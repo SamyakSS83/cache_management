@@ -1,0 +1,55 @@
+Cache Simulation Results:
+=========================
+
+Core 0 Statistics:
+  Read instructions: 1489888
+  Write instructions: 1007461
+  Total memory references: 2497349
+  Cache misses: 34239
+  Cache hits: 2463110
+  Miss rate: 1.371014%
+  Cache evictions: 34020
+  Cache writebacks: 7181
+  Total execution cycles: 2463110
+  Idle cycles: 3552528
+
+Core 1 Statistics:
+  Read instructions: 1485857
+  Write instructions: 1004611
+  Total memory references: 2490468
+  Cache misses: 33609
+  Cache hits: 2456859
+  Miss rate: 1.349505%
+  Cache evictions: 33399
+  Cache writebacks: 6796
+  Total execution cycles: 2456859
+  Idle cycles: 3496620
+
+Core 2 Statistics:
+  Read instructions: 1492629
+  Write instructions: 1016428
+  Total memory references: 2509057
+  Cache misses: 39015
+  Cache hits: 2470042
+  Miss rate: 1.554967%
+  Cache evictions: 38733
+  Cache writebacks: 10455
+  Total execution cycles: 2470042
+  Idle cycles: 4417500
+
+Core 3 Statistics:
+  Read instructions: 1493736
+  Write instructions: 1009391
+  Total memory references: 2503127
+  Cache misses: 34270
+  Cache hits: 2468857
+  Miss rate: 1.369088%
+  Cache evictions: 34072
+  Cache writebacks: 7018
+  Total execution cycles: 2468857
+  Idle cycles: 3547208
+
+Global Statistics:
+  Total invalidations on the bus: 397
+  Total data traffic on the bus: 28480 bytes
+

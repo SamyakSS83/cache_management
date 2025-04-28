@@ -12,6 +12,8 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
     totalInvalidations = 0;
     totalBusTraffic = 0;
     globalCycle = 0;
+    busLocked = false;
+    busOwner = -1;
     
     // Initialize caches for each core
     for (int i = 0; i < numCores; i++) {
@@ -85,22 +87,36 @@ void CacheSimulator::runSimulation() {
             }
             
             int currentCycle = coreCycles[i];
-            bool isHit = caches[i]->processRequest(memOp, address, currentCycle, otherCaches);
             
-            // Update core cycle count
-            coreCycles[i] = currentCycle;
-            
-            // If it's a miss, block the core until the specific time
-            if (!isHit) {
-                coreBlocked[i] = true;
-                // Don't read next line - wait for unblocking
-            } else {
-                // Process next line immediately for this core if it's a hit
-                if (std::getline(traceFiles[i], currentLines[i])) {
-                    // Core has another line to process
+            // Add bus lock mechanism
+            if (!busLocked) {
+                busLocked = true;
+                busOwner = i;
+                
+                bool isHit = caches[i]->processRequest(memOp, address, currentCycle, otherCaches);
+                
+                // Update core cycle count
+                coreCycles[i] = currentCycle;
+                
+                // If it's a miss, block the core until the specific time
+                if (!isHit) {
+                    coreBlocked[i] = true;
+                    // Don't read next line - wait for unblocking
                 } else {
-                    coreFinished[i] = true;
+                    // Process next line immediately for this core if it's a hit
+                    if (std::getline(traceFiles[i], currentLines[i])) {
+                        // Core has another line to process
+                    } else {
+                        coreFinished[i] = true;
+                    }
                 }
+                
+                busLocked = false;
+                busOwner = -1;
+            } else {
+                // Core must wait for bus to be available
+                coreCycles[i]++;  // Stall for a cycle
+                continue;
             }
         }
         

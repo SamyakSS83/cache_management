@@ -15,7 +15,8 @@ private:
     int totalInvalidations;
     int totalBusTraffic; // in bytes
     int globalCycle;
-    
+    bool busLocked;
+    int busOwner; // Core ID of the bus owner
 public:
     CacheSimulator(const std::string& traceFilePrefix, int s, int E, int b, 
                   const std::string& outFileName);
