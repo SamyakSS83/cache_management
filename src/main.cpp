@@ -48,7 +48,6 @@ int main(int argc, char* argv[]) {
                 printHelp();
                 return 0;
             default:
-                std::cerr << "Unknown option: " << static_cast<char>(opt) << std::endl;
                 printHelp();
                 return 1;
         }
@@ -56,33 +55,29 @@ int main(int argc, char* argv[]) {
     
     // Validate parameters
     if (traceFile.empty()) {
-        std::cerr << "Error: Trace file prefix not specified" << std::endl;
+        std::cerr << "Error: Missing trace file prefix (-t)" << std::endl;
         printHelp();
         return 1;
     }
     
     if (s <= 0) {
-        std::cerr << "Error: Invalid number of set index bits: " << s << std::endl;
-        printHelp();
+        std::cerr << "Error: Invalid set index bits (-s)" << std::endl;
         return 1;
     }
     
     if (E <= 0) {
-        std::cerr << "Error: Invalid associativity: " << E << std::endl;
-        printHelp();
+        std::cerr << "Error: Invalid associativity (-E)" << std::endl;
         return 1;
     }
     
     if (b <= 0) {
-        std::cerr << "Error: Invalid number of block bits: " << b << std::endl;
-        printHelp();
+        std::cerr << "Error: Invalid block bits (-b)" << std::endl;
         return 1;
     }
     
     // Create and run the simulator
     try {
-        CacheSimulator simulator(traceFile, s, E, b, outFileName);
-        simulator.setDebugMode(debugMode);
+        CacheSimulator simulator(traceFile, s, E, b, outFileName, debugMode);
         simulator.runSimulation();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
