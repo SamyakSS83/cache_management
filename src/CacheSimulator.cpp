@@ -90,13 +90,12 @@ void CacheSimulator::runSimulation() {
             // Update core cycle count
             coreCycles[i] = currentCycle;
             
-            // If it's a miss, block the core until the miss is resolved
+            // If it's a miss, block the core until the specific time
             if (!isHit) {
                 coreBlocked[i] = true;
-            }
-            
-            // Read next line for this core
-            if (!coreBlocked[i]) {
+                // Don't read next line - wait for unblocking
+            } else {
+                // Process next line immediately for this core if it's a hit
                 if (std::getline(traceFiles[i], currentLines[i])) {
                     // Core has another line to process
                 } else {
@@ -110,7 +109,7 @@ void CacheSimulator::runSimulation() {
             if (coreBlocked[i] && coreCycles[i] <= globalCycle) {
                 coreBlocked[i] = false;
                 
-                // Read next line for this core
+                // When unblocked, read next line
                 if (std::getline(traceFiles[i], currentLines[i])) {
                     // Core has another line to process
                 } else {

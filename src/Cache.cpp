@@ -65,8 +65,10 @@ int Cache::getLRULine(unsigned int setIndex) {
 }
 
 void Cache::updateLRU(unsigned int setIndex, int lineIndex) {
-    // Increment the lastUsed counter for the accessed line
+    // Set the accessed line's counter to current global cycle
     sets[setIndex].lines[lineIndex].lastUsed = totalCycles;
+    
+    // No need to update other lines - we just compare their lastUsed values
 }
 
 void Cache::evictLine(unsigned int setIndex, int lineIndex, int& cycle) {
@@ -126,8 +128,22 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
     } else {
         // Cache miss
         missCount++;
-        idleCycles += 100; // Memory access takes 100 cycles
-        totalCycles += 100;
+        
+        // Check if data is in other caches
+        int bytesTransferred = 0;
+        bool dataInOtherCache = checkDataInOtherCaches(address, otherCaches, bytesTransferred);
+        
+        if (dataInOtherCache) {
+            // Data comes from another cache - calculate transfer time
+            int transferCycles = 2 * (bytesTransferred / 4); // 2 cycles per word
+            cycle += transferCycles;
+            idleCycles += transferCycles;
+            busTraffic += bytesTransferred;
+        } else {
+            // Data comes from memory
+            cycle += 100; // Memory access latency
+            idleCycles += 100;
+        }
         
         // Find a line to replace
         bool needEviction = true;
@@ -148,7 +164,6 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
         // Check if other caches have this block
         bool otherCacheHasBlock = false;
         BusTransaction busOp = (op == READ) ? BUS_READ : BUS_WRITE;
-        int bytesTransferred = 0;
         
         for (auto cache : otherCaches) {
             if (cache->handleBusRequest(busOp, address, this, cycle, bytesTransferred)) {
@@ -230,6 +245,25 @@ bool Cache::handleBusRequest(BusTransaction busOp, unsigned int address,
     }
     
     return responded;
+}
+
+bool Cache::checkDataInOtherCaches(unsigned int address, std::vector<Cache*>& otherCaches, 
+                                 int& bytesTransferred) {
+    bytesTransferred = 0;
+    unsigned int setIndex = getSetIndex(address);
+    unsigned int tag = getTag(address);
+    
+    for (auto cache : otherCaches) {
+        int lineIndex = cache->findLineInSet(setIndex, tag);
+        if (lineIndex != -1 && cache->sets[setIndex].lines[lineIndex].state != INVALID) {
+            // Found in another cache
+            if (cache->sets[setIndex].lines[lineIndex].state == MODIFIED) {
+                bytesTransferred = blockSize;
+            }
+            return true;
+        }
+    }
+    return false;
 }
 
 void Cache::printState() {

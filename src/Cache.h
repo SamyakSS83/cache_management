@@ -47,6 +47,8 @@ public:
     // Bus snooping operations
     bool handleBusRequest(BusTransaction busOp, unsigned int address, 
                         Cache* requestingCache, int& cycle, int& bytesTransferred);
+    bool checkDataInOtherCaches(unsigned int address, std::vector<Cache*>& otherCaches, 
+                               int& bytesTransferred);
     
     // Statistics functions
     int getReadCount() const { return readCount; }
