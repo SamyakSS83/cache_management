@@ -1,271 +1,249 @@
 #include "CacheSimulator.h"
+#include "utils.h"
+#include <utility>
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <iomanip>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <cmath>
 #include <algorithm>
+#include <bits/stdc++.h>
+
+struct CoreState {
+    std::ifstream trace;
+    std::string currentLine;
+    bool finished;
+    int extime;    // execution time counter
+    int idletime;  // idle time counter
+    // Simplified cache: maps an address to a MESI state.
+    std::unordered_map<unsigned int, CacheLineState> cache;
+};
 
 CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E, int b, 
-                              const std::string& outFileName) {
-    this->outFileName = outFileName;
-    // this->s = s;
-    // this->E = E;
-    // this->b = b;
-    // this->traceFilePrefix = traceFilePrefix;
-    numCores = 4; // Quad-core
+                              const std::string& outFileName)
+    : outFileName(outFileName) {
+    numCores = 4; // Quad-core simulation
     totalInvalidations = 0;
     totalBusTraffic = 0;
     globalCycle = 0;
-    busLocked = false;
+    busFree = true;
     busOwner = -1;
-    debugMode = false;
     
-    // Initialize caches for each core
-    for (int i = 0; i < numCores; i++) {
-        caches.push_back(new Cache(i, s, E, b));
-    }
+    // Block size (in bytes) from b bits: blockSize = 2^b
+    blockSize = 1 << b;
     
-    // Open trace files
+    // Open six trace files: one per core.
     for (int i = 0; i < numCores; i++) {
+        CoreState core;
         std::string fileName = traceFilePrefix + "_proc" + std::to_string(i) + ".trace";
-        traceFiles.push_back(std::ifstream(fileName));
-        
-        if (!traceFiles[i].is_open()) {
+        core.trace.open(fileName);
+        if (!core.trace.is_open()) {
             std::cerr << "Error opening trace file: " << fileName << std::endl;
             exit(1);
         }
+        // Read the first line if possible.
+        if (std::getline(core.trace, core.currentLine)) {
+            // ready to simulate
+        } else {
+            core.finished = true;
+        }
+        core.finished = false;
+        core.extime = 0;
+        core.idletime = 0;
+        cores.push_back(std::move(core));  // Use move semantics here.
     }
 }
 
 CacheSimulator::~CacheSimulator() {
-    // Close trace files
-    for (auto& file : traceFiles) {
-        if (file.is_open()) {
-            file.close();
-        }
-    }
-    
-    // Free cache memory
-    for (auto cache : caches) {
-        delete cache;
+    // Close trace files.
+    for (auto &core : cores) {
+        if (core.trace.is_open())
+            core.trace.close();
     }
 }
 
+//
+// New simulation loop that uses a single global clock and per–core extime and idletime counters.
+// This implementation takes inspiration from your idea.txt pseudo code.
+// Note: You may fine–tune or extend timing logic as needed.
+//
 void CacheSimulator::runSimulation() {
-    std::vector<bool> coreFinished(numCores, false);
-    std::vector<std::string> currentLines(numCores);
-    std::vector<bool> coreBlocked(numCores, false);
-    std::vector<int> coreCycles(numCores, 0);
-    std::vector<int> busRequestCycle(numCores, 0); // Track when each core requested the bus
-    stalledSince.resize(numCores, 0); // Initialize tracking of stall beginning
-    
-    // Read first line from each trace file
-    for (int i = 0; i < numCores; i++) {
-        if (std::getline(traceFiles[i], currentLines[i])) {
-            // Core has a line to process
-        } else {
-            coreFinished[i] = true;
-        }
-    }
-    
-    // Main simulation loop
-    while (!std::all_of(coreFinished.begin(), coreFinished.end(), [](bool v) { return v; })) {
-        globalCycle++;
-        
-        // Process bus requests in fair order (FIFO with index priority)
-        if (!busLocked) {
-            // Find the core with the oldest pending bus request
-            // If tie, prefer the core with lower index
-            int selectedCore = -1;
-            int oldestRequestCycle = globalCycle + 1;
-            
-            for (int i = 0; i < numCores; i++) {
-                if (!coreFinished[i] && !coreBlocked[i]) {
-                    if (busRequestCycle[i] < oldestRequestCycle) {
-                        // This core has an older request
-                        oldestRequestCycle = busRequestCycle[i];
-                        selectedCore = i;
-                    }
-                    else if (busRequestCycle[i] == oldestRequestCycle) {
-                        // Same request cycle - lower index gets priority
-                        // selectedCore will already be the lower index core if set
-                        if (selectedCore == -1 || i < selectedCore) {
-                            selectedCore = i;
+    // Continue until every core has finished processing its trace.
+    while (!std::all_of(cores.begin(), cores.end(), [](const CoreState &cs){ return cs.finished; })) {
+        // For this cycle, if the bus is free try to give a turn to one core.
+        bool executed = false;
+        for (int coreId = 0; coreId < numCores; coreId++) {
+            CoreState &core = cores[coreId];
+            if (core.finished)
+                continue;
+
+            // If an instruction is available, process it.
+            if (!core.currentLine.empty()) {
+                // If bus is not free, the core idles.
+                if (!busFree) {
+                    core.idletime++;
+                    globalCycle++;
+                    continue;
+                }
+                // Mark bus busy for this core.
+                busFree = false;
+                busOwner = coreId;
+                
+                std::istringstream iss(core.currentLine);
+                char op;
+                std::string addrStr;
+                iss >> op >> addrStr;
+                unsigned int address = std::stoul(addrStr, nullptr, 16);
+                
+                // Process read instruction.
+                if (op == 'R') {
+                    // Read Hit: if the address is in the core's cache and state is not INVALID.
+                    if (core.cache.find(address) != core.cache.end() &&
+                        core.cache[address] != INVALID) {
+                        // Read hit: execute in 1 cycle.
+                        core.extime += 1;
+                        globalCycle += 1;
+                    } else {
+                        // Read Miss.
+                        // First check if any other core has the address.
+                        bool foundInOther = false;
+                        CacheLineState otherState = INVALID;
+                        for (int j = 0; j < numCores; j++) {
+                            if (j == coreId) continue;
+                            if (cores[j].cache.find(address) != cores[j].cache.end() &&
+                                cores[j].cache[address] != INVALID) {
+                                foundInOther = true;
+                                otherState = cores[j].cache[address];
+                                break;
+                            }
+                        }
+                        
+                        if (foundInOther) {
+                            // Cache-to-cache transfer.
+                            // Assume transfer time = 2n cycles where n = blockSize/4
+                            int transferCycles = 2 * (blockSize / 4);
+                            // Extra cycle when data comes from an E or M state.
+                            if (otherState == EXCLUSIVE || otherState == MODIFIED)
+                                transferCycles += 1;
+                            
+                            core.extime += transferCycles + 1; // +1 for execution after transfer.
+                            globalCycle += transferCycles + 1;
+                            
+                            // After transfer, mark line in L1 as SHARED.
+                            core.cache[address] = SHARED;
+                            
+                            // For a write–back may need to update bus traffic and invalidations.
+                            totalBusTraffic += blockSize;
+                        } else {
+                            // Data not found in any other cache: fetch from memory.
+                            int memAccessCycles = 100;
+                            core.extime += memAccessCycles + 1; // +1 for execute cycle.
+                            globalCycle += memAccessCycles + 1;
+                            
+                            // Set state to EXCLUSIVE.
+                            core.cache[address] = EXCLUSIVE;
                         }
                     }
                 }
-            }
-            
-            if (selectedCore >= 0) {
-                busLocked = true;
-                busOwner = selectedCore;
-                
-                // If this core was stalled, calculate idle time
-                if (stalledSince[selectedCore] > 0) {
-                    int idleTime = globalCycle - stalledSince[selectedCore];
-                    caches[selectedCore]->addIdleTime(idleTime);
-                    stalledSince[selectedCore] = 0; // Reset stall tracking
-                }
-                
-                // Parse the current line for the bus owner
-                std::istringstream iss(currentLines[busOwner]);
-                char op;
-                std::string addressStr;
-                
-                iss >> op >> addressStr;
-                
-                // Convert hex address to integer
-                unsigned int address = std::stoul(addressStr, nullptr, 16);
-                
-                // Process the memory operation
-                MemoryOperation memOp = (op == 'R') ? READ : WRITE;
-                std::vector<Cache*> otherCaches;
-                for (int j = 0; j < numCores; j++) {
-                    if (j != busOwner) otherCaches.push_back(caches[j]);
-                }
-                
-                int currentCycle = coreCycles[busOwner];
-                
-                // Initialize isHit before the debug block
-                bool isHit;
-                
-                // Debug output if enabled
-                if (debugMode) {
-                    std::cout << "========== Cycle " << globalCycle << " ==========" << std::endl;
-                    
-                    // Get the cache line's current state before processing (if it exists)
-                    unsigned int setIndex = caches[busOwner]->getSetIndexPublic(address);
-                    unsigned int tag = caches[busOwner]->getTagPublic(address);
-                    int lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
-                    CacheLineState oldState = INVALID;
-                    
-                    if (lineIndex != -1 && caches[busOwner]->getLineState(setIndex, lineIndex) != INVALID) {
-                        oldState = caches[busOwner]->getLineState(setIndex, lineIndex);
-                    }
-                    
-                    // Process the request
-                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
-                    
-                    // Get the new state after processing
-                    lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
-                    CacheLineState newState = INVALID;
-                    
-                    if (lineIndex != -1) {
-                        newState = caches[busOwner]->getLineState(setIndex, lineIndex);
-                    }
-                    
-                    // Print focused debug info about this instruction
-                    caches[busOwner]->printDebugInfo(memOp, address, isHit, oldState, newState);
-                    
-                    // Show bus activity if relevant
-                    if (memOp == WRITE && oldState == SHARED) {
-                        std::cout << "  → Bus: Sending invalidation to other caches" << std::endl;
-                    } else if (!isHit && (oldState == MODIFIED || oldState == EXCLUSIVE)) {
-                        std::cout << "  → Bus: Cache-to-cache transfer" << std::endl;
-                    } else if (!isHit) {
-                        std::cout << "  → Bus: Memory access" << std::endl;
-                    }
-                    
-                    std::cout << "================================" << std::endl << std::endl;
-                }
-                else {
-                    // Just process without debug output
-                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
-                }
-                
-                // If it's a miss, block the core until the specific time
-                if (!isHit) {
-                    coreBlocked[busOwner] = true;
-                } else {
-                    // Process next line immediately for this core if it's a hit
-                    if (std::getline(traceFiles[busOwner], currentLines[busOwner])) {
-                        // Core has another line to process
-                        busRequestCycle[busOwner] = globalCycle; // Update request time
+                // Process write instruction.
+                else if (op == 'W') {
+                    // Write Hit.
+                    if (core.cache.find(address) != core.cache.end() &&
+                        core.cache[address] != INVALID) {
+                        // If state is SHARED, send invalidations to other cores.
+                        if (core.cache[address] == SHARED) {
+                            for (int j = 0; j < numCores; j++) {
+                                if (j == coreId) continue;
+                                if (cores[j].cache.find(address) != cores[j].cache.end() &&
+                                    cores[j].cache[address] != INVALID) {
+                                    // Invalidate other core's copy.
+                                    cores[j].cache[address] = INVALID;
+                                    totalInvalidations++;
+                                    totalBusTraffic += blockSize;
+                                }
+                            }
+                            // Then update own state to MODIFIED.
+                            core.cache[address] = MODIFIED;
+                            core.extime += 1;
+                            globalCycle += 1;
+                        } else if (core.cache[address] == EXCLUSIVE || core.cache[address] == MODIFIED) {
+                            // Write hit in EXCLUSIVE or MODIFIED state takes 1 cycle.
+                            core.extime += 1;
+                            globalCycle += 1;
+                            core.cache[address] = MODIFIED;
+                        }
                     } else {
-                        coreFinished[busOwner] = true;
+                        // Write Miss.
+                        // Invalidate copies from other caches, if any.
+                        for (int j = 0; j < numCores; j++) {
+                            if (j == coreId) continue;
+                            if (cores[j].cache.find(address) != cores[j].cache.end() &&
+                                cores[j].cache[address] != INVALID) {
+                                cores[j].cache[address] = INVALID;
+                                totalInvalidations++;
+                                totalBusTraffic += blockSize;
+                            }
+                        }
+                        // Fetch data from memory.
+                        int memAccessCycles = 100;
+                        core.extime += memAccessCycles + 1;
+                        globalCycle += memAccessCycles + 1;
+                        
+                        // After write miss, update own state to MODIFIED.
+                        core.cache[address] = MODIFIED;
                     }
                 }
                 
-                busLocked = false;
+                // Mark bus as free.
+                busFree = true;
                 busOwner = -1;
-            }
-        } else {
-            // Bus is locked, mark cores as stalled if they need the bus
-            for (int i = 0; i < numCores; i++) {
-                if (!coreFinished[i] && !coreBlocked[i] && stalledSince[i] == 0) {
-                    stalledSince[i] = globalCycle; // Mark when stalling began
-                }
-            }
-        }
-        
-        // Check if any blocked cores can be unblocked
-        for (int i = 0; i < numCores; i++) {
-            if (coreBlocked[i] && coreCycles[i] <= globalCycle) {
-                coreBlocked[i] = false;
+                executed = true;
                 
-                // When unblocked, read next line
-                if (std::getline(traceFiles[i], currentLines[i])) {
-                    // Core has another line to process
-                    busRequestCycle[i] = globalCycle; // Update request time
-                } else {
-                    coreFinished[i] = true;
-                }
+                // Read next line for this core.
+                if (!std::getline(core.trace, core.currentLine))
+                    core.finished = true;
             }
         }
         
-        // For cores that aren't finished or blocked and haven't been processed yet,
-        // record their bus request
-        for (int i = 0; i < numCores; i++) {
-            if (!coreFinished[i] && !coreBlocked[i] && busRequestCycle[i] == 0) {
-                busRequestCycle[i] = globalCycle;
+        // If no core executed (e.g. all waiting for the bus), advance the clock.
+        if (!executed) {
+            globalCycle++;
+            for (int coreId = 0; coreId < numCores; coreId++) {
+                if (!cores[coreId].finished)
+                    cores[coreId].idletime++;
             }
         }
     }
     
-    // Collect final statistics
-    for (int i = 0; i < numCores; i++) {
-        totalInvalidations += caches[i]->getBusInvalidations();
-        totalBusTraffic += caches[i]->getBusTraffic();
-    }
-    
-    // Print statistics
     printStatistics();
 }
 
+//
+// Print simulation statistics.
+//
 void CacheSimulator::printStatistics() {
     std::ofstream outFile;
     if (!outFileName.empty()) {
         outFile.open(outFileName);
     }
     
-    std::ostream& out = outFileName.empty() ? std::cout : outFile;
+    std::ostream &out = (outFile.is_open() ? outFile : std::cout);
+    out << "Flat Cache Simulation Results:" << std::endl
+        << "Global Clock Cycles: " << globalCycle << std::endl << std::endl;
     
-    out << "Cache Simulation Results:" << std::endl;
-    out << "=========================" << std::endl << std::endl;
-    
-    // Print per-core statistics
     for (int i = 0; i < numCores; i++) {
         out << "Core " << i << " Statistics:" << std::endl;
-        out << "  Read instructions: " << caches[i]->getReadCount() << std::endl;
-        out << "  Write instructions: " << caches[i]->getWriteCount() << std::endl;
-        out << "  Total memory references: " << caches[i]->getReadCount() + caches[i]->getWriteCount() << std::endl;
-        out << "  Cache misses: " << caches[i]->getMissCount() << std::endl;
-        out << "  Cache hits: " << caches[i]->getHitCount() << std::endl;
-        out << "  Miss rate: " << std::fixed << std::setprecision(6) << caches[i]->getMissRate() * 100 << "%" << std::endl;
-        out << "  Cache evictions: " << caches[i]->getEvictionCount() << std::endl;
-        out << "  Cache writebacks: " << caches[i]->getWritebackCount() << std::endl;
-        out << "  Total execution cycles: " << caches[i]->getTotalCycles() << std::endl;
-        out << "  Idle cycles: " << caches[i]->getIdleCycles() << std::endl;
+        out << "  Total execution time: " << cores[i].extime << " cycles" << std::endl;
+        out << "  Total idle time: " << cores[i].idletime << " cycles" << std::endl;
         out << std::endl;
     }
     
-    // Print global statistics
     out << "Global Statistics:" << std::endl;
-    out << "  Total invalidations on the bus: " << totalInvalidations << std::endl;
-    out << "  Total data traffic on the bus: " << totalBusTraffic << " bytes" << std::endl;
-    out << std::endl;
+    out << "  Total invalidations: " << totalInvalidations << std::endl;
+    out << "  Total bus traffic: " << totalBusTraffic << " bytes" << std::endl;
     
-    if (outFile.is_open()) {
+    if (outFile.is_open())
         outFile.close();
-    }
 }

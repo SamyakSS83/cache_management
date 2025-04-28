@@ -1,64 +1,22 @@
-========== Cycle 1 ==========
-Core 0: WRITE 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] New state: M | Exec time: 101 cycles | Idle time: 100 cycles
-  → Bus: Memory access
-================================
-
-========== Cycle 2 ==========
-Core 0: WRITE 0x7e1afe78 - HIT [Set: 51, Tag: 0xfc35f] State: M | Exec time: 1 cycle | Idle time: 100 cycles
-================================
-
-Cache Simulation Results:
-=========================
+Flat Cache Simulation Results:
+Global Clock Cycles: 559
 
 Core 0 Statistics:
-  Read instructions: 0
-  Write instructions: 2
-  Total memory references: 2
-  Cache misses: 1
-  Cache hits: 1
-  Miss rate: 50.000000%
-  Cache evictions: 0
-  Cache writebacks: 0
-  Total execution cycles: 3
-  Idle cycles: 100
+  Total execution time: 202 cycles
+  Total idle time: 0 cycles
 
 Core 1 Statistics:
-  Read instructions: 0
-  Write instructions: 0
-  Total memory references: 0
-  Cache misses: 0
-  Cache hits: 0
-  Miss rate: 0.000000%
-  Cache evictions: 0
-  Cache writebacks: 0
-  Total execution cycles: 0
-  Idle cycles: 0
+  Total execution time: 36 cycles
+  Total idle time: 0 cycles
 
 Core 2 Statistics:
-  Read instructions: 0
-  Write instructions: 0
-  Total memory references: 0
-  Cache misses: 0
-  Cache hits: 0
-  Miss rate: 0.000000%
-  Cache evictions: 0
-  Cache writebacks: 0
-  Total execution cycles: 0
-  Idle cycles: 0
+  Total execution time: 119 cycles
+  Total idle time: 0 cycles
 
 Core 3 Statistics:
-  Read instructions: 0
-  Write instructions: 0
-  Total memory references: 0
-  Cache misses: 0
-  Cache hits: 0
-  Miss rate: 0.000000%
-  Cache evictions: 0
-  Cache writebacks: 0
-  Total execution cycles: 0
-  Idle cycles: 0
+  Total execution time: 202 cycles
+  Total idle time: 0 cycles
 
 Global Statistics:
-  Total invalidations on the bus: 0
-  Total data traffic on the bus: 0 bytes
-
+  Total invalidations: 6
+  Total bus traffic: 288 bytes
