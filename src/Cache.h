@@ -68,6 +68,22 @@ public:
     
     // Debug function
     void printState();
+
+    // Add to public methods
+    void addIdleTime(int cycles) { idleCycles += cycles; }
+
+    // New method to handle cache-to-cache transfer receipt
+    void receiveCacheToCache(unsigned int address, CacheLineState newState, int transferCycles) {
+        unsigned int setIndex = getSetIndex(address);
+        unsigned int tag = getTag(address);
+        int lineIndex = findLineInSet(setIndex, tag);
+        
+        // Add transfer cycles to idle time
+        idleCycles += transferCycles;
+        
+        // After transfer is complete, update the cache (1 additional cycle)
+        totalCycles += 1;
+    }
 };
 
 #endif // CACHE_H

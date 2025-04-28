@@ -88,7 +88,7 @@ if write miss:
 
 if bus free:
 
-
+case: rwitm (read with intent to modify)
 
 if others_dont_have:
 

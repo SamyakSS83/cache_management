@@ -107,20 +107,36 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
             // Read hit - no state change needed
         } else { // WRITE
             // Write hit
-            if (sets[setIndex].lines[lineIndex].state == SHARED || 
-                sets[setIndex].lines[lineIndex].state == EXCLUSIVE) {
-                // Need to invalidate copies in other caches (BusUpgrade)
+            if (sets[setIndex].lines[lineIndex].state == SHARED) {
+                // Send invalidation to other caches
                 int bytesTransferred = 0;
                 for (auto cache : otherCaches) {
-                    if (cache->handleBusRequest(BUS_UPGRADE, address, this, cycle, bytesTransferred)) {
+                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, cycle, bytesTransferred)) {
                         busInvalidations++;
                     }
                 }
                 busTraffic += bytesTransferred;
+                
+                // Change state to Modified
+                sets[setIndex].lines[lineIndex].state = MODIFIED;
+                sets[setIndex].lines[lineIndex].dirty = true;
+                
+                // 1 cycle for the actual write
+                totalCycles += 1;
+            } 
+            else if (sets[setIndex].lines[lineIndex].state == EXCLUSIVE) {
+                // Just change state to Modified, no bus transaction needed
+                sets[setIndex].lines[lineIndex].state = MODIFIED;
+                sets[setIndex].lines[lineIndex].dirty = true;
+                
+                // 1 cycle for the actual write
+                totalCycles += 1;
             }
-            
-            sets[setIndex].lines[lineIndex].dirty = true;
-            sets[setIndex].lines[lineIndex].state = MODIFIED;
+            else if (sets[setIndex].lines[lineIndex].state == MODIFIED) {
+                // Already MODIFIED, just update data
+                // 1 cycle for the actual write
+                totalCycles += 1;
+            }
         }
         
         updateLRU(setIndex, lineIndex);
@@ -131,18 +147,86 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
         
         // Check if data is in other caches
         int bytesTransferred = 0;
-        bool dataInOtherCache = checkDataInOtherCaches(address, otherCaches, bytesTransferred);
+        bool dataInSharedState = false;
+        bool dataInModifiedState = false;
         
-        if (dataInOtherCache) {
-            // Data comes from another cache - calculate transfer time
-            int transferCycles = 2 * (bytesTransferred / 4); // 2 cycles per word
-            cycle += transferCycles;
-            idleCycles += transferCycles;
-            busTraffic += bytesTransferred;
+        // First check if data exists in other caches and in what state
+        for (auto cache : otherCaches) {
+            unsigned int otherSetIndex = cache->getSetIndex(address);
+            unsigned int otherTag = cache->getTag(address);
+            int otherLineIndex = cache->findLineInSet(otherSetIndex, otherTag);
+            
+            if (otherLineIndex != -1 && cache->sets[otherSetIndex].lines[otherLineIndex].state != INVALID) {
+                if (cache->sets[otherSetIndex].lines[otherLineIndex].state == SHARED) {
+                    dataInSharedState = true;
+                } else if (cache->sets[otherSetIndex].lines[otherLineIndex].state == MODIFIED || 
+                           cache->sets[otherSetIndex].lines[otherLineIndex].state == EXCLUSIVE) {
+                    dataInModifiedState = true;
+                    break;  // Most important case
+                }
+            }
+        }
+        
+        if (op == READ) {
+            // Read miss
+            if (dataInSharedState) {
+                // Data in another cache in S state
+                int transferCycles = 2 * (blockSize / 4); // 2n cycles for c2c transfer
+                cycle += transferCycles;
+                idleCycles += transferCycles;
+                busTraffic += blockSize;
+                
+                // After transfer completes, free the bus and execute the instruction (1 more cycle)
+                totalCycles += 1;
+            }
+            else if (dataInModifiedState) {
+                // Data in another cache in E/M state
+                int transferCycles = 2 * (blockSize / 4); // 2n cycles for c2c transfer
+                cycle += transferCycles;
+                idleCycles += transferCycles;
+                busTraffic += blockSize;
+                
+                // Broadcast read request on bus
+                for (auto cache : otherCaches) {
+                    cache->handleBusRequest(BUS_READ, address, this, cycle, bytesTransferred);
+                }
+                
+                // After transfer completes, free the bus and execute the instruction (1 more cycle)
+                totalCycles += 1;
+            } 
+            else {
+                // Not in any cache, fetch from memory
+                cycle += 100; // Time to fetch from memory
+                idleCycles += 100;
+                
+                // After memory access completes, free the bus and execute (1 more cycle)
+                totalCycles += 1;
+            }
         } else {
-            // Data comes from memory
-            cycle += 100; // Memory access latency
-            idleCycles += 100;
+            // Write miss
+            if (dataInSharedState || dataInModifiedState) {
+                // First invalidate in other caches (Read with Intent to Modify)
+                for (auto cache : otherCaches) {
+                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, cycle, bytesTransferred)) {
+                        busInvalidations++;
+                    }
+                }
+                busTraffic += bytesTransferred;
+                
+                // Then fetch from memory
+                cycle += 100; // Time to fetch from memory
+                idleCycles += 100;
+                
+                // After memory access completes, free the bus and execute (1 more cycle)
+                totalCycles += 1;
+            } else {
+                // Not in any cache, fetch from memory
+                cycle += 100; // Time to fetch from memory
+                idleCycles += 100;
+                
+                // After memory access completes, free the bus and execute (1 more cycle)
+                totalCycles += 1;
+            }
         }
         
         // Find a line to replace
@@ -161,27 +245,13 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
             evictLine(setIndex, lineIndex, cycle);
         }
         
-        // Check if other caches have this block
-        bool otherCacheHasBlock = false;
-        BusTransaction busOp = (op == READ) ? BUS_READ : BUS_WRITE;
-        
-        for (auto cache : otherCaches) {
-            if (cache->handleBusRequest(busOp, address, this, cycle, bytesTransferred)) {
-                otherCacheHasBlock = true;
-                if (busOp == BUS_WRITE) {
-                    busInvalidations++;
-                }
-            }
-        }
-        busTraffic += bytesTransferred;
-        
         // Set the new line state based on MESI protocol
         sets[setIndex].lines[lineIndex].valid = true;
         sets[setIndex].lines[lineIndex].tag = tag;
         
         if (op == READ) {
             sets[setIndex].lines[lineIndex].dirty = false;
-            sets[setIndex].lines[lineIndex].state = otherCacheHasBlock ? SHARED : EXCLUSIVE;
+            sets[setIndex].lines[lineIndex].state = (dataInSharedState || dataInModifiedState) ? SHARED : EXCLUSIVE;
         } else { // WRITE
             sets[setIndex].lines[lineIndex].dirty = true;
             sets[setIndex].lines[lineIndex].state = MODIFIED;
@@ -210,23 +280,64 @@ bool Cache::handleBusRequest(BusTransaction busOp, unsigned int address,
             if (sets[setIndex].lines[lineIndex].state == MODIFIED) {
                 // Need to provide the modified data to the requesting cache and memory
                 bytesTransferred += blockSize; // Transfer entire block
-                cycle += 2 * (blockSize / 4); // 2 cycles per word
+                
+                // Cache-to-cache transfer timing (2n cycles as per idea.txt)
+                int transferCycles = (2 * (blockSize / 4));
+                
+                // Update the cycle counter (affects when bus is free)
+                cycle += transferCycles;
+                
+                // If requesting cache exists, inform it of the data transfer
+                if (requestingCache) {
+                    requestingCache->receiveCacheToCache(address, SHARED, transferCycles);
+                }
+                
+                // Writeback to memory (implicit)
+                writebackCount++;
                 
                 // Change state to SHARED
                 sets[setIndex].lines[lineIndex].state = SHARED;
                 sets[setIndex].lines[lineIndex].dirty = false;
+                
                 responded = true;
-            } else if (sets[setIndex].lines[lineIndex].state == EXCLUSIVE) {
+            } 
+            else if (sets[setIndex].lines[lineIndex].state == EXCLUSIVE) {
                 // Change state to SHARED
                 sets[setIndex].lines[lineIndex].state = SHARED;
+                
+                // Cache-to-cache transfer timing
+                int transferCycles = (2 * (blockSize / 4));
+                
+                // Update the cycle counter
+                cycle += transferCycles;
+                bytesTransferred += blockSize;
+                
+                // If requesting cache exists, inform it of the data transfer
+                if (requestingCache) {
+                    requestingCache->receiveCacheToCache(address, SHARED, transferCycles);
+                }
+                
                 responded = true;
-            } else if (sets[setIndex].lines[lineIndex].state == SHARED) {
-                // Already shared, no state change
+            } 
+            else if (sets[setIndex].lines[lineIndex].state == SHARED) {
+                // Already shared, just provide the data
+                bytesTransferred += blockSize;
+                
+                // Cache-to-cache transfer timing
+                int transferCycles = (2 * (blockSize / 4));
+                
+                // Update the cycle counter
+                cycle += transferCycles;
+                
+                // If requesting cache exists, inform it of the data transfer
+                if (requestingCache) {
+                    requestingCache->receiveCacheToCache(address, SHARED, transferCycles);
+                }
+                
                 responded = true;
             }
             break;
             
-        case BUS_WRITE:
         case BUS_INVALIDATE:
         case BUS_UPGRADE:
             // Invalidate the line
@@ -236,11 +347,25 @@ bool Cache::handleBusRequest(BusTransaction busOp, unsigned int address,
             if (sets[setIndex].lines[lineIndex].dirty) {
                 sets[setIndex].lines[lineIndex].dirty = false;
                 writebackCount++;
-                cycle += 100; // Writeback to memory
-                idleCycles += 100;
+                bytesTransferred += blockSize;
             }
             
             responded = true;
+            busInvalidations++;
+            break;
+            
+        case BUS_WRITE:
+            // Similar to invalidate but might have additional logic in the future
+            sets[setIndex].lines[lineIndex].state = INVALID;
+            
+            if (sets[setIndex].lines[lineIndex].dirty) {
+                sets[setIndex].lines[lineIndex].dirty = false;
+                writebackCount++;
+                bytesTransferred += blockSize;
+            }
+            
+            responded = true;
+            busInvalidations++;
             break;
     }
     
@@ -257,7 +382,7 @@ bool Cache::checkDataInOtherCaches(unsigned int address, std::vector<Cache*>& ot
         int lineIndex = cache->findLineInSet(setIndex, tag);
         if (lineIndex != -1 && cache->sets[setIndex].lines[lineIndex].state != INVALID) {
             // Found in another cache
-            if (cache->sets[setIndex].lines[lineIndex].state == MODIFIED) {
+            if (cache->sets[setIndex].lines[setIndex].state == MODIFIED) {
                 bytesTransferred = blockSize;
             }
             return true;

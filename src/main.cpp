@@ -5,13 +5,14 @@
 #include <getopt.h>
 
 void printHelp() {
-    std::cout << "Usage: ./L1simulate -t <tracefile> -s <s> -E <E> -b <b> [-o <outfilename>] [-h]" << std::endl;
+    std::cout << "Usage: ./L1simulate -t <tracefile> -s <s> -E <E> -b <b> [-o <outfilename>] [-d] [-h]" << std::endl;
     std::cout << "Options:" << std::endl;
     std::cout << "  -t <tracefile>: name of parallel application (e.g. app1) whose 4 traces are to be used" << std::endl;
     std::cout << "  -s <s>: number of set index bits (number of sets in the cache = S = 2^s)" << std::endl;
     std::cout << "  -E <E>: associativity (number of cache lines per set)" << std::endl;
     std::cout << "  -b <b>: number of block bits (block size = B = 2^b)" << std::endl;
     std::cout << "  -o <outfilename>: logs output in file for plotting etc." << std::endl;
+    std::cout << "  -d: enable debug mode (prints cache state after each instruction)" << std::endl;
     std::cout << "  -h: prints this help" << std::endl;
 }
 
@@ -19,10 +20,11 @@ int main(int argc, char* argv[]) {
     std::string traceFile;
     int s = 0, E = 0, b = 0;
     std::string outFileName;
+    bool debugMode = false;
     
     // Parse command line arguments
     int opt;
-    while ((opt = getopt(argc, argv, "t:s:E:b:o:h")) != -1) {
+    while ((opt = getopt(argc, argv, "t:s:E:b:o:dh")) != -1) {
         switch (opt) {
             case 't':
                 traceFile = optarg;
@@ -39,11 +41,14 @@ int main(int argc, char* argv[]) {
             case 'o':
                 outFileName = optarg;
                 break;
+            case 'd':
+                debugMode = true;
+                break;
             case 'h':
                 printHelp();
                 return 0;
             default:
-                std::cerr << "Error: Unknown option: " << opt << std::endl;
+                std::cerr << "Unknown option: " << static_cast<char>(opt) << std::endl;
                 printHelp();
                 return 1;
         }
@@ -77,6 +82,7 @@ int main(int argc, char* argv[]) {
     // Create and run the simulator
     try {
         CacheSimulator simulator(traceFile, s, E, b, outFileName);
+        simulator.setDebugMode(debugMode);
         simulator.runSimulation();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

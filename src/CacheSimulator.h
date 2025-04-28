@@ -17,12 +17,16 @@ private:
     int globalCycle;
     bool busLocked;
     int busOwner; // Core ID of the bus owner
+    std::vector<int> stalledSince; // Tracks when cores began waiting for the bus
+    bool debugMode;
+
 public:
     CacheSimulator(const std::string& traceFilePrefix, int s, int E, int b, 
                   const std::string& outFileName);
     ~CacheSimulator();
     void runSimulation();
     void printStatistics();
+    void setDebugMode(bool enable) { debugMode = enable; }
 };
 
 #endif // CACHE_SIMULATOR_H
