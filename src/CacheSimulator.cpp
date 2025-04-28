@@ -125,24 +125,52 @@ void CacheSimulator::runSimulation() {
                 }
                 
                 int currentCycle = coreCycles[busOwner];
-                bool isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
                 
-                // Update core cycle count
-                coreCycles[busOwner] = currentCycle;
+                // Initialize isHit before the debug block
+                bool isHit;
                 
                 // Debug output if enabled
                 if (debugMode) {
                     std::cout << "========== Cycle " << globalCycle << " ==========" << std::endl;
-                    std::cout << "Core " << busOwner << " " << (memOp == READ ? "READ" : "WRITE")
-                              << " address 0x" << std::hex << address << std::dec 
-                              << " - " << (isHit ? "HIT" : "MISS") << std::endl;
                     
-                    // Print state of all caches
-                    for (int i = 0; i < numCores; i++) {
-                        caches[i]->printState();
-                        std::cout << std::endl;
+                    // Get the cache line's current state before processing (if it exists)
+                    unsigned int setIndex = caches[busOwner]->getSetIndexPublic(address);
+                    unsigned int tag = caches[busOwner]->getTagPublic(address);
+                    int lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
+                    CacheLineState oldState = INVALID;
+                    
+                    if (lineIndex != -1 && caches[busOwner]->getLineState(setIndex, lineIndex) != INVALID) {
+                        oldState = caches[busOwner]->getLineState(setIndex, lineIndex);
                     }
+                    
+                    // Process the request
+                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
+                    
+                    // Get the new state after processing
+                    lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
+                    CacheLineState newState = INVALID;
+                    
+                    if (lineIndex != -1) {
+                        newState = caches[busOwner]->getLineState(setIndex, lineIndex);
+                    }
+                    
+                    // Print focused debug info about this instruction
+                    caches[busOwner]->printDebugInfo(memOp, address, isHit, oldState, newState);
+                    
+                    // Show bus activity if relevant
+                    if (memOp == WRITE && oldState == SHARED) {
+                        std::cout << "  → Bus: Sending invalidation to other caches" << std::endl;
+                    } else if (!isHit && (oldState == MODIFIED || oldState == EXCLUSIVE)) {
+                        std::cout << "  → Bus: Cache-to-cache transfer" << std::endl;
+                    } else if (!isHit) {
+                        std::cout << "  → Bus: Memory access" << std::endl;
+                    }
+                    
                     std::cout << "================================" << std::endl << std::endl;
+                }
+                else {
+                    // Just process without debug output
+                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
                 }
                 
                 // If it's a miss, block the core until the specific time

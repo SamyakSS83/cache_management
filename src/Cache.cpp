@@ -29,19 +29,19 @@ Cache::Cache(int coreId, int s, int E, int b) : coreId(coreId) {
     busTraffic = 0;
 }
 
-unsigned int Cache::getSetIndex(unsigned int address) {
+unsigned int Cache::getSetIndex(unsigned int address) const{
     return (address >> blockOffsetBits) & ((1 << setIndexBits) - 1);
 }
 
-unsigned int Cache::getTag(unsigned int address) {
+unsigned int Cache::getTag(unsigned int address) const{
     return address >> (blockOffsetBits + setIndexBits);
 }
 
-unsigned int Cache::getBlockOffset(unsigned int address) {
+unsigned int Cache::getBlockOffset(unsigned int address) const {
     return address & ((1 << blockOffsetBits) - 1);
 }
 
-int Cache::findLineInSet(unsigned int setIndex, unsigned int tag) {
+int Cache::findLineInSet(unsigned int setIndex, unsigned int tag) const{
     for (int i = 0; i < associativity; i++) {
         if (sets[setIndex].lines[i].valid && sets[setIndex].lines[i].tag == tag) {
             return i;
@@ -407,4 +407,40 @@ void Cache::printState() {
         std::cout << std::endl;
     }
     std::cout << std::dec;
+}
+
+void Cache::printDebugInfo(MemoryOperation op, unsigned int address, bool isHit, 
+                         CacheLineState oldState, CacheLineState newState) {
+    std::cout << "Core " << coreId << ": "
+              << (op == READ ? "READ" : "WRITE") << " 0x" << std::hex << address << std::dec;
+              
+    // Print hit/miss status
+    std::cout << " - " << (isHit ? "HIT" : "MISS");
+    
+    // Add details about set and tag
+    unsigned int setIndex = getSetIndex(address);
+    unsigned int tag = getTag(address);
+    std::cout << " [Set: " << setIndex << ", Tag: 0x" << std::hex << tag << std::dec << "]";
+    
+    // Show state transition if applicable
+    if (oldState != INVALID) {
+        std::cout << " State: " << stateToString(oldState);
+        if (newState != oldState) {
+            std::cout << " → " << stateToString(newState);
+        }
+    } else if (newState != INVALID) {
+        std::cout << " New state: " << stateToString(newState);
+    }
+    
+    // Show execution and idle times
+    if (isHit) {
+        std::cout << " | Exec time: 1 cycle";
+    } else if (op == READ) {
+        int memTime = (newState == SHARED) ? (2 * (blockSize / 4)) + 1 : 101;
+        std::cout << " | Exec time: " << memTime << " cycles";
+    } else { // Write miss
+        std::cout << " | Exec time: 101 cycles";
+    }
+    
+    std::cout << " | Idle time: " << idleCycles << " cycles" << std::endl;
 }

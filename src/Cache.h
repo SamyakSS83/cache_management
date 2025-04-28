@@ -29,10 +29,10 @@ private:
     int busTraffic; // in bytes
     
     // Helper functions
-    unsigned int getSetIndex(unsigned int address);
-    unsigned int getTag(unsigned int address);
-    unsigned int getBlockOffset(unsigned int address);
-    int findLineInSet(unsigned int setIndex, unsigned int tag);
+    unsigned int getSetIndex(unsigned int address) const;
+    unsigned int getTag(unsigned int address) const;
+    unsigned int getBlockOffset(unsigned int address) const;
+    int findLineInSet(unsigned int setIndex, unsigned int tag) const;
     int getLRULine(unsigned int setIndex);
     void updateLRU(unsigned int setIndex, int lineIndex);
     void evictLine(unsigned int setIndex, int lineIndex, int& cycle);
@@ -69,6 +69,9 @@ public:
     // Debug function
     void printState();
 
+    // Add this method declaration to the public section:
+    void printDebugInfo(MemoryOperation op, unsigned int address, bool isHit, CacheLineState oldState = INVALID, CacheLineState newState = INVALID);    
+
     // Add to public methods
     void addIdleTime(int cycles) { idleCycles += cycles; }
 
@@ -84,6 +87,19 @@ public:
         // After transfer is complete, update the cache (1 additional cycle)
         totalCycles += 1;
     }
+
+    // Add to public section:
+    CacheLineState getLineState(unsigned int setIndex, int lineIndex) const {
+        if (lineIndex != -1 && setIndex < sets.size()) {
+            return sets[setIndex].lines[lineIndex].state;
+        }
+        return INVALID;
+    }
+
+    // Public accessors for debugging
+    unsigned int getSetIndexPublic(unsigned int address) const { return getSetIndex(address); }
+    unsigned int getTagPublic(unsigned int address) const { return getTag(address); }
+    int findLineInSetPublic(unsigned int setIndex, unsigned int tag) const { return findLineInSet(setIndex, tag); }
 };
 
 #endif // CACHE_H
