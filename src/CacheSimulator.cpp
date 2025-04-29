@@ -162,8 +162,17 @@ void CacheSimulator::runSimulation() {
                 
                 // For a miss, block the core until its active execution completes.
                 if (!isHit) {
+                    if (memOp == READ) {
+                        // For read misses, add extra idle time of 100 cycles.
+                        idleTime[busOwner] += 100;
+                        totTime[busOwner] = extTime[busOwner] + idleTime[busOwner];
+                        // The core remains blocked for (100 + result.execTime) cycles.
+                        unblockTime[busOwner] = globalCycle + 100 + result.execTime;
+                    } else {
+                        // For write misses, use the returned execTime.
+                        unblockTime[busOwner] = globalCycle + result.execTime;
+                    }
                     coreBlocked[busOwner] = true;
-                    unblockTime[busOwner] = globalCycle + result.execTime;
                 }
                 
                 busLocked = false;
