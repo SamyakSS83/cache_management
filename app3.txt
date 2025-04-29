@@ -1,0 +1,1028 @@
+[Cycle 0] Initializing simulator with 4 cores
+[Cycle 0] Block size: 32 bytes
+[Cycle 0] Core 0 first instruction: R 0x7e1afe78
+[Cycle 0] Core 1 first instruction: R 0x7e1afe78
+[Cycle 0] Core 2 first instruction: W 0x7e1afe78
+[Cycle 0] Core 3 first instruction: W 0x7e1afe78
+[Cycle 0] ======= Starting cycle 0 =======
+[Cycle 0] Bus is free
+[Cycle 1] Core 0 processing: R 0x7e1afe78
+[Cycle 1] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 1] Core 1 processing: R 0x7e1afe78
+[Cycle 1] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 1] Core 2 processing: W 0x7e1afe78
+[Cycle 1] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 1] Core 3 processing: W 0x7e1afe78
+[Cycle 1] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 1] ======= Starting cycle 1 =======
+[Cycle 1] Bus is owned by Core 0
+[Cycle 2] Core 0 processing: R 0x7e1afe78
+[Cycle 2] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 2] Core 1 processing: R 0x7e1afe78
+[Cycle 2] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 2] Core 2 processing: W 0x7e1afe78
+[Cycle 2] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 2] Core 3 processing: W 0x7e1afe78
+[Cycle 2] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 2] ======= Starting cycle 2 =======
+[Cycle 2] Bus is owned by Core 0
+[Cycle 3] Core 0 processing: R 0x7e1afe78
+[Cycle 3] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 3] Core 1 processing: R 0x7e1afe78
+[Cycle 3] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 3] Core 2 processing: W 0x7e1afe78
+[Cycle 3] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 3] Core 3 processing: W 0x7e1afe78
+[Cycle 3] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 3] ======= Starting cycle 3 =======
+[Cycle 3] Bus is owned by Core 0
+[Cycle 4] Core 0 processing: R 0x7e1afe78
+[Cycle 4] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 4] Core 1 processing: R 0x7e1afe78
+[Cycle 4] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 4] Core 2 processing: W 0x7e1afe78
+[Cycle 4] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 4] Core 3 processing: W 0x7e1afe78
+[Cycle 4] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 4] ======= Starting cycle 4 =======
+[Cycle 4] Bus is owned by Core 0
+[Cycle 5] Core 0 processing: R 0x7e1afe78
+[Cycle 5] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 5] Core 1 processing: R 0x7e1afe78
+[Cycle 5] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 5] Core 2 processing: W 0x7e1afe78
+[Cycle 5] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 5] Core 3 processing: W 0x7e1afe78
+[Cycle 5] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 5] ======= Starting cycle 5 =======
+[Cycle 5] Bus is owned by Core 0
+[Cycle 6] Core 0 processing: R 0x7e1afe78
+[Cycle 6] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 6] Core 1 processing: R 0x7e1afe78
+[Cycle 6] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 6] Core 2 processing: W 0x7e1afe78
+[Cycle 6] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 6] Core 3 processing: W 0x7e1afe78
+[Cycle 6] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 6] ======= Starting cycle 6 =======
+[Cycle 6] Bus is owned by Core 0
+[Cycle 7] Core 0 processing: R 0x7e1afe78
+[Cycle 7] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 7] Core 1 processing: R 0x7e1afe78
+[Cycle 7] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 7] Core 2 processing: W 0x7e1afe78
+[Cycle 7] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 7] Core 3 processing: W 0x7e1afe78
+[Cycle 7] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 7] ======= Starting cycle 7 =======
+[Cycle 7] Bus is owned by Core 0
+[Cycle 8] Core 0 processing: R 0x7e1afe78
+[Cycle 8] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 8] Core 1 processing: R 0x7e1afe78
+[Cycle 8] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 8] Core 2 processing: W 0x7e1afe78
+[Cycle 8] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 8] Core 3 processing: W 0x7e1afe78
+[Cycle 8] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 8] ======= Starting cycle 8 =======
+[Cycle 8] Bus is owned by Core 0
+[Cycle 9] Core 0 processing: R 0x7e1afe78
+[Cycle 9] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 9] Core 1 processing: R 0x7e1afe78
+[Cycle 9] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 9] Core 2 processing: W 0x7e1afe78
+[Cycle 9] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 9] Core 3 processing: W 0x7e1afe78
+[Cycle 9] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 9] ======= Starting cycle 9 =======
+[Cycle 9] Bus is owned by Core 0
+[Cycle 10] Core 0 processing: R 0x7e1afe78
+[Cycle 10] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 10] Core 1 processing: R 0x7e1afe78
+[Cycle 10] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 10] Core 2 processing: W 0x7e1afe78
+[Cycle 10] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 10] Core 3 processing: W 0x7e1afe78
+[Cycle 10] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 10] ======= Starting cycle 10 =======
+[Cycle 10] Bus is owned by Core 0
+[Cycle 11] Core 0 processing: R 0x7e1afe78
+[Cycle 11] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 11] Core 1 processing: R 0x7e1afe78
+[Cycle 11] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 11] Core 2 processing: W 0x7e1afe78
+[Cycle 11] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 11] Core 3 processing: W 0x7e1afe78
+[Cycle 11] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 11] ======= Starting cycle 11 =======
+[Cycle 11] Bus is owned by Core 0
+[Cycle 12] Core 0 processing: R 0x7e1afe78
+[Cycle 12] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 12] Core 1 processing: R 0x7e1afe78
+[Cycle 12] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 12] Core 2 processing: W 0x7e1afe78
+[Cycle 12] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 12] Core 3 processing: W 0x7e1afe78
+[Cycle 12] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 12] ======= Starting cycle 12 =======
+[Cycle 12] Bus is owned by Core 0
+[Cycle 13] Core 0 processing: R 0x7e1afe78
+[Cycle 13] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 13] Core 1 processing: R 0x7e1afe78
+[Cycle 13] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 13] Core 2 processing: W 0x7e1afe78
+[Cycle 13] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 13] Core 3 processing: W 0x7e1afe78
+[Cycle 13] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 13] ======= Starting cycle 13 =======
+[Cycle 13] Bus is owned by Core 0
+[Cycle 14] Core 0 processing: R 0x7e1afe78
+[Cycle 14] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 14] Core 1 processing: R 0x7e1afe78
+[Cycle 14] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 14] Core 2 processing: W 0x7e1afe78
+[Cycle 14] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 14] Core 3 processing: W 0x7e1afe78
+[Cycle 14] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 14] ======= Starting cycle 14 =======
+[Cycle 14] Bus is owned by Core 0
+[Cycle 15] Core 0 processing: R 0x7e1afe78
+[Cycle 15] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 15] Core 1 processing: R 0x7e1afe78
+[Cycle 15] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 15] Core 2 processing: W 0x7e1afe78
+[Cycle 15] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 15] Core 3 processing: W 0x7e1afe78
+[Cycle 15] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 15] ======= Starting cycle 15 =======
+[Cycle 15] Bus is owned by Core 0
+[Cycle 16] Core 0 processing: R 0x7e1afe78
+[Cycle 16] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 16] Core 1 processing: R 0x7e1afe78
+[Cycle 16] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 16] Core 2 processing: W 0x7e1afe78
+[Cycle 16] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 16] Core 3 processing: W 0x7e1afe78
+[Cycle 16] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 16] ======= Starting cycle 16 =======
+[Cycle 16] Bus is owned by Core 0
+[Cycle 17] Core 0 processing: R 0x7e1afe78
+[Cycle 17] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 17] Core 1 processing: R 0x7e1afe78
+[Cycle 17] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 17] Core 2 processing: W 0x7e1afe78
+[Cycle 17] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 17] Core 3 processing: W 0x7e1afe78
+[Cycle 17] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 17] ======= Starting cycle 17 =======
+[Cycle 17] Bus is owned by Core 0
+[Cycle 18] Core 0 processing: R 0x7e1afe78
+[Cycle 18] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 18] Core 1 processing: R 0x7e1afe78
+[Cycle 18] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 18] Core 2 processing: W 0x7e1afe78
+[Cycle 18] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 18] Core 3 processing: W 0x7e1afe78
+[Cycle 18] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 18] ======= Starting cycle 18 =======
+[Cycle 18] Bus is owned by Core 0
+[Cycle 19] Core 0 processing: R 0x7e1afe78
+[Cycle 19] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 19] Core 1 processing: R 0x7e1afe78
+[Cycle 19] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 19] Core 2 processing: W 0x7e1afe78
+[Cycle 19] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 19] Core 3 processing: W 0x7e1afe78
+[Cycle 19] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 19] ======= Starting cycle 19 =======
+[Cycle 19] Bus is owned by Core 0
+[Cycle 20] Core 0 processing: R 0x7e1afe78
+[Cycle 20] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 20] Core 1 processing: R 0x7e1afe78
+[Cycle 20] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 20] Core 2 processing: W 0x7e1afe78
+[Cycle 20] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 20] Core 3 processing: W 0x7e1afe78
+[Cycle 20] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 20] ======= Starting cycle 20 =======
+[Cycle 20] Bus is owned by Core 0
+[Cycle 21] Core 0 processing: R 0x7e1afe78
+[Cycle 21] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 21] Core 1 processing: R 0x7e1afe78
+[Cycle 21] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 21] Core 2 processing: W 0x7e1afe78
+[Cycle 21] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 21] Core 3 processing: W 0x7e1afe78
+[Cycle 21] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 21] ======= Starting cycle 21 =======
+[Cycle 21] Bus is owned by Core 0
+[Cycle 22] Core 0 processing: R 0x7e1afe78
+[Cycle 22] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 22] Core 1 processing: R 0x7e1afe78
+[Cycle 22] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 22] Core 2 processing: W 0x7e1afe78
+[Cycle 22] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 22] Core 3 processing: W 0x7e1afe78
+[Cycle 22] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 22] ======= Starting cycle 22 =======
+[Cycle 22] Bus is owned by Core 0
+[Cycle 23] Core 0 processing: R 0x7e1afe78
+[Cycle 23] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 23] Core 1 processing: R 0x7e1afe78
+[Cycle 23] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 23] Core 2 processing: W 0x7e1afe78
+[Cycle 23] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 23] Core 3 processing: W 0x7e1afe78
+[Cycle 23] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 23] ======= Starting cycle 23 =======
+[Cycle 23] Bus is owned by Core 0
+[Cycle 24] Core 0 processing: R 0x7e1afe78
+[Cycle 24] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 24] Core 1 processing: R 0x7e1afe78
+[Cycle 24] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 24] Core 2 processing: W 0x7e1afe78
+[Cycle 24] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 24] Core 3 processing: W 0x7e1afe78
+[Cycle 24] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 24] ======= Starting cycle 24 =======
+[Cycle 24] Bus is owned by Core 0
+[Cycle 25] Core 0 processing: R 0x7e1afe78
+[Cycle 25] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 25] Core 1 processing: R 0x7e1afe78
+[Cycle 25] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 25] Core 2 processing: W 0x7e1afe78
+[Cycle 25] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 25] Core 3 processing: W 0x7e1afe78
+[Cycle 25] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 25] ======= Starting cycle 25 =======
+[Cycle 25] Bus is owned by Core 0
+[Cycle 26] Core 0 processing: R 0x7e1afe78
+[Cycle 26] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 26] Core 1 processing: R 0x7e1afe78
+[Cycle 26] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 26] Core 2 processing: W 0x7e1afe78
+[Cycle 26] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 26] Core 3 processing: W 0x7e1afe78
+[Cycle 26] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 26] ======= Starting cycle 26 =======
+[Cycle 26] Bus is owned by Core 0
+[Cycle 27] Core 0 processing: R 0x7e1afe78
+[Cycle 27] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 27] Core 1 processing: R 0x7e1afe78
+[Cycle 27] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 27] Core 2 processing: W 0x7e1afe78
+[Cycle 27] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 27] Core 3 processing: W 0x7e1afe78
+[Cycle 27] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 27] ======= Starting cycle 27 =======
+[Cycle 27] Bus is owned by Core 0
+[Cycle 28] Core 0 processing: R 0x7e1afe78
+[Cycle 28] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 28] Core 1 processing: R 0x7e1afe78
+[Cycle 28] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 28] Core 2 processing: W 0x7e1afe78
+[Cycle 28] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 28] Core 3 processing: W 0x7e1afe78
+[Cycle 28] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 28] ======= Starting cycle 28 =======
+[Cycle 28] Bus is owned by Core 0
+[Cycle 29] Core 0 processing: R 0x7e1afe78
+[Cycle 29] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 29] Core 1 processing: R 0x7e1afe78
+[Cycle 29] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 29] Core 2 processing: W 0x7e1afe78
+[Cycle 29] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 29] Core 3 processing: W 0x7e1afe78
+[Cycle 29] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 29] ======= Starting cycle 29 =======
+[Cycle 29] Bus is owned by Core 0
+[Cycle 30] Core 0 processing: R 0x7e1afe78
+[Cycle 30] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 30] Core 1 processing: R 0x7e1afe78
+[Cycle 30] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 30] Core 2 processing: W 0x7e1afe78
+[Cycle 30] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 30] Core 3 processing: W 0x7e1afe78
+[Cycle 30] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 30] ======= Starting cycle 30 =======
+[Cycle 30] Bus is owned by Core 0
+[Cycle 31] Core 0 processing: R 0x7e1afe78
+[Cycle 31] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 31] Core 1 processing: R 0x7e1afe78
+[Cycle 31] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 31] Core 2 processing: W 0x7e1afe78
+[Cycle 31] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 31] Core 3 processing: W 0x7e1afe78
+[Cycle 31] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 31] ======= Starting cycle 31 =======
+[Cycle 31] Bus is owned by Core 0
+[Cycle 32] Core 0 processing: R 0x7e1afe78
+[Cycle 32] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 32] Core 1 processing: R 0x7e1afe78
+[Cycle 32] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 32] Core 2 processing: W 0x7e1afe78
+[Cycle 32] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 32] Core 3 processing: W 0x7e1afe78
+[Cycle 32] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 32] ======= Starting cycle 32 =======
+[Cycle 32] Bus is owned by Core 0
+[Cycle 33] Core 0 processing: R 0x7e1afe78
+[Cycle 33] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 33] Core 1 processing: R 0x7e1afe78
+[Cycle 33] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 33] Core 2 processing: W 0x7e1afe78
+[Cycle 33] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 33] Core 3 processing: W 0x7e1afe78
+[Cycle 33] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 33] ======= Starting cycle 33 =======
+[Cycle 33] Bus is owned by Core 0
+[Cycle 34] Core 0 processing: R 0x7e1afe78
+[Cycle 34] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 34] Core 1 processing: R 0x7e1afe78
+[Cycle 34] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 34] Core 2 processing: W 0x7e1afe78
+[Cycle 34] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 34] Core 3 processing: W 0x7e1afe78
+[Cycle 34] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 34] ======= Starting cycle 34 =======
+[Cycle 34] Bus is owned by Core 0
+[Cycle 35] Core 0 processing: R 0x7e1afe78
+[Cycle 35] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 35] Core 1 processing: R 0x7e1afe78
+[Cycle 35] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 35] Core 2 processing: W 0x7e1afe78
+[Cycle 35] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 35] Core 3 processing: W 0x7e1afe78
+[Cycle 35] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 35] ======= Starting cycle 35 =======
+[Cycle 35] Bus is owned by Core 0
+[Cycle 36] Core 0 processing: R 0x7e1afe78
+[Cycle 36] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 36] Core 1 processing: R 0x7e1afe78
+[Cycle 36] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 36] Core 2 processing: W 0x7e1afe78
+[Cycle 36] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 36] Core 3 processing: W 0x7e1afe78
+[Cycle 36] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 36] ======= Starting cycle 36 =======
+[Cycle 36] Bus is owned by Core 0
+[Cycle 37] Core 0 processing: R 0x7e1afe78
+[Cycle 37] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 37] Core 1 processing: R 0x7e1afe78
+[Cycle 37] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 37] Core 2 processing: W 0x7e1afe78
+[Cycle 37] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 37] Core 3 processing: W 0x7e1afe78
+[Cycle 37] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 37] ======= Starting cycle 37 =======
+[Cycle 37] Bus is owned by Core 0
+[Cycle 38] Core 0 processing: R 0x7e1afe78
+[Cycle 38] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 38] Core 1 processing: R 0x7e1afe78
+[Cycle 38] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 38] Core 2 processing: W 0x7e1afe78
+[Cycle 38] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 38] Core 3 processing: W 0x7e1afe78
+[Cycle 38] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 38] ======= Starting cycle 38 =======
+[Cycle 38] Bus is owned by Core 0
+[Cycle 39] Core 0 processing: R 0x7e1afe78
+[Cycle 39] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 39] Core 1 processing: R 0x7e1afe78
+[Cycle 39] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 39] Core 2 processing: W 0x7e1afe78
+[Cycle 39] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 39] Core 3 processing: W 0x7e1afe78
+[Cycle 39] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 39] ======= Starting cycle 39 =======
+[Cycle 39] Bus is owned by Core 0
+[Cycle 40] Core 0 processing: R 0x7e1afe78
+[Cycle 40] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 40] Core 1 processing: R 0x7e1afe78
+[Cycle 40] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 40] Core 2 processing: W 0x7e1afe78
+[Cycle 40] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 40] Core 3 processing: W 0x7e1afe78
+[Cycle 40] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 40] ======= Starting cycle 40 =======
+[Cycle 40] Bus is owned by Core 0
+[Cycle 41] Core 0 processing: R 0x7e1afe78
+[Cycle 41] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 41] Core 1 processing: R 0x7e1afe78
+[Cycle 41] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 41] Core 2 processing: W 0x7e1afe78
+[Cycle 41] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 41] Core 3 processing: W 0x7e1afe78
+[Cycle 41] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 41] ======= Starting cycle 41 =======
+[Cycle 41] Bus is owned by Core 0
+[Cycle 42] Core 0 processing: R 0x7e1afe78
+[Cycle 42] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 42] Core 1 processing: R 0x7e1afe78
+[Cycle 42] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 42] Core 2 processing: W 0x7e1afe78
+[Cycle 42] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 42] Core 3 processing: W 0x7e1afe78
+[Cycle 42] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 42] ======= Starting cycle 42 =======
+[Cycle 42] Bus is owned by Core 0
+[Cycle 43] Core 0 processing: R 0x7e1afe78
+[Cycle 43] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 43] Core 1 processing: R 0x7e1afe78
+[Cycle 43] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 43] Core 2 processing: W 0x7e1afe78
+[Cycle 43] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 43] Core 3 processing: W 0x7e1afe78
+[Cycle 43] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 43] ======= Starting cycle 43 =======
+[Cycle 43] Bus is owned by Core 0
+[Cycle 44] Core 0 processing: R 0x7e1afe78
+[Cycle 44] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 44] Core 1 processing: R 0x7e1afe78
+[Cycle 44] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 44] Core 2 processing: W 0x7e1afe78
+[Cycle 44] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 44] Core 3 processing: W 0x7e1afe78
+[Cycle 44] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 44] ======= Starting cycle 44 =======
+[Cycle 44] Bus is owned by Core 0
+[Cycle 45] Core 0 processing: R 0x7e1afe78
+[Cycle 45] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 45] Core 1 processing: R 0x7e1afe78
+[Cycle 45] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 45] Core 2 processing: W 0x7e1afe78
+[Cycle 45] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 45] Core 3 processing: W 0x7e1afe78
+[Cycle 45] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 45] ======= Starting cycle 45 =======
+[Cycle 45] Bus is owned by Core 0
+[Cycle 46] Core 0 processing: R 0x7e1afe78
+[Cycle 46] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 46] Core 1 processing: R 0x7e1afe78
+[Cycle 46] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 46] Core 2 processing: W 0x7e1afe78
+[Cycle 46] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 46] Core 3 processing: W 0x7e1afe78
+[Cycle 46] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 46] ======= Starting cycle 46 =======
+[Cycle 46] Bus is owned by Core 0
+[Cycle 47] Core 0 processing: R 0x7e1afe78
+[Cycle 47] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 47] Core 1 processing: R 0x7e1afe78
+[Cycle 47] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 47] Core 2 processing: W 0x7e1afe78
+[Cycle 47] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 47] Core 3 processing: W 0x7e1afe78
+[Cycle 47] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 47] ======= Starting cycle 47 =======
+[Cycle 47] Bus is owned by Core 0
+[Cycle 48] Core 0 processing: R 0x7e1afe78
+[Cycle 48] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 48] Core 1 processing: R 0x7e1afe78
+[Cycle 48] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 48] Core 2 processing: W 0x7e1afe78
+[Cycle 48] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 48] Core 3 processing: W 0x7e1afe78
+[Cycle 48] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 48] ======= Starting cycle 48 =======
+[Cycle 48] Bus is owned by Core 0
+[Cycle 49] Core 0 processing: R 0x7e1afe78
+[Cycle 49] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 49] Core 1 processing: R 0x7e1afe78
+[Cycle 49] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 49] Core 2 processing: W 0x7e1afe78
+[Cycle 49] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 49] Core 3 processing: W 0x7e1afe78
+[Cycle 49] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 49] ======= Starting cycle 49 =======
+[Cycle 49] Bus is owned by Core 0
+[Cycle 50] Core 0 processing: R 0x7e1afe78
+[Cycle 50] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 50] Core 1 processing: R 0x7e1afe78
+[Cycle 50] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 50] Core 2 processing: W 0x7e1afe78
+[Cycle 50] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 50] Core 3 processing: W 0x7e1afe78
+[Cycle 50] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 50] ======= Starting cycle 50 =======
+[Cycle 50] Bus is owned by Core 0
+[Cycle 51] Core 0 processing: R 0x7e1afe78
+[Cycle 51] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 51] Core 1 processing: R 0x7e1afe78
+[Cycle 51] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 51] Core 2 processing: W 0x7e1afe78
+[Cycle 51] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 51] Core 3 processing: W 0x7e1afe78
+[Cycle 51] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 51] ======= Starting cycle 51 =======
+[Cycle 51] Bus is owned by Core 0
+[Cycle 52] Core 0 processing: R 0x7e1afe78
+[Cycle 52] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 52] Core 1 processing: R 0x7e1afe78
+[Cycle 52] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 52] Core 2 processing: W 0x7e1afe78
+[Cycle 52] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 52] Core 3 processing: W 0x7e1afe78
+[Cycle 52] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 52] ======= Starting cycle 52 =======
+[Cycle 52] Bus is owned by Core 0
+[Cycle 53] Core 0 processing: R 0x7e1afe78
+[Cycle 53] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 53] Core 1 processing: R 0x7e1afe78
+[Cycle 53] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 53] Core 2 processing: W 0x7e1afe78
+[Cycle 53] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 53] Core 3 processing: W 0x7e1afe78
+[Cycle 53] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 53] ======= Starting cycle 53 =======
+[Cycle 53] Bus is owned by Core 0
+[Cycle 54] Core 0 processing: R 0x7e1afe78
+[Cycle 54] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 54] Core 1 processing: R 0x7e1afe78
+[Cycle 54] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 54] Core 2 processing: W 0x7e1afe78
+[Cycle 54] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 54] Core 3 processing: W 0x7e1afe78
+[Cycle 54] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 54] ======= Starting cycle 54 =======
+[Cycle 54] Bus is owned by Core 0
+[Cycle 55] Core 0 processing: R 0x7e1afe78
+[Cycle 55] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 55] Core 1 processing: R 0x7e1afe78
+[Cycle 55] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 55] Core 2 processing: W 0x7e1afe78
+[Cycle 55] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 55] Core 3 processing: W 0x7e1afe78
+[Cycle 55] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 55] ======= Starting cycle 55 =======
+[Cycle 55] Bus is owned by Core 0
+[Cycle 56] Core 0 processing: R 0x7e1afe78
+[Cycle 56] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 56] Core 1 processing: R 0x7e1afe78
+[Cycle 56] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 56] Core 2 processing: W 0x7e1afe78
+[Cycle 56] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 56] Core 3 processing: W 0x7e1afe78
+[Cycle 56] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 56] ======= Starting cycle 56 =======
+[Cycle 56] Bus is owned by Core 0
+[Cycle 57] Core 0 processing: R 0x7e1afe78
+[Cycle 57] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 57] Core 1 processing: R 0x7e1afe78
+[Cycle 57] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 57] Core 2 processing: W 0x7e1afe78
+[Cycle 57] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 57] Core 3 processing: W 0x7e1afe78
+[Cycle 57] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 57] ======= Starting cycle 57 =======
+[Cycle 57] Bus is owned by Core 0
+[Cycle 58] Core 0 processing: R 0x7e1afe78
+[Cycle 58] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 58] Core 1 processing: R 0x7e1afe78
+[Cycle 58] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 58] Core 2 processing: W 0x7e1afe78
+[Cycle 58] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 58] Core 3 processing: W 0x7e1afe78
+[Cycle 58] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 58] ======= Starting cycle 58 =======
+[Cycle 58] Bus is owned by Core 0
+[Cycle 59] Core 0 processing: R 0x7e1afe78
+[Cycle 59] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 59] Core 1 processing: R 0x7e1afe78
+[Cycle 59] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 59] Core 2 processing: W 0x7e1afe78
+[Cycle 59] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 59] Core 3 processing: W 0x7e1afe78
+[Cycle 59] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 59] ======= Starting cycle 59 =======
+[Cycle 59] Bus is owned by Core 0
+[Cycle 60] Core 0 processing: R 0x7e1afe78
+[Cycle 60] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 60] Core 1 processing: R 0x7e1afe78
+[Cycle 60] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 60] Core 2 processing: W 0x7e1afe78
+[Cycle 60] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 60] Core 3 processing: W 0x7e1afe78
+[Cycle 60] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 60] ======= Starting cycle 60 =======
+[Cycle 60] Bus is owned by Core 0
+[Cycle 61] Core 0 processing: R 0x7e1afe78
+[Cycle 61] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 61] Core 1 processing: R 0x7e1afe78
+[Cycle 61] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 61] Core 2 processing: W 0x7e1afe78
+[Cycle 61] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 61] Core 3 processing: W 0x7e1afe78
+[Cycle 61] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 61] ======= Starting cycle 61 =======
+[Cycle 61] Bus is owned by Core 0
+[Cycle 62] Core 0 processing: R 0x7e1afe78
+[Cycle 62] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 62] Core 1 processing: R 0x7e1afe78
+[Cycle 62] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 62] Core 2 processing: W 0x7e1afe78
+[Cycle 62] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 62] Core 3 processing: W 0x7e1afe78
+[Cycle 62] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 62] ======= Starting cycle 62 =======
+[Cycle 62] Bus is owned by Core 0
+[Cycle 63] Core 0 processing: R 0x7e1afe78
+[Cycle 63] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 63] Core 1 processing: R 0x7e1afe78
+[Cycle 63] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 63] Core 2 processing: W 0x7e1afe78
+[Cycle 63] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 63] Core 3 processing: W 0x7e1afe78
+[Cycle 63] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 63] ======= Starting cycle 63 =======
+[Cycle 63] Bus is owned by Core 0
+[Cycle 64] Core 0 processing: R 0x7e1afe78
+[Cycle 64] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 64] Core 1 processing: R 0x7e1afe78
+[Cycle 64] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 64] Core 2 processing: W 0x7e1afe78
+[Cycle 64] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 64] Core 3 processing: W 0x7e1afe78
+[Cycle 64] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 64] ======= Starting cycle 64 =======
+[Cycle 64] Bus is owned by Core 0
+[Cycle 65] Core 0 processing: R 0x7e1afe78
+[Cycle 65] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 65] Core 1 processing: R 0x7e1afe78
+[Cycle 65] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 65] Core 2 processing: W 0x7e1afe78
+[Cycle 65] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 65] Core 3 processing: W 0x7e1afe78
+[Cycle 65] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 65] ======= Starting cycle 65 =======
+[Cycle 65] Bus is owned by Core 0
+[Cycle 66] Core 0 processing: R 0x7e1afe78
+[Cycle 66] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 66] Core 1 processing: R 0x7e1afe78
+[Cycle 66] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 66] Core 2 processing: W 0x7e1afe78
+[Cycle 66] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 66] Core 3 processing: W 0x7e1afe78
+[Cycle 66] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 66] ======= Starting cycle 66 =======
+[Cycle 66] Bus is owned by Core 0
+[Cycle 67] Core 0 processing: R 0x7e1afe78
+[Cycle 67] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 67] Core 1 processing: R 0x7e1afe78
+[Cycle 67] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 67] Core 2 processing: W 0x7e1afe78
+[Cycle 67] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 67] Core 3 processing: W 0x7e1afe78
+[Cycle 67] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 67] ======= Starting cycle 67 =======
+[Cycle 67] Bus is owned by Core 0
+[Cycle 68] Core 0 processing: R 0x7e1afe78
+[Cycle 68] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 68] Core 1 processing: R 0x7e1afe78
+[Cycle 68] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 68] Core 2 processing: W 0x7e1afe78
+[Cycle 68] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 68] Core 3 processing: W 0x7e1afe78
+[Cycle 68] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 68] ======= Starting cycle 68 =======
+[Cycle 68] Bus is owned by Core 0
+[Cycle 69] Core 0 processing: R 0x7e1afe78
+[Cycle 69] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 69] Core 1 processing: R 0x7e1afe78
+[Cycle 69] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 69] Core 2 processing: W 0x7e1afe78
+[Cycle 69] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 69] Core 3 processing: W 0x7e1afe78
+[Cycle 69] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 69] ======= Starting cycle 69 =======
+[Cycle 69] Bus is owned by Core 0
+[Cycle 70] Core 0 processing: R 0x7e1afe78
+[Cycle 70] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 70] Core 1 processing: R 0x7e1afe78
+[Cycle 70] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 70] Core 2 processing: W 0x7e1afe78
+[Cycle 70] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 70] Core 3 processing: W 0x7e1afe78
+[Cycle 70] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 70] ======= Starting cycle 70 =======
+[Cycle 70] Bus is owned by Core 0
+[Cycle 71] Core 0 processing: R 0x7e1afe78
+[Cycle 71] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 71] Core 1 processing: R 0x7e1afe78
+[Cycle 71] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 71] Core 2 processing: W 0x7e1afe78
+[Cycle 71] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 71] Core 3 processing: W 0x7e1afe78
+[Cycle 71] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 71] ======= Starting cycle 71 =======
+[Cycle 71] Bus is owned by Core 0
+[Cycle 72] Core 0 processing: R 0x7e1afe78
+[Cycle 72] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 72] Core 1 processing: R 0x7e1afe78
+[Cycle 72] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 72] Core 2 processing: W 0x7e1afe78
+[Cycle 72] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 72] Core 3 processing: W 0x7e1afe78
+[Cycle 72] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 72] ======= Starting cycle 72 =======
+[Cycle 72] Bus is owned by Core 0
+[Cycle 73] Core 0 processing: R 0x7e1afe78
+[Cycle 73] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 73] Core 1 processing: R 0x7e1afe78
+[Cycle 73] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 73] Core 2 processing: W 0x7e1afe78
+[Cycle 73] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 73] Core 3 processing: W 0x7e1afe78
+[Cycle 73] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 73] ======= Starting cycle 73 =======
+[Cycle 73] Bus is owned by Core 0
+[Cycle 74] Core 0 processing: R 0x7e1afe78
+[Cycle 74] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 74] Core 1 processing: R 0x7e1afe78
+[Cycle 74] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 74] Core 2 processing: W 0x7e1afe78
+[Cycle 74] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 74] Core 3 processing: W 0x7e1afe78
+[Cycle 74] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 74] ======= Starting cycle 74 =======
+[Cycle 74] Bus is owned by Core 0
+[Cycle 75] Core 0 processing: R 0x7e1afe78
+[Cycle 75] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 75] Core 1 processing: R 0x7e1afe78
+[Cycle 75] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 75] Core 2 processing: W 0x7e1afe78
+[Cycle 75] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 75] Core 3 processing: W 0x7e1afe78
+[Cycle 75] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 75] ======= Starting cycle 75 =======
+[Cycle 75] Bus is owned by Core 0
+[Cycle 76] Core 0 processing: R 0x7e1afe78
+[Cycle 76] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 76] Core 1 processing: R 0x7e1afe78
+[Cycle 76] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 76] Core 2 processing: W 0x7e1afe78
+[Cycle 76] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 76] Core 3 processing: W 0x7e1afe78
+[Cycle 76] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 76] ======= Starting cycle 76 =======
+[Cycle 76] Bus is owned by Core 0
+[Cycle 77] Core 0 processing: R 0x7e1afe78
+[Cycle 77] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 77] Core 1 processing: R 0x7e1afe78
+[Cycle 77] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 77] Core 2 processing: W 0x7e1afe78
+[Cycle 77] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 77] Core 3 processing: W 0x7e1afe78
+[Cycle 77] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 77] ======= Starting cycle 77 =======
+[Cycle 77] Bus is owned by Core 0
+[Cycle 78] Core 0 processing: R 0x7e1afe78
+[Cycle 78] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 78] Core 1 processing: R 0x7e1afe78
+[Cycle 78] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 78] Core 2 processing: W 0x7e1afe78
+[Cycle 78] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 78] Core 3 processing: W 0x7e1afe78
+[Cycle 78] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 78] ======= Starting cycle 78 =======
+[Cycle 78] Bus is owned by Core 0
+[Cycle 79] Core 0 processing: R 0x7e1afe78
+[Cycle 79] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 79] Core 1 processing: R 0x7e1afe78
+[Cycle 79] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 79] Core 2 processing: W 0x7e1afe78
+[Cycle 79] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 79] Core 3 processing: W 0x7e1afe78
+[Cycle 79] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 79] ======= Starting cycle 79 =======
+[Cycle 79] Bus is owned by Core 0
+[Cycle 80] Core 0 processing: R 0x7e1afe78
+[Cycle 80] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 80] Core 1 processing: R 0x7e1afe78
+[Cycle 80] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 80] Core 2 processing: W 0x7e1afe78
+[Cycle 80] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 80] Core 3 processing: W 0x7e1afe78
+[Cycle 80] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 80] ======= Starting cycle 80 =======
+[Cycle 80] Bus is owned by Core 0
+[Cycle 81] Core 0 processing: R 0x7e1afe78
+[Cycle 81] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 81] Core 1 processing: R 0x7e1afe78
+[Cycle 81] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 81] Core 2 processing: W 0x7e1afe78
+[Cycle 81] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 81] Core 3 processing: W 0x7e1afe78
+[Cycle 81] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 81] ======= Starting cycle 81 =======
+[Cycle 81] Bus is owned by Core 0
+[Cycle 82] Core 0 processing: R 0x7e1afe78
+[Cycle 82] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 82] Core 1 processing: R 0x7e1afe78
+[Cycle 82] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 82] Core 2 processing: W 0x7e1afe78
+[Cycle 82] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 82] Core 3 processing: W 0x7e1afe78
+[Cycle 82] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 82] ======= Starting cycle 82 =======
+[Cycle 82] Bus is owned by Core 0
+[Cycle 83] Core 0 processing: R 0x7e1afe78
+[Cycle 83] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 83] Core 1 processing: R 0x7e1afe78
+[Cycle 83] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 83] Core 2 processing: W 0x7e1afe78
+[Cycle 83] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 83] Core 3 processing: W 0x7e1afe78
+[Cycle 83] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 83] ======= Starting cycle 83 =======
+[Cycle 83] Bus is owned by Core 0
+[Cycle 84] Core 0 processing: R 0x7e1afe78
+[Cycle 84] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 84] Core 1 processing: R 0x7e1afe78
+[Cycle 84] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 84] Core 2 processing: W 0x7e1afe78
+[Cycle 84] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 84] Core 3 processing: W 0x7e1afe78
+[Cycle 84] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 84] ======= Starting cycle 84 =======
+[Cycle 84] Bus is owned by Core 0
+[Cycle 85] Core 0 processing: R 0x7e1afe78
+[Cycle 85] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 85] Core 1 processing: R 0x7e1afe78
+[Cycle 85] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 85] Core 2 processing: W 0x7e1afe78
+[Cycle 85] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 85] Core 3 processing: W 0x7e1afe78
+[Cycle 85] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 85] ======= Starting cycle 85 =======
+[Cycle 85] Bus is owned by Core 0
+[Cycle 86] Core 0 processing: R 0x7e1afe78
+[Cycle 86] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 86] Core 1 processing: R 0x7e1afe78
+[Cycle 86] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 86] Core 2 processing: W 0x7e1afe78
+[Cycle 86] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 86] Core 3 processing: W 0x7e1afe78
+[Cycle 86] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 86] ======= Starting cycle 86 =======
+[Cycle 86] Bus is owned by Core 0
+[Cycle 87] Core 0 processing: R 0x7e1afe78
+[Cycle 87] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 87] Core 1 processing: R 0x7e1afe78
+[Cycle 87] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 87] Core 2 processing: W 0x7e1afe78
+[Cycle 87] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 87] Core 3 processing: W 0x7e1afe78
+[Cycle 87] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 87] ======= Starting cycle 87 =======
+[Cycle 87] Bus is owned by Core 0
+[Cycle 88] Core 0 processing: R 0x7e1afe78
+[Cycle 88] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 88] Core 1 processing: R 0x7e1afe78
+[Cycle 88] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 88] Core 2 processing: W 0x7e1afe78
+[Cycle 88] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 88] Core 3 processing: W 0x7e1afe78
+[Cycle 88] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 88] ======= Starting cycle 88 =======
+[Cycle 88] Bus is owned by Core 0
+[Cycle 89] Core 0 processing: R 0x7e1afe78
+[Cycle 89] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 89] Core 1 processing: R 0x7e1afe78
+[Cycle 89] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 89] Core 2 processing: W 0x7e1afe78
+[Cycle 89] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 89] Core 3 processing: W 0x7e1afe78
+[Cycle 89] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 89] ======= Starting cycle 89 =======
+[Cycle 89] Bus is owned by Core 0
+[Cycle 90] Core 0 processing: R 0x7e1afe78
+[Cycle 90] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 90] Core 1 processing: R 0x7e1afe78
+[Cycle 90] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 90] Core 2 processing: W 0x7e1afe78
+[Cycle 90] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 90] Core 3 processing: W 0x7e1afe78
+[Cycle 90] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 90] ======= Starting cycle 90 =======
+[Cycle 90] Bus is owned by Core 0
+[Cycle 91] Core 0 processing: R 0x7e1afe78
+[Cycle 91] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 91] Core 1 processing: R 0x7e1afe78
+[Cycle 91] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 91] Core 2 processing: W 0x7e1afe78
+[Cycle 91] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 91] Core 3 processing: W 0x7e1afe78
+[Cycle 91] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 91] ======= Starting cycle 91 =======
+[Cycle 91] Bus is owned by Core 0
+[Cycle 92] Core 0 processing: R 0x7e1afe78
+[Cycle 92] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 92] Core 1 processing: R 0x7e1afe78
+[Cycle 92] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 92] Core 2 processing: W 0x7e1afe78
+[Cycle 92] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 92] Core 3 processing: W 0x7e1afe78
+[Cycle 92] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 92] ======= Starting cycle 92 =======
+[Cycle 92] Bus is owned by Core 0
+[Cycle 93] Core 0 processing: R 0x7e1afe78
+[Cycle 93] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 93] Core 1 processing: R 0x7e1afe78
+[Cycle 93] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 93] Core 2 processing: W 0x7e1afe78
+[Cycle 93] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 93] Core 3 processing: W 0x7e1afe78
+[Cycle 93] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 93] ======= Starting cycle 93 =======
+[Cycle 93] Bus is owned by Core 0
+[Cycle 94] Core 0 processing: R 0x7e1afe78
+[Cycle 94] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 94] Core 1 processing: R 0x7e1afe78
+[Cycle 94] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 94] Core 2 processing: W 0x7e1afe78
+[Cycle 94] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 94] Core 3 processing: W 0x7e1afe78
+[Cycle 94] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 94] ======= Starting cycle 94 =======
+[Cycle 94] Bus is owned by Core 0
+[Cycle 95] Core 0 processing: R 0x7e1afe78
+[Cycle 95] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 95] Core 1 processing: R 0x7e1afe78
+[Cycle 95] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 95] Core 2 processing: W 0x7e1afe78
+[Cycle 95] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 95] Core 3 processing: W 0x7e1afe78
+[Cycle 95] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 95] ======= Starting cycle 95 =======
+[Cycle 95] Bus is owned by Core 0
+[Cycle 96] Core 0 processing: R 0x7e1afe78
+[Cycle 96] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 96] Core 1 processing: R 0x7e1afe78
+[Cycle 96] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 96] Core 2 processing: W 0x7e1afe78
+[Cycle 96] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 96] Core 3 processing: W 0x7e1afe78
+[Cycle 96] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 96] ======= Starting cycle 96 =======
+[Cycle 96] Bus is owned by Core 0
+[Cycle 97] Core 0 processing: R 0x7e1afe78
+[Cycle 97] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 97] Core 1 processing: R 0x7e1afe78
+[Cycle 97] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 97] Core 2 processing: W 0x7e1afe78
+[Cycle 97] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 97] Core 3 processing: W 0x7e1afe78
+[Cycle 97] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 97] ======= Starting cycle 97 =======
+[Cycle 97] Bus is owned by Core 0
+[Cycle 98] Core 0 processing: R 0x7e1afe78
+[Cycle 98] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 98] Core 1 processing: R 0x7e1afe78
+[Cycle 98] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 98] Core 2 processing: W 0x7e1afe78
+[Cycle 98] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 98] Core 3 processing: W 0x7e1afe78
+[Cycle 98] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 98] ======= Starting cycle 98 =======
+[Cycle 98] Bus is owned by Core 0
+[Cycle 99] Core 0 processing: R 0x7e1afe78
+[Cycle 99] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 99] Core 1 processing: R 0x7e1afe78
+[Cycle 99] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 99] Core 2 processing: W 0x7e1afe78
+[Cycle 99] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 99] Core 3 processing: W 0x7e1afe78
+[Cycle 99] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 99] ======= Starting cycle 99 =======
+[Cycle 99] Bus is owned by Core 0
+[Cycle 100] Core 0 processing: R 0x7e1afe78
+[Cycle 100] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 100] Core 1 processing: R 0x7e1afe78
+[Cycle 100] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 100] Core 2 processing: W 0x7e1afe78
+[Cycle 100] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 100] Core 3 processing: W 0x7e1afe78
+[Cycle 100] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 100] ======= Starting cycle 100 =======
+[Cycle 100] Bus is owned by Core 0
+[Cycle 101] Core 0 processing: R 0x7e1afe78
+[Cycle 101] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 101] Core 1 processing: R 0x7e1afe78
+[Cycle 101] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 101] Core 2 processing: W 0x7e1afe78
+[Cycle 101] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 101] Core 3 processing: W 0x7e1afe78
+[Cycle 101] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 101] ======= Starting cycle 101 =======
+[Cycle 101] Bus is owned by Core 0
+[Cycle 102] Core 0 processing: R 0x7e1afe78
+[Cycle 102] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 102] Core 0 released the bus
+[Cycle 102] Core 0 next instruction: W 0x7e1ac04c
+[Cycle 102] Core 1 processing: R 0x7e1afe78
+[Cycle 102] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 102] Core 1 found data in Core 0 (state: E)
+[Cycle 102] Core 1 acquired bus for cache-to-cache transfer
+[Cycle 102] Core 2 processing: W 0x7e1afe78
+[Cycle 102] Core 2 WRITE MISS for address 0x7e1afe78

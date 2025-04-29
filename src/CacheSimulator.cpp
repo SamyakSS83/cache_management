@@ -1,6 +1,7 @@
 #include "CacheSimulator.h"
 #include "utils.h"
 #include <utility>
+#include <memory>        
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -14,8 +15,7 @@
 using namespace std;
 
 struct CoreState {
-    std::fstream trace;
-    // std::unique_ptr<std::fstream> trace;
+    std::unique_ptr<std::ifstream> trace;
     std::string currentLine;
     bool finished;
     int extime;    // execution time counter
@@ -64,13 +64,14 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
     for (int i = 0; i < numCores; i++) {
         CoreState core;
         std::string fileName = traceFilePrefix + "_proc" + std::to_string(i) + ".trace";
-        core.trace.open(fileName);
-        if (!core.trace.is_open()) {
+        // C++11 has no make_unique; reset the unique_ptr instead
+        core.trace.reset(new std::ifstream(fileName));
+        if (!core.trace->is_open()) {
             std::cerr << "Error opening trace file: " << fileName << std::endl;
             exit(1);
         }
         // Read the first line if possible
-        if (std::getline(core.trace, core.currentLine)) {
+        if (std::getline(*core.trace, core.currentLine)) {
             debugPrint("Core " + std::to_string(i) + " first instruction: " + core.currentLine);
         } else {
             core.finished = true;
@@ -98,8 +99,8 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
 CacheSimulator::~CacheSimulator() {
     // Close trace files
     for (auto &core : cores) {
-        if (core.trace.is_open())
-            core.trace.close();
+        if (core.trace && core.trace->is_open())
+            core.trace->close();
     }
 }
 
@@ -566,13 +567,13 @@ void CacheSimulator::runSimulation() {
                                     case SHARED:
                                     {
                                         //find all shared blocks, and invalidate their copies
-                                        vector<CoreState> sharedCores;
+                                        vector<int> sharedCoreIndices;
                                         for (int j = 0; j < numCores; j++) {
                                             if (j==coreId) continue;
                                             if (cores[j].cache.find(address) != cores[j].cache.end() &&
                                                 cores[j].cache[address] != INVALID) {
                                                 if (cores[j].cache[address] == SHARED) 
-                                                    sharedCores.push_back(cores[j]);
+                                                    sharedCoreIndices.push_back(j);  // Store index, not the object
                                                 }            
                                         }
                                         if (busFree) //bus is free, capture it and send req to memory
@@ -621,10 +622,9 @@ void CacheSimulator::runSimulation() {
                                                 }
                                             }
                                         }
-                                        for (auto& sharedCore : sharedCores) {
-                                            assert(sharedCore.cache[address] == SHARED);
-                                            //some invalidation stats
-                                            sharedCore.cache[address] = INVALID;
+                                        for (auto idx : sharedCoreIndices) {
+                                            assert(cores[idx].cache[address] == SHARED);
+                                            cores[idx].cache[address] = INVALID;
                                         } //done, all shared blocks set to invalid
                                         break;
                           }
@@ -766,7 +766,7 @@ void CacheSimulator::runSimulation() {
                 executed = true;
                 
                 // Read next line for this core
-                if (!std::getline(core.trace, core.currentLine)) {
+                if (!std::getline(*core.trace, core.currentLine)) {
                     core.finished = true;
                     debugPrint("Core " + std::to_string(coreId) + " has no more instructions");
                 } else {
