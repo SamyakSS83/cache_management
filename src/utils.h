@@ -21,6 +21,7 @@ enum CacheLineState {
     INVALID,
     SHARED,
     EXCLUSIVE,
+    
     MODIFIED
 };
 
