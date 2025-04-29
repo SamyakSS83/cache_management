@@ -14,7 +14,7 @@ private:
     int totalInvalidations;
     int totalBusTraffic; // in bytes
     int totalBusTransactions;
-    int globalCycle;
+    int globalCycle; //what is this ?
     bool busFree;
     int busOwner;
     int blockSize;     // Derived from block bits b: blockSize = 2^b

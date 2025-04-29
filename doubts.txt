@@ -2,4 +2,6 @@
 - what exactly should a bus transaction have and do?
 - what is the bus latency?
 - what is the bus bandwidth? - 1 transaction at a time
+- add a block bit for a core, to indicate it is still not done processing previous instruction
+- figure out how to put bus on hold for 100 cycles
 try to figure out from lecture slides or readings

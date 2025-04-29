@@ -128,12 +128,12 @@ void CacheSimulator::runSimulation() {
             // If an instruction is available, process it
             if (!core.currentLine.empty()) {
                 // If bus is not free, the core idles
-                if (!busFree) {
-                    core.idletime++;
-                    debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " + 
-                              std::to_string(busOwner) + ")");
-                    continue;
-                }
+                // if (!busFree) {
+                //     core.idletime++;
+                //     debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " + 
+                //               std::to_string(busOwner) + ")");
+                //     continue;
+                // }
                 
                 // Mark bus busy for this core
                 busFree = false;
@@ -155,12 +155,13 @@ void CacheSimulator::runSimulation() {
                     // Read Hit: if the address is in the core's cache and state is not INVALID
                     if (core.cache.find(address) != core.cache.end() &&
                         core.cache[address] != INVALID) {
-                        // Read hit: execute in 1 cycle
+                        // Local Read hit: execute in 1 cycle
                         core.hitCount++;
                         core.extime += 1;
                         globalCycle += 1;
                         
                         CacheLineState oldState = core.cache[address];
+                        // no state change required for local read hit
                         debugPrint("Core " + std::to_string(coreId) + " READ HIT for address " + 
                                   addrStr + " (state: " + stateToString(oldState) + ")");
                     } else {
@@ -221,8 +222,9 @@ void CacheSimulator::runSimulation() {
                         } else {
                             // Data not found in any other cache: fetch from memory
                             int memAccessCycles = 100;
-                            core.extime += memAccessCycles + 1; // +1 for execute cycle
-                            globalCycle += memAccessCycles + 1;
+                            core.idletime += memAccessCycles; //+100 for idle cycle
+                            core.extime += 1;
+                     // ********      // globalCycle += memAccessCycles + 1;********
                             
                             // Set state to EXCLUSIVE
                             core.cache[address] = EXCLUSIVE;
