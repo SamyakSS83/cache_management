@@ -20,7 +20,7 @@ struct CoreState {
     int extime;    // execution time counter
     int idletime;  // idle time counter
 
-    // Remove the old simplified cache mapping and use a pointer to a Cache.
+    // Each core now uses a Cache (with full LRU and MESI handling)
     Cache* cachePtr;
     
     // Statistics
@@ -37,8 +37,8 @@ struct CoreState {
 
 CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E, int b, 
                               const std::string& outFileName, bool debug)
-    : outFileName(outFileName), debugMode(debug) {
-    
+    : outFileName(outFileName), debugMode(debug)
+{
     // Store configuration parameters
     setIndexBits = s;
     associativity = E;
@@ -53,7 +53,7 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
     busFree = true;
     busOwner = -1;
     
-    // Block size (in bytes) from b bits: blockSize = 2^b
+    // Block size in bytes: blockSize = 2^b
     blockSize = 1 << b;
     
     debugPrint("Initializing simulator with " + std::to_string(numCores) + " cores");
@@ -90,7 +90,7 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
         core.busInvalidations = 0;
         core.dataTraffic = 0;
         
-        // Create the per‐core cache. (The parameters s, E, b are used so that each Cache has the same configuration.)
+        // Create the per‐core cache. (Each Cache now internally implements LRU and the detailed MESI logic.)
         core.cachePtr = new Cache(i, s, E, b);
         
         cores.push_back(std::move(core));  // Use move semantics here
@@ -122,7 +122,7 @@ void CacheSimulator::runSimulation() {
             debugPrint("Bus is owned by Core " + std::to_string(busOwner));
         }
         
-        // For this cycle, if the bus is free try to give a turn to one core.
+        // For this cycle, if the bus is free we try to give a turn to one core.
         bool executed = false;
         for (int coreId = 0; coreId < numCores; coreId++) {
             CoreState &core = cores[coreId];
@@ -132,11 +132,11 @@ void CacheSimulator::runSimulation() {
             }
             
             if (!core.currentLine.empty()) {
-                // If bus is not free, the core idles.
+                // If the bus is not free, the core idles.
                 if (!busFree) {
                     core.idletime++;
-                    debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " + 
-                              std::to_string(busOwner) + ")");
+                    debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " +
+                               std::to_string(busOwner) + ")");
                     continue;
                 }
                 
@@ -145,6 +145,7 @@ void CacheSimulator::runSimulation() {
                 busOwner = coreId;
                 debugPrint("Core " + std::to_string(coreId) + " acquired bus");
                 
+                // Use an istringstream to parse the line command from the trace
                 std::istringstream iss(core.currentLine);
                 char opChar;
                 std::string addrStr;
@@ -154,232 +155,48 @@ void CacheSimulator::runSimulation() {
                 core.totalInstructions++;
                 debugPrint("Core " + std::to_string(coreId) + " processing: " + opChar + " " + addrStr);
                 
-                // Process read instruction
-                if (op == 'R') {
-                    core.readCount++;
-                    // Read Hit: if the address is in the core's cache and state is not INVALID
-                    if (core.cache.find(address) != core.cache.end() &&
-                        core.cache[address] != INVALID) {
-                        // Read hit: execute in 1 cycle
-                        core.hitCount++;
-                        core.extime += 1;
-                        globalCycle += 1;
-                        
-                        CacheLineState oldState = core.cache[address];
-                        debugPrint("Core " + std::to_string(coreId) + " READ HIT for address " + 
-                                  addrStr + " (state: " + stateToString(oldState) + ")");
-                    } else {
-                        // Read Miss
-                        core.missCount++;
-                        debugPrint("Core " + std::to_string(coreId) + " READ MISS for address " + addrStr);
-                        
-                        // First check if any other core has the address
-                        bool foundInOther = false;
-                        int ownerCore = -1;
-                        CacheLineState otherState = INVALID;
-                        
+                // Build a vector of other Cache pointers (for snooping/invalidation) for LRU/MESI handling.
+                std::vector<Cache*> otherCaches;
                 for (int j = 0; j < numCores; j++) {
-                    if (j == coreId) continue;
-                            if (cores[j].cache.find(address) != cores[j].cache.end() &&
-                                cores[j].cache[address] != INVALID) {
-                                foundInOther = true;
-                                otherState = cores[j].cache[address];
-                                ownerCore = j;
-                                break;
-                    }
+                    if (j != coreId)
+                        otherCaches.push_back(cores[j].cachePtr);
                 }
                 
-                totalBusTransactions++;
-                        
-                        if (foundInOther) {
-                            // Cache-to-cache transfer
-                            int transferCycles = 2 * (blockSize / 4); // 2n cycles where n = blockSize/4
-                            
-                            debugPrint("Core " + std::to_string(coreId) + " found data in Core " + 
-                                      std::to_string(ownerCore) + " (state: " + stateToString(otherState) + ")");
-                            
-                            // Extra cycle when data comes from an E or M state
-                            if (otherState == EXCLUSIVE || otherState == MODIFIED) {
-                                transferCycles += 1;
-                                debugPrint("Extra cycle for E/M state transfer");
-                            }
-                            
-                            core.extime += transferCycles + 1; // +1 for execution after transfer
-                            globalCycle += transferCycles + 1;
-                            
-                            // After transfer, mark line in requester as SHARED
-                            core.cache[address] = SHARED;
-                            
-                            // If source was E or M, change it to S too
-                            if (otherState == EXCLUSIVE || otherState == MODIFIED) {
-                    cores[ownerCore].cache[address] = SHARED;
-                                debugPrint("Core " + std::to_string(ownerCore) + " state changed to SHARED");
-                            }
-                            
-                            // Update bus traffic statistics
-                            core.dataTraffic += blockSize;
-                            totalBusTraffic += blockSize;
-                            
-                            debugPrint("Cache-to-cache transfer complete (took " + 
-                                      std::to_string(transferCycles) + " cycles)");
-                            debugPrint("Core " + std::to_string(coreId) + " state now SHARED");
-                        } else {
-                            // Data not found in any other cache: fetch from memory
-                            int memAccessCycles = 100;
-                            core.extime += memAccessCycles + 1; // +1 for execute cycle
-                            globalCycle += memAccessCycles + 1;
-                            
-                            // Set state to EXCLUSIVE
-                            core.cache[address] = EXCLUSIVE;
-                            
-                            // Update bus traffic
-                            core.dataTraffic += blockSize;
-                            totalBusTraffic += blockSize;
-                            
-                            debugPrint("Memory fetch complete (took " + 
-                                      std::to_string(memAccessCycles) + " cycles)");
-                            debugPrint("Core " + std::to_string(coreId) + " state now EXCLUSIVE");
+                // Process the instruction using the Cache's processRequest which integrates LRU and MESI logic.
+                bool hit = false;
+                if (opChar == 'R') {
+                    core.readCount++;
+                    hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches);
+                    if (hit) {
+                        debugPrint("Core " + std::to_string(coreId) + " READ HIT for address " + addrStr);
+                    } else {
+                        debugPrint("Core " + std::to_string(coreId) + " READ MISS for address " + addrStr);
+                    }
                 }
-}
-                }
-                // Process write instruction
-                else if (op == 'W') {
+                else if (opChar == 'W') {
                     core.writeCount++;
-                    // Write Hit
-                    if (core.cache.find(address) != core.cache.end() &&
-                        core.cache[address] != INVALID) {
-                        core.hitCount++;
-                        CacheLineState oldState = core.cache[address];
-                        
-                        debugPrint("Core " + std::to_string(coreId) + " WRITE HIT for address " + 
-                                  addrStr + " (state: " + stateToString(oldState) + ")");
-                        
-                        // If state is SHARED, send invalidations to other cores
-                        if (oldState == SHARED) {
-                            debugPrint("Sending invalidations to other cores with SHARED copies");
-                            totalBusTransactions++;
-                            
-                            for (int j = 0; j < numCores; j++) {
-                                if (j == coreId) continue;
-                                auto it = cores[j].cache.find(address);
-                                if (it != cores[j].cache.end() && it->second != INVALID) {
-                                    CacheLineState prevState = it->second;
-
-                                    // flush if Modified
-                                    if (prevState == MODIFIED) {
-                                        debugPrint("Core " + std::to_string(j) + " flushing modified block for address " + addrStr);
-                                        // take bus
-                                        busFree = false;
-                                        busOwner = j;
-                                        // record write‐back
-                                        cores[j].writebackCount++;
-                                        totalBusTransactions++;
-                                        // stall 100 cycles
-                                        cores[j].extime += 100;
-                                        globalCycle += 100;
-                                        // count traffic
-                                        cores[j].dataTraffic += blockSize;
-                                        totalBusTraffic += blockSize;
-                                        debugPrint("Core " + std::to_string(j) + " stall 100 cycles for write‐back");
-                                        // restore bus to writer
-                                        busOwner = coreId;
-                                    }
-
-                                    // now invalidate
-                                    it->second = INVALID;
-                                    totalInvalidations++;
-                                    cores[j].busInvalidations++;
-                                    core.dataTraffic += blockSize;
-                                    totalBusTraffic += blockSize;
-                                    
-                                    debugPrint("Invalidated Core " + std::to_string(j) +
-                                               " copy (was " + stateToString(prevState) + ")");
-                                }
-                            }
-                            // Then update own state to MODIFIED
-                            core.cache[address] = MODIFIED;
-                            core.extime += 1;
-                            globalCycle += 1;
-                            
-                            debugPrint("Core " + std::to_string(coreId) + " state changed to MODIFIED");
-                        } else if (oldState == EXCLUSIVE) {
-                            // Write hit in EXCLUSIVE state takes 1 cycle, becomes MODIFIED
-                            core.extime += 1;
-                            globalCycle += 1;
-                            core.cache[address] = MODIFIED;
-                            
-                            debugPrint("Core " + std::to_string(coreId) + 
-                                      " state changed from EXCLUSIVE to MODIFIED");
-                        } else if (oldState == MODIFIED) {
-                            // Write hit in MODIFIED state takes 1 cycle
-                            core.extime += 1;
-                            globalCycle += 1;
-                            
-                            debugPrint("Core " + std::to_string(coreId) + 
-                                      " remains in MODIFIED state");
-                        }
-                } else {
-                    core.missCount++;
-                debugPrint("Core " + std::to_string(coreId) + " WRITE MISS for address " + addrStr);
-                        totalBusTransactions++;
-                        
-                        // Invalidate copies from other caches, if any
-                        for (int j = 0; j < numCores; j++) {
-                            if (j == coreId) continue;
-                            auto it = cores[j].cache.find(address);
-                            if (it != cores[j].cache.end() && it->second != INVALID) {
-                                CacheLineState prevState = it->second;
-
-                                // flush if Modified
-                                if (prevState == MODIFIED) {
-                                    debugPrint("Core " + std::to_string(j) + " flushing modified block for address " + addrStr);
-                                    // take bus
-                                    busFree = false;
-                                    busOwner = j;
-                                    cores[j].writebackCount++;
-                                    totalBusTransactions++;
-                                    cores[j].extime += 100;
-                                    globalCycle += 100;
-                                    cores[j].dataTraffic += blockSize;
-                                    totalBusTraffic += blockSize;
-                                    debugPrint("Core " + std::to_string(j) + " stall 100 cycles for write‐back");
-                                    busOwner = coreId;
-                                }
-
-                                // invalidate
-                                it->second = INVALID;
-                                totalInvalidations++;
-                                cores[j].busInvalidations++;
-                                core.dataTraffic += blockSize;
-                                totalBusTraffic += blockSize;
-
-                                debugPrint("Invalidated Core " + std::to_string(j) +
-                                           " copy (was " + stateToString(prevState) + ")");
-                            }
-                        }
-                        
-                        // Fetch data from memory
-                        int memAccessCycles = 100;
-                        core.extime += memAccessCycles + 1;
-                        globalCycle += memAccessCycles + 1;
-                        
-                        // Update bus traffic for memory fetch
-                        core.dataTraffic += blockSize;
-                        totalBusTraffic += blockSize;
-                        
-                        // After write miss, update own state to MODIFIED
-                        core.cache[address] = MODIFIED;
-                        
-                        debugPrint("Memory fetch and modify complete (took " + 
-                                  std::to_string(memAccessCycles+1) + " cycles)");
-                        debugPrint("Core " + std::to_string(coreId) + " state now MODIFIED");
+                    hit = core.cachePtr->processRequest(WRITE, address, globalCycle, otherCaches);
+                    if (hit) {
+                        debugPrint("Core " + std::to_string(coreId) + " WRITE HIT for address " + addrStr);
+                    } else {
+                        debugPrint("Core " + std::to_string(coreId) + " WRITE MISS for address " + addrStr);
                     }
                 }
                 
-                // Mark bus as free
+                // Update hit/miss statistics based on the returned result.
+                if (hit)
+                    core.hitCount++;
+                else
+                    core.missCount++;
+                
+                // Also update eviction and write-back counts from the cache.
+                core.evictionCount = core.cachePtr->getEvictionCount();
+                core.writebackCount = core.cachePtr->getWritebackCount();
+                
+                // Release the bus.
                 busFree = true;
-                debugPrint("Core " + std::to_string(coreId) + " released the bus");
                 busOwner = -1;
+                debugPrint("Core " + std::to_string(coreId) + " released the bus");
                 executed = true;
                 
                 // Read next line for this core.
@@ -389,10 +206,10 @@ void CacheSimulator::runSimulation() {
                 } else {
                     debugPrint("Core " + std::to_string(coreId) + " next instruction: " + core.currentLine);
                 }
-            }
-        }
+            } // end processing current line
+        } // end for all cores
         
-        // If no core executed, advance the clock.
+        // If no core executed in this cycle, simply advance the global clock.
         if (!executed) {
             globalCycle++;
             debugPrint("No execution this cycle, advancing global clock");
@@ -403,7 +220,7 @@ void CacheSimulator::runSimulation() {
                 }
             }
         }
-    }
+    } // end simulation while loop
     
     printStatistics();
 }
@@ -419,12 +236,12 @@ void CacheSimulator::printStatistics() {
     
     std::ostream &out = (outFile.is_open() ? outFile : std::cout);
     
-    // Calculate cache size in KB (per core).
+    // Calculate cache size in KB (per core)
     double cacheSize = (double)(numSets * associativity * blockSize) / 1024.0;
     
     // Print simulation parameters.
     out << "Simulation Parameters:" << std::endl;
-    out << "Trace Prefix: " << "app" << std::endl;  // Placeholder, replace with actual prefix
+    out << "Trace Prefix: " << "app" << std::endl;  // Replace with actual prefix if needed.
     out << "Set Index Bits: " << setIndexBits << std::endl;
     out << "Associativity: " << associativity << std::endl;
     out << "Block Bits: " << blockBits << std::endl;
@@ -442,9 +259,8 @@ void CacheSimulator::printStatistics() {
         const CoreState &core = cores[i];
         
         double missRate = 0.0;
-        if (core.readCount + core.writeCount > 0) {
+        if (core.readCount + core.writeCount > 0)
             missRate = 100.0 * (double)core.missCount / (double)(core.readCount + core.writeCount);
-        }
         
         out << "Core " << i << " Statistics:" << std::endl;
         out << "Total Instructions: " << core.totalInstructions << std::endl;
@@ -466,7 +282,6 @@ void CacheSimulator::printStatistics() {
     out << "Total Bus Transactions: " << totalBusTransactions << std::endl;
     out << "Total Bus Traffic (Bytes): " << totalBusTraffic << std::endl;
     
-    if (outFile.is_open()) {
+    if (outFile.is_open())
         outFile.close();
-    }
 }
