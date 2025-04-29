@@ -199,6 +199,12 @@ void CacheSimulator::runSimulation() {
                 debugPrint("Core " + std::to_string(coreId) + " released the bus");
                 executed = true;
                 
+                // In debug mode, print this core's cache state after processing the instruction.
+                if (debugMode) {
+                    debugPrint("Core " + std::to_string(coreId) + " cache state:");
+                    core.cachePtr->printState();
+                }
+                
                 // Read next line for this core.
                 if (!std::getline(core.trace, core.currentLine)) {
                     core.finished = true;
