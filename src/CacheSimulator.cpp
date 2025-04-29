@@ -10,6 +10,7 @@
 #include <cmath>
 #include <algorithm>
 #include <iomanip>
+#include <cassert>
 
 struct CoreState {
     std::ifstream trace;
@@ -117,8 +118,14 @@ void CacheSimulator::runSimulation() {
         }
         
         // For this cycle, if the bus is free try to give a turn to one core
+        globalCycle++; //increment global cycle for each cycle
         bool executed = false;
         for (int coreId = 0; coreId < numCores; coreId++) {
+            
+            // if (globalCycle > busNextFree) {
+            //     busFree = true;
+            //     busOwner = -1;
+            // } // dont free here, owner will free the bus
             CoreState &core = cores[coreId];
             if (core.finished) {
                 debugPrint("Core " + std::to_string(coreId) + " has finished execution");
@@ -136,9 +143,9 @@ void CacheSimulator::runSimulation() {
                 // }
                 
                 // Mark bus busy for this core
-                busFree = false;
-                busOwner = coreId;
-                debugPrint("Core " + std::to_string(coreId) + " acquired bus");
+                // busFree = false;
+                // busOwner = coreId;
+                // debugPrint("Core " + std::to_string(coreId) + " acquired bus");
                 
                 std::istringstream iss(core.currentLine);
                 char op;
@@ -150,7 +157,7 @@ void CacheSimulator::runSimulation() {
                 debugPrint("Core " + std::to_string(coreId) + " processing: " + op + " " + addrStr);
                 
                 // Process read instruction
-                if (op == 'R') {
+                if (op == 'R') { //one TODO here
                     core.readCount++;
                     // Read Hit: if the address is in the core's cache and state is not INVALID
                     if (core.cache.find(address) != core.cache.end() &&
@@ -165,7 +172,7 @@ void CacheSimulator::runSimulation() {
                         debugPrint("Core " + std::to_string(coreId) + " READ HIT for address " + 
                                   addrStr + " (state: " + stateToString(oldState) + ")");
                     } else {
-                        // Read Miss
+                        // Read Miss, what if present and invalid?
                         core.missCount++;
                         debugPrint("Core " + std::to_string(coreId) + " READ MISS for address " + addrStr);
                         
@@ -177,7 +184,7 @@ void CacheSimulator::runSimulation() {
                         for (int j = 0; j < numCores; j++) {
                             if (j == coreId) continue;
                             if (cores[j].cache.find(address) != cores[j].cache.end() &&
-                                cores[j].cache[address] != INVALID) {
+                                cores[j].cache[address] != INVALID) { //dont want invalid copy
                                 foundInOther = true;
                                 otherState = cores[j].cache[address];
                                 ownerCore = j;
@@ -194,69 +201,233 @@ void CacheSimulator::runSimulation() {
                             debugPrint("Core " + std::to_string(coreId) + " found data in Core " + 
                                       std::to_string(ownerCore) + " (state: " + stateToString(otherState) + ")");
                             
+
+                            switch (otherState)
+                            {
+                                case SHARED: 
+                                {
+                                    // take data from other cache and set own state to shared
+                                    if (busFree) 
+                                    { //bus is free, capture it and send request
+                                        busFree = false;
+                                        busOwner = coreId;
+                                        debugPrint("Core " + std::to_string(coreId) + " acquired bus for cache-to-cache transfer");
+                                        busNextFree = globalCycle + transferCycles;
+                                        core.idletime++;
+                                        continue; //sent request just now, so stalling
+                                        break;
+                                    }
+                                    else // bus is busy
+                                    { //bus is not free
+                                        if (busOwner == coreId) // i am waiting on my own request to be served
+                                        {
+                                            if (globalCycle <= busNextFree) //my request not yet served
+                                            {
+                                                core.idletime++;
+                                                continue;
+                                                break;
+                                            }
+                                            else //my request just served
+                                            {
+                                                busFree = true;
+                                                busOwner = -1;
+                                                core.cache[address] = SHARED;
+                                                core.extime++; //including this here but not very sure
+                                                //update bus traffic stats
+                                                core.dataTraffic += blockSize;
+                                                totalBusTraffic += blockSize;
+                                                break;
+                                            }
+                                        }
+                                        else // i am waiting on someone else's request to be served
+                                        {
+                                            core.idletime++;
+                                            continue;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                case EXCLUSIVE:
+                                {
+                                    if (busFree) //bus is free, capture and send request
+                                    {
+                                        busFree = false;
+                                        busOwner = coreId;
+                                        debugPrint("Core " + std::to_string(coreId) + " acquired bus for cache-to-cache transfer");
+                                        busNextFree = globalCycle + transferCycles;
+                                        core.idletime++;
+                                        continue; //sent request just now, so stalling
+                                        break;
+                                    }
+                                    else //bus is busy
+                                    {
+                                        if (busOwner == coreId) // i am waiting on my own request to be served
+                                        {
+                                            if (globalCycle <= busNextFree) //my request not yet served
+                                            {
+                                                core.idletime++;
+                                                continue;
+                                                break;
+                                            }
+                                            else //my request just served
+                                            {
+                                                busFree = true;
+                                                busOwner = -1;
+                                                core.cache[address] = SHARED;
+                                                cores[ownerCore].cache[address] = SHARED; //setting owner's state to shared
+                                                core.extime++; //including this here but not very sure
+                                                //update bus traffic stats
+                                                core.dataTraffic += blockSize;
+                                                totalBusTraffic += blockSize;
+                                                break;
+                                            }
+                                        }
+                                        else //waiting on someone else's request
+                                        {
+                                            core.idletime++;
+                                            continue;
+                                            break;
+                                        }
+                                    }
+                                }
+                                case MODIFIED:
+                                {
+                                    if (busFree) //bus is free, take control and send request
+                                    {
+                                        busFree = false;
+                                        busOwner = coreId;
+                                        debugPrint("Core " + std::to_string(coreId) + " acquired bus for cache-to-cache transfer");
+                                        busNextFree = globalCycle + transferCycles;
+                                        core.idletime++;
+                                        continue; //sent request just now, so stalling
+                                        break;
+                                    }
+                                    else //bus busy, one TODO here
+                                    {
+                                        if (busOwner == coreId) // i am waiting on my own request to be served
+                                        {
+                                            if (globalCycle <= busNextFree) //my request not yet served
+                                            {
+                                                core.idletime++;
+                                                continue;
+                                                break;
+                                            }
+                                            else //my request just served
+                                            {
+                                                busFree = true;
+                                                busOwner = -1;
+                                                core.cache[address] = SHARED;
+                                                core.extime++; //including this here but not very sure
+                                                //update bus traffic stats
+                                                core.dataTraffic += blockSize;
+                                                totalBusTraffic += blockSize;
+                                                // have to write back owners copy into memory
+                                                // TODO - write from owner to memory, make a function for this, also some eviction logic, ect
+                                                break;
+                                            }
+                                        }
+                                        else //waiting on someone else's request
+                                        {
+                                            core.idletime++;
+                                            continue;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
                             // Extra cycle when data comes from an E or M state
-                            if (otherState == EXCLUSIVE || otherState == MODIFIED) {
-                                transferCycles += 1;
-                                debugPrint("Extra cycle for E/M state transfer");
-                            }
+                            // if (otherState == EXCLUSIVE || otherState == MODIFIED) {
+                            //     transferCycles += 1;
+                            //     debugPrint("Extra cycle for E/M state transfer");
+                            // }
                             
-                            core.extime += transferCycles + 1; // +1 for execution after transfer
-                            globalCycle += transferCycles + 1;
+                            // core.extime += transferCycles + 1; // +1 for execution after transfer
+                            // globalCycle += transferCycles + 1;
                             
-                            // After transfer, mark line in requester as SHARED
-                            core.cache[address] = SHARED;
+                            // // After transfer, mark line in requester as SHARED
+                            // core.cache[address] = SHARED;
                             
-                            // If source was E or M, change it to S too
-                            if (otherState == EXCLUSIVE || otherState == MODIFIED) {
-                                cores[ownerCore].cache[address] = SHARED;
-                                debugPrint("Core " + std::to_string(ownerCore) + " state changed to SHARED");
-                            }
+                            // // If source was E or M, change it to S too
+                            // if (otherState == EXCLUSIVE || otherState == MODIFIED) {
+                            //     cores[ownerCore].cache[address] = SHARED;
+                            //     debugPrint("Core " + std::to_string(ownerCore) + " state changed to SHARED");
+                            // }
                             
-                            // Update bus traffic statistics
-                            core.dataTraffic += blockSize;
-                            totalBusTraffic += blockSize;
+                            // // Update bus traffic statistics
+                            // core.dataTraffic += blockSize;
+                            // totalBusTraffic += blockSize;
                             
-                            debugPrint("Cache-to-cache transfer complete (took " + 
-                                      std::to_string(transferCycles) + " cycles)");
-                            debugPrint("Core " + std::to_string(coreId) + " state now SHARED");
+                            // debugPrint("Cache-to-cache transfer complete (took " + 
+                            //           std::to_string(transferCycles) + " cycles)");
+                            // debugPrint("Core " + std::to_string(coreId) + " state now SHARED");
                         } else {
                             // Data not found in any other cache: fetch from memory
                             int memAccessCycles = 100;
-                            core.idletime += memAccessCycles; //+100 for idle cycle
-                            core.extime += 1;
-                     // ********      // globalCycle += memAccessCycles + 1;********
+                            // core.idletime += memAccessCycles; //+100 for idle cycle
+                            // core.extime += 1;
                             
-                            // Set state to EXCLUSIVE
-                            core.cache[address] = EXCLUSIVE;
+                            if (!busFree) // bus is busy
+                            {
+                                if (busOwner == coreId) { //i am the owner and waiting on my request
+                                    if (globalCycle <= busNextFree) //my request not yet complete
+                                    {
+                                        core.idletime++; //stall and move on
+                                        continue;
+                                    } 
+                                    else //my request just completed
+                                    {
+                                        busFree = true;
+                                        busOwner = -1;
+                                        core.cache[address] = EXCLUSIVE;
+                                        core.extime++; //including this here but not very sure
+                                        //update bus traffic stats
+                                        core.dataTraffic += blockSize;
+                                        totalBusTraffic += blockSize;
+                                    }
+                                } 
+                                else 
+                                { //bus is busy due someone else's request
+                                    core.idletime++;
+                                    continue;
+                                }
+                            } 
+                            else  //bus is free to capture
+                            { //take ownership of bus and send request
+                                busFree = false;
+                                busOwner = coreId;
+                                busNextFree = globalCycle + memAccessCycles;
+                                core.idletime++; //including idle time here though not very sure
+                                continue;
+                            }
+                     // ********// globalCycle += memAccessCycles + 1;********
                             
-                            // Update bus traffic
-                            core.dataTraffic += blockSize;
-                            totalBusTraffic += blockSize;
-                            
-                            debugPrint("Memory fetch complete (took " + 
-                                      std::to_string(memAccessCycles) + " cycles)");
-                            debugPrint("Core " + std::to_string(coreId) + " state now EXCLUSIVE");
+                            // Set state to EXCLUSIVE, this to do when we get data from memory, for now processor should stall
+                            // core.cache[address] = EXCLUSIVE;
+                            // core.dataTraffic += blockSize;
+                            // totalBusTraffic += blockSize;
                         }
                     }
                 }
                 // Process write instruction
                 else if (op == 'W') {
                     core.writeCount++;
-                    // Write Hit
+                    // Write Hit, all actions will be instantaneous
                     if (core.cache.find(address) != core.cache.end() &&
                         core.cache[address] != INVALID) {
                         core.hitCount++;
-                        CacheLineState oldState = core.cache[address];
+                        CacheLineState ownState = core.cache[address];
                         
                         debugPrint("Core " + std::to_string(coreId) + " WRITE HIT for address " + 
-                                  addrStr + " (state: " + stateToString(oldState) + ")");
+                                  addrStr + " (state: " + stateToString(ownState) + ")");
                         
                         // If state is SHARED, send invalidations to other cores
-                        if (oldState == SHARED) {
+                        if (ownState == SHARED) {
                             debugPrint("Sending invalidations to other cores with SHARED copies");
                             totalBusTransactions++;
                             
-                            for (int j = 0; j < numCores; j++) {
+                            for (int j = 0; j < numCores; j++) { //assuming this operation is instantaneously happening
                                 if (j == coreId) continue;
                                 if (cores[j].cache.find(address) != cores[j].cache.end() &&
                                     cores[j].cache[address] != INVALID) {
@@ -264,7 +435,7 @@ void CacheSimulator::runSimulation() {
                                     CacheLineState prevState = cores[j].cache[address];
                                     cores[j].cache[address] = INVALID;
                                     totalInvalidations++;
-                                    cores[j].busInvalidations++;
+                                    cores[j].busInvalidations++; // what is this?
                                     core.dataTraffic += blockSize;
                                     totalBusTraffic += blockSize;
                                     
@@ -275,27 +446,27 @@ void CacheSimulator::runSimulation() {
                             // Then update own state to MODIFIED
                             core.cache[address] = MODIFIED;
                             core.extime += 1;
-                            globalCycle += 1;
+                            // globalCycle += 1;
                             
                             debugPrint("Core " + std::to_string(coreId) + " state changed to MODIFIED");
-                        } else if (oldState == EXCLUSIVE) {
+                        } else if (ownState == EXCLUSIVE) {
                             // Write hit in EXCLUSIVE state takes 1 cycle, becomes MODIFIED
                             core.extime += 1;
-                            globalCycle += 1;
+                            // globalCycle += 1;
                             core.cache[address] = MODIFIED;
                             
                             debugPrint("Core " + std::to_string(coreId) + 
                                       " state changed from EXCLUSIVE to MODIFIED");
-                        } else if (oldState == MODIFIED) {
+                        } else if (ownState == MODIFIED) {
                             // Write hit in MODIFIED state takes 1 cycle
                             core.extime += 1;
-                            globalCycle += 1;
+                            // globalCycle += 1;
                             
                             debugPrint("Core " + std::to_string(coreId) + 
                                       " remains in MODIFIED state");
                         }
-                    } else {
-                        // Write Miss
+                    } else { //some operations will take bus access, handle accordingly
+                        // Local Write Miss Happened
                         core.missCount++;
                         debugPrint("Core " + std::to_string(coreId) + " WRITE MISS for address " + addrStr);
                         totalBusTransactions++;
@@ -308,28 +479,65 @@ void CacheSimulator::runSimulation() {
                                 cores[j].cache[address] != INVALID) {
                                 foundInOther = true;
                                 CacheLineState prevState = cores[j].cache[address];
-                                cores[j].cache[address] = INVALID;
-                                totalInvalidations++;
-                                cores[j].busInvalidations++;
-                                core.dataTraffic += blockSize;
-                                totalBusTraffic += blockSize;
+                                switch (prevState) 
+                                {
+                                    case SHARED:
+                                    case EXCLUSIVE:
+                                    { //have to fetch data from memory
+                                        // implement stall logic here, idk how yet
+                                        cores[j].cache[address] = INVALID;
+                                        //some invalidation stats
+                                        break;
+                                    }
+                                }
                                 
                                 debugPrint("Invalidated Core " + std::to_string(j) + 
                                           " copy (was " + stateToString(prevState) + ")");
                             }
                         }
                         
-                        // Fetch data from memory
+                        // Fetch data from memory, didnt find in any other cache
                         int memAccessCycles = 100;
-                        core.extime += memAccessCycles + 1;
-                        globalCycle += memAccessCycles + 1;
+                        if (busFree) //bus is free, capture it and send req to memory
+                        {
+                            busFree = false;
+                            busOwner = coreId;
+                            busNextFree = globalCycle + memAccessCycles;
+                        }
+                        else //bus is busy
+                        {
+                            if (busOwner == coreId) // i am waiting on my own request
+                            {
+                                if (globalCycle <= busNextFree) //my req not processed yet
+                                {
+                                    core.idletime ++;
+                                    continue;
+                                }
+                                else //my req just processed
+                                {
+                                    busFree = true;
+                                    busOwner = -1;
+                                    core.cache[address] = MODIFIED;
+                                    core.dataTraffic += blockSize;
+                                    core.extime++;
+                                    totalBusTraffic += blockSize;
+                                }
+                            }
+                            else //i am waiting on someone else's req
+                            {
+                                core.idletime ++;
+                                continue;
+                            }
+                        }
+                        // core.extime += memAccessCycles + 1;
+                        // globalCycle += memAccessCycles + 1;
                         
                         // Update bus traffic for memory fetch
-                        core.dataTraffic += blockSize;
-                        totalBusTraffic += blockSize;
+                        // core.dataTraffic += blockSize;
+                        // totalBusTraffic += blockSize;
                         
                         // After write miss, update own state to MODIFIED
-                        core.cache[address] = MODIFIED;
+                        assert(core.cache[address] == MODIFIED);
                         
                         debugPrint("Memory fetch and modify complete (took " + 
                                   std::to_string(memAccessCycles+1) + " cycles)");
@@ -338,7 +546,8 @@ void CacheSimulator::runSimulation() {
                 }
                 
                 // Mark bus as free
-                busFree = true;
+                assert(busFree = true); // bus should be free if reached here
+                // busFree = true;
                 debugPrint("Core " + std::to_string(coreId) + " released the bus");
                 busOwner = -1;
                 executed = true;
@@ -354,16 +563,16 @@ void CacheSimulator::runSimulation() {
         }
         
         // If no core executed (e.g., all waiting for the bus), advance the clock
-        if (!executed) {
-            globalCycle++;
-            debugPrint("No execution this cycle, advancing global clock");
-            for (int coreId = 0; coreId < numCores; coreId++) {
-                if (!cores[coreId].finished) {
-                    cores[coreId].idletime++;
-                    debugPrint("Core " + std::to_string(coreId) + " idle time increased");
-                }
-            }
-        }
+        // if (!executed) {
+        //     globalCycle++;
+        //     debugPrint("No execution this cycle, advancing global clock");
+        //     for (int coreId = 0; coreId < numCores; coreId++) {
+        //         if (!cores[coreId].finished) {
+        //             cores[coreId].idletime++;
+        //             debugPrint("Core " + std::to_string(coreId) + " idle time increased");
+        //         }
+        //     }
+        // }
     }
     
     printStatistics();

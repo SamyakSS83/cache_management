@@ -2,6 +2,12 @@
 - what exactly should a bus transaction have and do?
 - what is the bus latency?
 - what is the bus bandwidth? - 1 transaction at a time
+- what is the variable global_cycle?
 - add a block bit for a core, to indicate it is still not done processing previous instruction
-- figure out how to put bus on hold for 100 cycles
+- figure out how to put bus on hold for 100 cycles, bus put on hold, but how to free it after 100 cycles? 
+    - inc the globalcounter by 1 at the end of one iteration through all the cores
+- make a function to write back from a cache back to memory
+- inc totalBusTransactions accordingly everywhere
+- inc miss counts also
+- introduce req types on bus, for different cases
 try to figure out from lecture slides or readings

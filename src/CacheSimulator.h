@@ -16,6 +16,7 @@ private:
     int totalBusTransactions;
     int globalCycle; //what is this ?
     bool busFree;
+    unsigned int busNextFree; //bus is next free at this time
     int busOwner;
     int blockSize;     // Derived from block bits b: blockSize = 2^b
     bool debugMode;    // Flag for debug output
