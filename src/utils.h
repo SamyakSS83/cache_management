@@ -37,11 +37,11 @@ inline std::string stateToString(CacheLineState state) {
 }
 
 // Bus transaction types
-enum BusTransaction {
-    BUS_READ,
-    BUS_WRITE,
-    BUS_UPGRADE,
-    BUS_INVALIDATE
-};
+// enum BusTransaction {
+//     BUS_READ,
+//     BUS_WRITE,
+//     BUS_UPGRADE,
+//     BUS_INVALIDATE
+// };
 
 #endif // UTILS_H

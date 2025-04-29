@@ -10,4 +10,7 @@
 - inc totalBusTransactions accordingly everywhere
 - inc miss counts also
 - introduce req types on bus, for different cases
+- need to implement bus transaction type seriously :
+    - i cant generate 2 diff req at the same time, only one after another's completion is possible
+- also look at how to replace already present blocks
 try to figure out from lecture slides or readings

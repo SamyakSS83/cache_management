@@ -6,6 +6,18 @@
 #include <fstream>
 #include <utility>
 
+
+enum BusTransaction {
+    ReadWithIntentToModify,
+    WriteBackOnOtherReadMiss,
+    WriteBackOnEviction,
+    WriteBackOnOtherWriteMiss,
+    ReadFromMem,
+    ReadCacheToCache,
+    BroadCastInvalidate,
+    None
+};
+
 class CacheSimulator {
 private:
     std::vector<struct CoreState> cores; // now holds per-core simulation state
@@ -17,6 +29,7 @@ private:
     int globalCycle; //what is this ?
     bool busFree;
     unsigned int busNextFree; //bus is next free at this time
+    BusTransaction busTransaction;
     int busOwner;
     int blockSize;     // Derived from block bits b: blockSize = 2^b
     bool debugMode;    // Flag for debug output
