@@ -1,3 +1,1167 @@
+
+=== Global Cycle 1 | BusLocked=0 | BusFreeAt=0 | BusOwner=-1 ===
+[Cycle 1] Core 0 granted BUS (requested at cycle 0)
+[Cycle 1] BUS will be held for 100 cycles, free at cycle 101
+========== Cycle 1 ==========
+Core 0: READ 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: E | Exec time: 101 cycles | Idle time: 0 cycles
+  → Bus: Cache-to-cache transfer
+================================
+
+
+=== Global Cycle 2 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 3 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 4 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 5 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 6 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 7 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 8 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 9 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 10 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 11 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 12 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 13 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 14 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 15 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 16 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 17 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 18 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 19 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 20 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 21 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 22 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 23 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 24 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 25 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 26 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 27 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 28 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 29 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 30 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 31 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 32 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 33 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 34 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 35 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 36 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 37 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 38 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 39 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 40 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 41 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 42 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 43 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 44 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 45 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 46 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 47 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 48 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 49 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 50 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 51 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 52 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 53 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 54 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 55 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 56 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 57 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 58 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 59 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 60 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 61 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 62 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 63 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 64 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 65 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 66 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 67 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 68 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 69 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 70 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 71 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 72 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 73 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 74 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 75 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 76 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 77 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 78 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 79 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 80 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 81 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 82 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 83 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 84 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 85 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 86 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 87 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 88 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 89 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 90 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 91 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 92 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 93 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 94 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 95 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 96 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 97 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 98 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 99 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 100 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+
+=== Global Cycle 101 | BusLocked=1 | BusFreeAt=101 | BusOwner=0 ===
+[Cycle 101] BUS UNLOCKED (was held by Core 0)
+[Cycle 101] Core 1 granted BUS (requested at cycle 0)
+[Cycle 101] BUS will be held for 16 cycles, free at cycle 117
+========== Cycle 101 ==========
+Core 1: READ 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: S | Exec time: 17 cycles | Idle time: 16 cycles
+  → Bus: Memory access
+================================
+
+
+=== Global Cycle 102 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 103 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 104 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 105 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 106 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 107 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 108 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 109 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 110 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 111 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 112 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 113 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 114 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 115 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 116 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+
+=== Global Cycle 117 | BusLocked=1 | BusFreeAt=117 | BusOwner=1 ===
+[Cycle 117] BUS UNLOCKED (was held by Core 1)
+[Cycle 117] Core 2 granted BUS (requested at cycle 0)
+[Cycle 117] BUS will be held for 100 cycles, free at cycle 217
+========== Cycle 117 ==========
+Core 2: WRITE 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: M | Exec time: 101 cycles | Idle time: 0 cycles
+  → Bus: Cache-to-cache transfer
+================================
+
+
+=== Global Cycle 118 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 119 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 120 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 121 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 122 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 123 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 124 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 125 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 126 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 127 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 128 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 129 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 130 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 131 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 132 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 133 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 134 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 135 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 136 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 137 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 138 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 139 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 140 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 141 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 142 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 143 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 144 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 145 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 146 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 147 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 148 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 149 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 150 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 151 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 152 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 153 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 154 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 155 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 156 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 157 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 158 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 159 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 160 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 161 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 162 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 163 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 164 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 165 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 166 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 167 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 168 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 169 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 170 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 171 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 172 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 173 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 174 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 175 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 176 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 177 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 178 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 179 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 180 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 181 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 182 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 183 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 184 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 185 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 186 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 187 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 188 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 189 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 190 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 191 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 192 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 193 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 194 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 195 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 196 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 197 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 198 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 199 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 200 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 201 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 202 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 203 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 204 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 205 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 206 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 207 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 208 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 209 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 210 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 211 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 212 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 213 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 214 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 215 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 216 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+
+=== Global Cycle 217 | BusLocked=1 | BusFreeAt=217 | BusOwner=2 ===
+[Cycle 217] BUS UNLOCKED (was held by Core 2)
+[Cycle 217] Core 3 granted BUS (requested at cycle 0)
+[Cycle 217] BUS will be held for 100 cycles, free at cycle 317
+========== Cycle 217 ==========
+Core 3: WRITE 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: M | Exec time: 101 cycles | Idle time: 0 cycles
+  → Bus: Cache-to-cache transfer
+================================
+
+
+=== Global Cycle 218 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 219 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 220 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 221 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 222 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 223 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 224 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 225 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 226 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 227 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 228 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 229 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 230 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 231 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 232 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 233 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 234 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 235 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 236 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 237 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 238 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 239 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 240 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 241 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 242 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 243 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 244 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 245 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 246 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 247 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 248 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 249 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 250 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 251 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 252 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 253 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 254 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 255 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 256 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 257 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 258 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 259 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 260 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 261 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 262 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 263 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 264 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 265 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 266 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 267 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 268 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 269 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 270 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 271 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 272 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 273 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 274 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 275 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 276 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 277 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 278 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 279 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 280 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 281 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 282 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 283 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 284 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 285 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 286 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 287 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 288 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 289 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 290 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 291 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 292 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 293 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 294 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 295 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 296 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 297 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 298 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 299 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 300 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 301 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 302 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 303 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 304 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 305 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 306 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 307 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 308 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 309 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 310 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 311 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 312 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 313 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 314 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 315 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 316 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+
+=== Global Cycle 317 | BusLocked=1 | BusFreeAt=317 | BusOwner=3 ===
+[Cycle 317] BUS UNLOCKED (was held by Core 3)
+[Cycle 317] Core 0 granted BUS (requested at cycle 102)
+[Cycle 317] BUS will be held for 100 cycles, free at cycle 417
+========== Cycle 317 ==========
+Core 0: WRITE 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: M | Exec time: 101 cycles | Idle time: 0 cycles
+  → Bus: Cache-to-cache transfer
+================================
+
+
+=== Global Cycle 318 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 319 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 320 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 321 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 322 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 323 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 324 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 325 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 326 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 327 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 328 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 329 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 330 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 331 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 332 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 333 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 334 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 335 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 336 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 337 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 338 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 339 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 340 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 341 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 342 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 343 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 344 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 345 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 346 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 347 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 348 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 349 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 350 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 351 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 352 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 353 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 354 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 355 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 356 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 357 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 358 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 359 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 360 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 361 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 362 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 363 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 364 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 365 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 366 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 367 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 368 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 369 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 370 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 371 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 372 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 373 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 374 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 375 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 376 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 377 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 378 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 379 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 380 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 381 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 382 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 383 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 384 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 385 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 386 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 387 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 388 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 389 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 390 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 391 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 392 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 393 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 394 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 395 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 396 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 397 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 398 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 399 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 400 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 401 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 402 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 403 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 404 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 405 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 406 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 407 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 408 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 409 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 410 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 411 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 412 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 413 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 414 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 415 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 416 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+
+=== Global Cycle 417 | BusLocked=1 | BusFreeAt=417 | BusOwner=0 ===
+[Cycle 417] BUS UNLOCKED (was held by Core 0)
+[Cycle 417] Core 1 granted BUS (requested at cycle 118)
+[Cycle 417] BUS will be held for 16 cycles, free at cycle 433
+========== Cycle 417 ==========
+Core 1: READ 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: S | Exec time: 17 cycles | Idle time: 32 cycles
+  → Bus: Memory access
+================================
+
+
+=== Global Cycle 418 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 419 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 420 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 421 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 422 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 423 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 424 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 425 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 426 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 427 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 428 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 429 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 430 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 431 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 432 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+
+=== Global Cycle 433 | BusLocked=1 | BusFreeAt=433 | BusOwner=1 ===
+[Cycle 433] BUS UNLOCKED (was held by Core 1)
+[Cycle 433] Core 2 granted BUS (requested at cycle 218)
+[Cycle 433] BUS will be held for 16 cycles, free at cycle 449
+========== Cycle 433 ==========
+Core 2: READ 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: S | Exec time: 17 cycles | Idle time: 0 cycles
+  → Bus: Memory access
+================================
+
+
+=== Global Cycle 434 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 435 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 436 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 437 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 438 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 439 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 440 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 441 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 442 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 443 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 444 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 445 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 446 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 447 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 448 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+
+=== Global Cycle 449 | BusLocked=1 | BusFreeAt=449 | BusOwner=2 ===
+[Cycle 449] BUS UNLOCKED (was held by Core 2)
+[Cycle 449] Core 3 granted BUS (requested at cycle 318)
+[Cycle 449] BUS will be held for 100 cycles, free at cycle 549
+========== Cycle 449 ==========
+Core 3: WRITE 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: M | Exec time: 101 cycles | Idle time: 0 cycles
+  → Bus: Cache-to-cache transfer
+================================
+
+
+=== Global Cycle 450 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 451 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 452 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 453 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 454 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 455 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 456 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 457 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 458 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 459 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 460 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 461 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 462 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 463 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 464 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 465 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 466 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 467 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 468 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 469 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 470 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 471 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 472 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 473 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 474 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 475 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 476 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 477 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 478 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 479 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 480 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 481 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 482 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 483 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 484 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 485 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 486 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 487 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 488 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 489 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 490 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 491 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 492 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 493 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 494 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 495 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 496 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 497 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 498 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 499 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 500 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 501 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 502 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 503 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 504 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 505 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 506 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 507 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 508 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 509 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 510 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 511 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 512 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 513 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 514 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 515 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 516 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 517 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 518 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 519 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 520 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 521 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 522 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 523 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 524 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 525 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 526 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 527 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 528 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 529 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 530 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 531 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 532 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 533 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 534 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 535 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 536 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 537 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 538 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 539 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 540 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 541 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 542 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 543 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 544 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 545 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 546 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 547 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 548 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+
+=== Global Cycle 549 | BusLocked=1 | BusFreeAt=549 | BusOwner=3 ===
+[Cycle 549] BUS UNLOCKED (was held by Core 3)
+
+=== Global Cycle 550 | BusLocked=0 | BusFreeAt=549 | BusOwner=-1 ===
 Cache Simulation Results:
 =========================
 
