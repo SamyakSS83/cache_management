@@ -85,9 +85,8 @@ void Cache::evictLine(unsigned int setIndex, int lineIndex, int& cycle) {
     sets[setIndex].lines[lineIndex].state = INVALID;
 }
 
-bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle, 
-                         std::vector<Cache*>& otherCaches) {
-    // Update statistics
+RequestResult Cache::processRequest(MemoryOperation op, unsigned int address, std::vector<Cache*>& otherCaches) {
+    // Update instruction counters
     if (op == READ) {
         readCount++;
     } else {
@@ -98,59 +97,54 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
     unsigned int tag = getTag(address);
     int lineIndex = findLineInSet(setIndex, tag);
     
+    int execTime = 0;
+    
     if (lineIndex != -1 && sets[setIndex].lines[lineIndex].state != INVALID) {
         // Cache hit
         hitCount++;
-        totalCycles += 1; // L1 cache hit is 1 cycle
+        // L1 cache hit executes in 1 cycle
+        execTime = 1;
         
-        if (op == READ) {
-            // Read hit - no state change needed
-        } else { // WRITE
-            // Write hit
+        if (op == WRITE) {
             if (sets[setIndex].lines[lineIndex].state == SHARED) {
-                // Send invalidation to other caches
+                // Invalidate in other caches
                 int bytesTransferred = 0;
                 for (auto cache : otherCaches) {
-                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, cycle, bytesTransferred)) {
+                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, execTime, bytesTransferred)) {
                         busInvalidations++;
                     }
                 }
                 busTraffic += bytesTransferred;
                 
-                // Change state to Modified
+                // Change to MODIFIED and mark dirty
                 sets[setIndex].lines[lineIndex].state = MODIFIED;
                 sets[setIndex].lines[lineIndex].dirty = true;
-                
-                // 1 cycle for the actual write
-                totalCycles += 1;
-            } 
+                // 1 extra cycle for the write
+                execTime += 1;
+            }
             else if (sets[setIndex].lines[lineIndex].state == EXCLUSIVE) {
-                // Just change state to Modified, no bus transaction needed
+                // Write hit converting from E to M
                 sets[setIndex].lines[lineIndex].state = MODIFIED;
                 sets[setIndex].lines[lineIndex].dirty = true;
-                
-                // 1 cycle for the actual write
-                totalCycles += 1;
+                execTime += 1;
             }
             else if (sets[setIndex].lines[lineIndex].state == MODIFIED) {
-                // Already MODIFIED, just update data
-                // 1 cycle for the actual write
-                totalCycles += 1;
+                // Already modified; just write
+                execTime += 1;
             }
         }
         
         updateLRU(setIndex, lineIndex);
-        return true;
+        return { true, execTime };
+        
     } else {
         // Cache miss
         missCount++;
-        
-        // Check if data is in other caches
         int bytesTransferred = 0;
         bool dataInSharedState = false;
         bool dataInModifiedState = false;
         
-        // First check if data exists in other caches and in what state
+        // Check other caches
         for (auto cache : otherCaches) {
             unsigned int otherSetIndex = cache->getSetIndex(address);
             unsigned int otherTag = cache->getTag(address);
@@ -162,74 +156,43 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
                 } else if (cache->sets[otherSetIndex].lines[otherLineIndex].state == MODIFIED || 
                            cache->sets[otherSetIndex].lines[otherLineIndex].state == EXCLUSIVE) {
                     dataInModifiedState = true;
-                    break;  // Most important case
+                    break;
                 }
             }
         }
         
         if (op == READ) {
-            // Read miss
             if (dataInSharedState) {
-                // Data in another cache in S state
-                int transferCycles = 2 * (blockSize / 4); // 2n cycles for c2c transfer
-                cycle += transferCycles;
-                idleCycles += transferCycles;
-                busTraffic += blockSize;
-                
-                // After transfer completes, free the bus and execute the instruction (1 more cycle)
-                totalCycles += 1;
+                int transferCycles = 2 * (blockSize / 4);
+                execTime = transferCycles + 1;
             }
             else if (dataInModifiedState) {
-                // Data in another cache in E/M state
-                int transferCycles = 2 * (blockSize / 4); // 2n cycles for c2c transfer
-                cycle += transferCycles;
-                idleCycles += transferCycles;
-                busTraffic += blockSize;
-                
-                // Broadcast read request on bus
+                int transferCycles = 2 * (blockSize / 4);
+                // Issue bus read to force the sharing
                 for (auto cache : otherCaches) {
-                    cache->handleBusRequest(BUS_READ, address, this, cycle, bytesTransferred);
+                    cache->handleBusRequest(BUS_READ, address, this, execTime, bytesTransferred);
                 }
-                
-                // After transfer completes, free the bus and execute the instruction (1 more cycle)
-                totalCycles += 1;
+                execTime = transferCycles + 1;
             } 
             else {
-                // Not in any cache, fetch from memory
-                cycle += 100; // Time to fetch from memory
-                idleCycles += 100;
-                
-                // After memory access completes, free the bus and execute (1 more cycle)
-                totalCycles += 1;
+                // Fetch from memory: 100 cycles then 1 to process
+                execTime = 100 + 1;
             }
-        } else {
-            // Write miss
+        } else { // WRITE miss
             if (dataInSharedState || dataInModifiedState) {
-                // First invalidate in other caches (Read with Intent to Modify)
+                // Invalidate in others, then fetch from memory
                 for (auto cache : otherCaches) {
-                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, cycle, bytesTransferred)) {
+                    if (cache->handleBusRequest(BUS_INVALIDATE, address, this, execTime, bytesTransferred)) {
                         busInvalidations++;
                     }
                 }
-                busTraffic += bytesTransferred;
-                
-                // Then fetch from memory
-                cycle += 100; // Time to fetch from memory
-                idleCycles += 100;
-                
-                // After memory access completes, free the bus and execute (1 more cycle)
-                totalCycles += 1;
+                execTime = 100 + 1;
             } else {
-                // Not in any cache, fetch from memory
-                cycle += 100; // Time to fetch from memory
-                idleCycles += 100;
-                
-                // After memory access completes, free the bus and execute (1 more cycle)
-                totalCycles += 1;
+                execTime = 100 + 1;
             }
         }
         
-        // Find a line to replace
+        // Find which line to replace
         bool needEviction = true;
         for (int i = 0; i < associativity; i++) {
             if (!sets[setIndex].lines[i].valid || sets[setIndex].lines[i].state == INVALID) {
@@ -238,27 +201,29 @@ bool Cache::processRequest(MemoryOperation op, unsigned int address, int& cycle,
                 break;
             }
         }
-        
         if (needEviction) {
             lineIndex = getLRULine(setIndex);
             evictionCount++;
-            evictLine(setIndex, lineIndex, cycle);
+            // Eviction writeback (if dirty) adds 100 cycles:
+            if (sets[setIndex].lines[lineIndex].dirty) {
+                writebackCount++;
+                execTime += 100;
+            }
         }
         
-        // Set the new line state based on MESI protocol
+        // Set new line state
         sets[setIndex].lines[lineIndex].valid = true;
         sets[setIndex].lines[lineIndex].tag = tag;
-        
         if (op == READ) {
             sets[setIndex].lines[lineIndex].dirty = false;
             sets[setIndex].lines[lineIndex].state = (dataInSharedState || dataInModifiedState) ? SHARED : EXCLUSIVE;
-        } else { // WRITE
+        } else { // WRITE miss
             sets[setIndex].lines[lineIndex].dirty = true;
             sets[setIndex].lines[lineIndex].state = MODIFIED;
         }
         
         updateLRU(setIndex, lineIndex);
-        return false;
+        return { false, execTime };
     }
 }
 
@@ -443,4 +408,12 @@ void Cache::printDebugInfo(MemoryOperation op, unsigned int address, bool isHit,
     }
     
     std::cout << " | Idle time: " << idleCycles << " cycles" << std::endl;
+}
+
+void Cache::setTotalCycles(int cycles) {
+    totalCycles = cycles;
+}
+
+void Cache::setIdleCycles(int cycles) {
+    idleCycles = cycles;
 }

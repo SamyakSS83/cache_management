@@ -8,10 +8,6 @@
 CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E, int b, 
                               const std::string& outFileName) {
     this->outFileName = outFileName;
-    // this->s = s;
-    // this->E = E;
-    // this->b = b;
-    // this->traceFilePrefix = traceFilePrefix;
     numCores = 4; // Quad-core
     totalInvalidations = 0;
     totalBusTraffic = 0;
@@ -52,46 +48,50 @@ CacheSimulator::~CacheSimulator() {
 }
 
 void CacheSimulator::runSimulation() {
+    int numCores = caches.size();
     std::vector<bool> coreFinished(numCores, false);
     std::vector<std::string> currentLines(numCores);
     std::vector<bool> coreBlocked(numCores, false);
-    std::vector<int> coreCycles(numCores, 0);
-    std::vector<int> busRequestCycle(numCores, 0); // Track when each core requested the bus
-    stalledSince.resize(numCores, 0); // Initialize tracking of stall beginning
+    // Instead of using a separate cycle counter per core,
+    // we track totaltime, extime and idletime for each core.
+    std::vector<int> totTime(numCores, 0);
+    std::vector<int> extTime(numCores, 0);
+    std::vector<int> idleTime(numCores, 0);
+    // When cores are blocked (e.g. waiting for bus), record when stall began.
+    stalledSince.resize(numCores, 0);
+    // For a blocked core, record when it can become unblocked.
+    std::vector<int> unblockTime(numCores, 0);
+    // Track request start time per core (used for fairness)
+    std::vector<int> requestTime(numCores, 0);
     
-    // Read first line from each trace file
+    // Read the first line from each trace file.
     for (int i = 0; i < numCores; i++) {
         if (std::getline(traceFiles[i], currentLines[i])) {
-            // Core has a line to process
+            requestTime[i] = globalCycle;
         } else {
             coreFinished[i] = true;
         }
     }
     
-    // Main simulation loop
     while (!std::all_of(coreFinished.begin(), coreFinished.end(), [](bool v) { return v; })) {
         globalCycle++;
         
-        // Process bus requests in fair order (FIFO with index priority)
+        // For every core not processing an instruction this cycle and not finished,
+        // add 1 cycle to its idle time.
+        for (int i = 0; i < numCores; i++) {
+            if (!coreFinished[i] && !coreBlocked[i])
+                idleTime[i]++;
+        }
+        
+        // Process bus requests in a fair (FIFO) order.
         if (!busLocked) {
-            // Find the core with the oldest pending bus request
-            // If tie, prefer the core with lower index
             int selectedCore = -1;
-            int oldestRequestCycle = globalCycle + 1;
-            
+            int oldestRequest = globalCycle + 1;
             for (int i = 0; i < numCores; i++) {
                 if (!coreFinished[i] && !coreBlocked[i]) {
-                    if (busRequestCycle[i] < oldestRequestCycle) {
-                        // This core has an older request
-                        oldestRequestCycle = busRequestCycle[i];
+                    if (requestTime[i] < oldestRequest) {
+                        oldestRequest = requestTime[i];
                         selectedCore = i;
-                    }
-                    else if (busRequestCycle[i] == oldestRequestCycle) {
-                        // Same request cycle - lower index gets priority
-                        // selectedCore will already be the lower index core if set
-                        if (selectedCore == -1 || i < selectedCore) {
-                            selectedCore = i;
-                        }
                     }
                 }
             }
@@ -99,37 +99,31 @@ void CacheSimulator::runSimulation() {
             if (selectedCore >= 0) {
                 busLocked = true;
                 busOwner = selectedCore;
-                
-                // If this core was stalled, calculate idle time
+                // If the core was stalled, add that waiting time to idleTime.
                 if (stalledSince[selectedCore] > 0) {
-                    int idleTime = globalCycle - stalledSince[selectedCore];
-                    caches[selectedCore]->addIdleTime(idleTime);
-                    stalledSince[selectedCore] = 0; // Reset stall tracking
+                    idleTime[selectedCore] += (globalCycle - stalledSince[selectedCore]);
+                    stalledSince[selectedCore] = 0;
                 }
                 
-                // Parse the current line for the bus owner
                 std::istringstream iss(currentLines[busOwner]);
                 char op;
                 std::string addressStr;
-                
                 iss >> op >> addressStr;
-                
-                // Convert hex address to integer
                 unsigned int address = std::stoul(addressStr, nullptr, 16);
-                
-                // Process the memory operation
                 MemoryOperation memOp = (op == 'R') ? READ : WRITE;
                 std::vector<Cache*> otherCaches;
                 for (int j = 0; j < numCores; j++) {
-                    if (j != busOwner) otherCaches.push_back(caches[j]);
+                    if (j != busOwner)
+                        otherCaches.push_back(caches[j]);
                 }
                 
-                int currentCycle = coreCycles[busOwner];
+                // Process the memory request (using the updated processRequest signature)
+                auto result = caches[busOwner]->processRequest(memOp, address, otherCaches);
+                // Update core active execution time and totaltime.
+                extTime[busOwner] += result.execTime;
+                totTime[busOwner] = extTime[busOwner] + idleTime[busOwner];
+                bool isHit = result.isHit;
                 
-                // Initialize isHit before the debug block
-                bool isHit;
-                
-                // Debug output if enabled
                 if (debugMode) {
                     std::cout << "========== Cycle " << globalCycle << " ==========" << std::endl;
                     
@@ -138,26 +132,15 @@ void CacheSimulator::runSimulation() {
                     unsigned int tag = caches[busOwner]->getTagPublic(address);
                     int lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
                     CacheLineState oldState = INVALID;
-                    
                     if (lineIndex != -1 && caches[busOwner]->getLineState(setIndex, lineIndex) != INVALID) {
                         oldState = caches[busOwner]->getLineState(setIndex, lineIndex);
                     }
                     
-                    // Process the request
-                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
+                    // Print focused debug info about the instruction.
+                    // (Assume printDebugInfo uses the latest cache state.)
+                    caches[busOwner]->printDebugInfo(memOp, address, isHit, oldState, 
+                                                      (lineIndex != -1 ? caches[busOwner]->getLineState(setIndex, lineIndex) : INVALID));
                     
-                    // Get the new state after processing
-                    lineIndex = caches[busOwner]->findLineInSetPublic(setIndex, tag);
-                    CacheLineState newState = INVALID;
-                    
-                    if (lineIndex != -1) {
-                        newState = caches[busOwner]->getLineState(setIndex, lineIndex);
-                    }
-                    
-                    // Print focused debug info about this instruction
-                    caches[busOwner]->printDebugInfo(memOp, address, isHit, oldState, newState);
-                    
-                    // Show bus activity if relevant
                     if (memOp == WRITE && oldState == SHARED) {
                         std::cout << "  → Bus: Sending invalidation to other caches" << std::endl;
                     } else if (!isHit && (oldState == MODIFIED || oldState == EXCLUSIVE)) {
@@ -167,68 +150,48 @@ void CacheSimulator::runSimulation() {
                     }
                     
                     std::cout << "================================" << std::endl << std::endl;
-                }
-                else {
-                    // Just process without debug output
-                    isHit = caches[busOwner]->processRequest(memOp, address, currentCycle, otherCaches);
-                }
-                
-                // If it's a miss, block the core until the specific time
-                if (!isHit) {
-                    coreBlocked[busOwner] = true;
+                    // In debug mode do not block the core.
                 } else {
-                    // Process next line immediately for this core if it's a hit
+                    // For a hit, immediately fetch next instruction.
                     if (std::getline(traceFiles[busOwner], currentLines[busOwner])) {
-                        // Core has another line to process
-                        busRequestCycle[busOwner] = globalCycle; // Update request time
+                        requestTime[busOwner] = globalCycle;
                     } else {
                         coreFinished[busOwner] = true;
                     }
                 }
                 
+                // For a miss, block the core until its active execution completes.
+                if (!isHit) {
+                    coreBlocked[busOwner] = true;
+                    unblockTime[busOwner] = globalCycle + result.execTime;
+                }
+                
                 busLocked = false;
                 busOwner = -1;
             }
-        } else {
-            // Bus is locked, mark cores as stalled if they need the bus
-            for (int i = 0; i < numCores; i++) {
-                if (!coreFinished[i] && !coreBlocked[i] && stalledSince[i] == 0) {
-                    stalledSince[i] = globalCycle; // Mark when stalling began
-                }
-            }
         }
         
-        // Check if any blocked cores can be unblocked
+        // Unblock cores whose waiting (for bus/memory) is complete.
         for (int i = 0; i < numCores; i++) {
-            if (coreBlocked[i] && coreCycles[i] <= globalCycle) {
+            if (coreBlocked[i] && globalCycle >= unblockTime[i]) {
                 coreBlocked[i] = false;
-                
-                // When unblocked, read next line
+                // Read the next instruction (if any).
                 if (std::getline(traceFiles[i], currentLines[i])) {
-                    // Core has another line to process
-                    busRequestCycle[i] = globalCycle; // Update request time
+                    requestTime[i] = globalCycle;
                 } else {
                     coreFinished[i] = true;
                 }
             }
         }
-        
-        // For cores that aren't finished or blocked and haven't been processed yet,
-        // record their bus request
-        for (int i = 0; i < numCores; i++) {
-            if (!coreFinished[i] && !coreBlocked[i] && busRequestCycle[i] == 0) {
-                busRequestCycle[i] = globalCycle;
-            }
-        }
     }
     
-    // Collect final statistics
+    // After simulation, update each cache's total cycle counter.
     for (int i = 0; i < numCores; i++) {
-        totalInvalidations += caches[i]->getBusInvalidations();
-        totalBusTraffic += caches[i]->getBusTraffic();
+        // Each cache now records totTime from simulation.
+        caches[i]->setTotalCycles(totTime[i]);
+        caches[i]->setIdleCycles(idleTime[i]);
     }
     
-    // Print statistics
     printStatistics();
 }
 

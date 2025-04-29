@@ -5,6 +5,14 @@
 #include "CacheLine.h"
 #include <vector>
 
+// enum MemoryOperation { READ, WRITE };
+// enum BusTransaction { BUS_READ, BUS_INVALIDATE, BUS_UPGRADE, BUS_WRITE };
+
+struct RequestResult {
+    bool isHit;
+    int execTime; // time (in cycles) to execute the instruction (fetch + 1 cycle to process)
+};
+
 class Cache {
 private:
     int coreId;
@@ -41,8 +49,7 @@ public:
     Cache(int coreId, int s, int E, int b);
     
     // Core cache operations
-    bool processRequest(MemoryOperation op, unsigned int address, int& cycle, 
-                      std::vector<Cache*>& otherCaches);
+    RequestResult processRequest(MemoryOperation op, unsigned int address, std::vector<Cache*>& otherCaches);
     
     // Bus snooping operations
     bool handleBusRequest(BusTransaction busOp, unsigned int address, 
@@ -100,6 +107,10 @@ public:
     unsigned int getSetIndexPublic(unsigned int address) const { return getSetIndex(address); }
     unsigned int getTagPublic(unsigned int address) const { return getTag(address); }
     int findLineInSetPublic(unsigned int setIndex, unsigned int tag) const { return findLineInSet(setIndex, tag); }
+
+    // New methods to set cycles
+    void setTotalCycles(int cycles);
+    void setIdleCycles(int cycles);
 };
 
 #endif // CACHE_H
