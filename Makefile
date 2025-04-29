@@ -1,7 +1,8 @@
 # Makefile for L1 Cache Simulator
 
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -O2
+CXXFLAGS = -Wall -Wextra -O2
+CXXFLAGS += -g -O1 -fsanitize=address
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
@@ -24,5 +25,6 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean:
 	rm -rf $(OBJDIR)/*.o $(BINDIR)/$(EXECUTABLE)
+	rmdir $(OBJDIR) $(BINDIR) 2>/dev/null || true
 
 .PHONY: all clean

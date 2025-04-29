@@ -1,43 +1,3 @@
-========== Cycle 1 ==========
-Core 0: READ 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: E | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
-========== Cycle 2 ==========
-Core 1: READ 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: S | Exec time: 17 cycles | Idle time: 16 cycles
-  → Bus: Memory access
-================================
-
-========== Cycle 3 ==========
-Core 2: WRITE 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: M | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
-========== Cycle 4 ==========
-Core 3: WRITE 0x7e1afe78 - MISS [Set: 51, Tag: 0xfc35f] State: M | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
-========== Cycle 105 ==========
-Core 2: READ 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: E | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
-========== Cycle 106 ==========
-Core 3: WRITE 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: M | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
-========== Cycle 120 ==========
-Core 1: READ 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: S | Exec time: 17 cycles | Idle time: 32 cycles
-  → Bus: Memory access
-================================
-
-========== Cycle 203 ==========
-Core 0: WRITE 0x7e1ac04c - MISS [Set: 2, Tag: 0xfc358] State: M | Exec time: 101 cycles | Idle time: 0 cycles
-  → Bus: Cache-to-cache transfer
-================================
-
 Cache Simulation Results:
 =========================
 
@@ -49,9 +9,9 @@ Core 0 Statistics:
   Cache hits: 0
   Miss rate: 100.000000%
   Cache evictions: 0
-  Cache writebacks: 0
-  Total execution cycles: 304
-  Idle cycles: 102
+  Cache writebacks: 1
+  Total execution cycles: 218
+  Idle cycles: 216
 
 Core 1 Statistics:
   Read instructions: 2
@@ -62,8 +22,8 @@ Core 1 Statistics:
   Miss rate: 100.000000%
   Cache evictions: 0
   Cache writebacks: 0
-  Total execution cycles: 237
-  Idle cycles: 203
+  Total execution cycles: 402
+  Idle cycles: 400
 
 Core 2 Statistics:
   Read instructions: 1
@@ -74,8 +34,8 @@ Core 2 Statistics:
   Miss rate: 100.000000%
   Cache evictions: 0
   Cache writebacks: 1
-  Total execution cycles: 306
-  Idle cycles: 104
+  Total execution cycles: 334
+  Idle cycles: 332
 
 Core 3 Statistics:
   Read instructions: 0
@@ -85,9 +45,9 @@ Core 3 Statistics:
   Cache hits: 0
   Miss rate: 100.000000%
   Cache evictions: 0
-  Cache writebacks: 1
-  Total execution cycles: 207
-  Idle cycles: 5
+  Cache writebacks: 0
+  Total execution cycles: 350
+  Idle cycles: 348
 
 Global Statistics:
   Total invalidations on the bus: 0

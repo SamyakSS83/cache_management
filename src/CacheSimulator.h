@@ -17,6 +17,7 @@ private:
     int globalCycle;
     bool busLocked;
     int busOwner; // Core ID of the bus owner
+    int busFreeCycle; // cycle when bus becomes free
     std::vector<int> stalledSince; // Tracks when cores began waiting for the bus
     bool debugMode;
 
