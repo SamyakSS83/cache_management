@@ -164,9 +164,20 @@ void CacheSimulator::runSimulation() {
                 
                 // Process the instruction using the Cache's processRequest which integrates LRU and MESI logic.
                 bool hit = false;
+                int cyclesUsed = 0;
+                int bytesTransferred = 0;
+                
                 if (opChar == 'R') {
                     core.readCount++;
-                    hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches);
+                    hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
+                    core.extime += cyclesUsed;
+                    core.dataTraffic += bytesTransferred;
+                    totalBusTraffic += bytesTransferred;
+                    
+                    if (bytesTransferred > 0) {
+                        totalBusTransactions++;
+                    }
+                    
                     if (hit) {
                         debugPrint("Core " + std::to_string(coreId) + " READ HIT for address " + addrStr);
                     } else {
@@ -175,7 +186,15 @@ void CacheSimulator::runSimulation() {
                 }
                 else if (opChar == 'W') {
                     core.writeCount++;
-                    hit = core.cachePtr->processRequest(WRITE, address, globalCycle, otherCaches);
+                    hit = core.cachePtr->processRequest(WRITE, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
+                    core.extime += cyclesUsed;
+                    core.dataTraffic += bytesTransferred;
+                    totalBusTraffic += bytesTransferred;
+                    
+                    if (bytesTransferred > 0) {
+                        totalBusTransactions++;
+                    }
+                    
                     if (hit) {
                         debugPrint("Core " + std::to_string(coreId) + " WRITE HIT for address " + addrStr);
                     } else {
@@ -189,9 +208,10 @@ void CacheSimulator::runSimulation() {
                 else
                     core.missCount++;
                 
-                // Also update eviction and write-back counts from the cache.
+                // Also update eviction, write-back counts and invalidations from the cache
                 core.evictionCount = core.cachePtr->getEvictionCount();
                 core.writebackCount = core.cachePtr->getWritebackCount();
+                core.busInvalidations = core.cachePtr->getBusInvalidations();
                 
                 // Release the bus.
                 busFree = true;

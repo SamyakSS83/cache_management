@@ -44,6 +44,22 @@ private:
                         int &cycle,
                         std::vector<Cache*> &otherCaches);
 
+    // Add this method with cyclesUsed and bytesTransferred parameters
+    bool processRequest(MemoryOperation op,
+                        unsigned int address, 
+                        int &cycle, 
+                        std::vector<Cache*> &otherCaches,
+                        int &cyclesUsed, 
+                        int &bytesTransferred);
+
+    // Keep the BusTransaction version
+    bool processRequest(BusTransaction type, 
+                        unsigned int address,
+                        int &cycle, 
+                        const std::vector<Cache*>& otherCaches,
+                        int &cyclesUsed, 
+                        int &bytesTransferred);
+
     // snooping bus operations
     bool handleBusRequest(BusTransaction busOp,
                           unsigned int address,
@@ -55,6 +71,7 @@ private:
     int getMissCount() const { return missCount; }
     int getEvictionCount() const { return evictionCount; }
     int getWritebackCount() const { return writebackCount; }
+    int getBusInvalidations() const { return busInvalidations; }
 
     // for debug / tracing
     void printState();

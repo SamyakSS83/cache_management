@@ -232,6 +232,29 @@ bool Cache::processRequest(MemoryOperation op,
 }
 
 //
+// Implement the new processRequest method that tracks cycles and bytes
+//
+bool Cache::processRequest(MemoryOperation op,
+                          unsigned int address,
+                          int &cycle,
+                          std::vector<Cache*> &otherCaches,
+                          int &cyclesUsed,
+                          int &bytesTransferred) {
+    // Start counting cycles and bytes
+    int startCycle = cycle;
+    int prevBusTraffic = busTraffic;
+    
+    // Use the existing processRequest implementation
+    bool result = processRequest(op, address, cycle, otherCaches);
+    
+    // Calculate and return the metrics
+    cyclesUsed = cycle - startCycle;
+    bytesTransferred = busTraffic - prevBusTraffic;
+    
+    return result;
+}
+
+//
 // Handle snooping bus operations.
 // (This implementation is a stub. In a full implementation, this would examine the bus transaction,
 // update states accordingly and return whether the request resulted in a write-back.)
