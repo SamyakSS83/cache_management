@@ -1,0 +1,55 @@
+Cache Simulation Results:
+=========================
+
+Core 0 Statistics:
+  Read instructions: 0
+  Write instructions: 0
+  Total memory references: 0
+  Cache misses: 0
+  Cache hits: 0
+  Miss rate: 0.000000%
+  Cache evictions: 0
+  Cache writebacks: 0
+  Total execution cycles: 0
+  Idle cycles: 0
+
+Core 1 Statistics:
+  Read instructions: 0
+  Write instructions: 0
+  Total memory references: 0
+  Cache misses: 0
+  Cache hits: 0
+  Miss rate: 0.000000%
+  Cache evictions: 0
+  Cache writebacks: 0
+  Total execution cycles: 0
+  Idle cycles: 0
+
+Core 2 Statistics:
+  Read instructions: 0
+  Write instructions: 0
+  Total memory references: 0
+  Cache misses: 0
+  Cache hits: 0
+  Miss rate: 0.000000%
+  Cache evictions: 0
+  Cache writebacks: 0
+  Total execution cycles: 0
+  Idle cycles: 0
+
+Core 3 Statistics:
+  Read instructions: 0
+  Write instructions: 0
+  Total memory references: 0
+  Cache misses: 0
+  Cache hits: 0
+  Miss rate: 0.000000%
+  Cache evictions: 0
+  Cache writebacks: 0
+  Total execution cycles: 0
+  Idle cycles: 0
+
+Global Statistics:
+  Total invalidations on the bus: 0
+  Total data traffic on the bus: 0 bytes
+
