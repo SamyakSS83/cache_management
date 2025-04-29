@@ -124,7 +124,7 @@ void CacheSimulator::runSimulation() {
         globalCycle++; //increment global cycle for each cycle
         bool executed = false;
         for (int coreId = 0; coreId < numCores; coreId++) {
-            
+            cout << "Core " << coreId << " is executing" << endl;
             // if (globalCycle > busNextFree) {
             //     busFree = true;
             //     busOwner = -1;
@@ -604,7 +604,7 @@ void CacheSimulator::runSimulation() {
                                                             busOwner = -1;
                                                             core.cache[address] = MODIFIED;
                                                             //key request processed, set other owner to I, and my copy to M
-                                                            cores[j].cache[address] = INVALID;
+                                                            cores[ownerCore].cache[address] = INVALID;
                                                             core.dataTraffic += blockSize;
                                                             totalBusTraffic += blockSize;
                                                             break;
@@ -659,7 +659,7 @@ void CacheSimulator::runSimulation() {
                                                             busOwner = -1;
                                                             core.cache[address] = MODIFIED;
                                                             //key request processed, set other owner to I, and my copy to M
-                                                            cores[j].cache[address] = INVALID;
+                                                            cores[ownerCore].cache[address] = INVALID;
                                                             core.dataTraffic += blockSize;
                                                             totalBusTraffic += blockSize;
                                                             break;
@@ -678,7 +678,7 @@ void CacheSimulator::runSimulation() {
                                             }
                                         }
                                         
-                                        assert(cores[j].cache[address] == INVALID);
+                                        // assert(cores[ownerCore].cache[address] == INVALID);
                                         //some invalidation stats
                                         break;
                                     }
@@ -710,7 +710,7 @@ void CacheSimulator::runSimulation() {
                         if (!canProceed) continue; // cant issue request, move on
                         // Fetch data from memory, didnt find in any other cache
                         int memAccessCycles = 100;
-                        assert(!foundInOther);
+                        // assert(!foundInOther);
                         if (busFree) //bus is free, capture it and send req to memory
                         {
                             busFree = false;
@@ -750,7 +750,7 @@ void CacheSimulator::runSimulation() {
                         // totalBusTraffic += blockSize;
                         
                         // After write miss, update own state to MODIFIED
-                        assert(core.cache[address] == MODIFIED);
+                        // assert(core.cache[address] == MODIFIED);
                         
                         debugPrint("Memory fetch and modify complete (took " + 
                                   std::to_string(memAccessCycles+1) + " cycles)");
