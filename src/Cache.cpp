@@ -235,23 +235,285 @@ bool Cache::processRequest(MemoryOperation op,
 // Implement the new processRequest method that tracks cycles and bytes
 //
 bool Cache::processRequest(MemoryOperation op,
-                          unsigned int address,
-                          int &cycle,
-                          std::vector<Cache*> &otherCaches,
-                          int &cyclesUsed,
-                          int &bytesTransferred) {
-    // Start counting cycles and bytes
+                         unsigned int address,
+                         int &cycle,
+                         std::vector<Cache*> &otherCaches,
+                         int &cyclesUsed,
+                         int &bytesTransferred) {
+    unsigned int setIndex = getSetIndex(address);
+    unsigned int tag = getTag(address);
+    int lineIndex = findLineInSet(setIndex, tag);
     int startCycle = cycle;
-    int prevBusTraffic = busTraffic;
+    bytesTransferred = 0;
     
-    // Use the existing processRequest implementation
-    bool result = processRequest(op, address, cycle, otherCaches);
+    // Check if any other cache has this line and in what state
+    Cache* ownerCache = nullptr;
+    int ownerSetIndex = -1;
+    int ownerLineIndex = -1;
+    CacheLineState ownerState = INVALID;
     
-    // Calculate and return the metrics
+    for (Cache* other : otherCaches) {
+        unsigned int otherSetIndex = other->getSetIndex(address);
+        int otherLineIndex = other->findLineInSet(otherSetIndex, tag);
+        if (otherLineIndex != -1) {
+            CacheLine &otherLine = other->sets[otherSetIndex].lines[otherLineIndex];
+            if (otherLine.valid && otherLine.state != INVALID) {
+                ownerCache = other;
+                ownerSetIndex = otherSetIndex;
+                ownerLineIndex = otherLineIndex;
+                ownerState = otherLine.state;
+                break;
+            }
+        }
+    }
+    
+    // CASE 1: CACHE HIT
+    if (lineIndex != -1) {
+        CacheLine &line = sets[setIndex].lines[lineIndex];
+        
+        // Handle read hit - simple case, always take 1 cycle
+        if (op == READ) {
+            updateLRU(setIndex, lineIndex);
+            hitCount++;
+            cycle += 1;
+            cyclesUsed = cycle - startCycle;
+            return true;
+        } 
+        // Handle write hit - depends on current state
+        else if (op == WRITE) {
+            writeCount++;
+            hitCount++;
+            
+            // Write hit on EXCLUSIVE line - simple case, just 1 cycle
+            if (line.state == EXCLUSIVE) {
+                line.state = MODIFIED;
+                updateLRU(setIndex, lineIndex);
+                cycle += 1;
+                cyclesUsed = cycle - startCycle;
+                return true;
+            }
+            // Write hit on MODIFIED line - also simple, just 1 cycle
+            else if (line.state == MODIFIED) {
+                updateLRU(setIndex, lineIndex);
+                cycle += 1;
+                cyclesUsed = cycle - startCycle;
+                return true;
+            }
+            // Write hit on SHARED line - need to invalidate other copies
+            else if (line.state == SHARED) {
+                // Must wait for bus to be free before proceeding
+                // Note: In the actual implementation, busRequest and busGranted
+                // flags would be used to model this
+                
+                // Invalidate all other copies
+                for (Cache* other : otherCaches) {
+                    unsigned int otherSetIndex = other->getSetIndex(address);
+                    int otherLineIndex = other->findLineInSet(otherSetIndex, tag);
+                    if (otherLineIndex != -1 && 
+                        other->sets[otherSetIndex].lines[otherLineIndex].state != INVALID) {
+                        // Mark the other cache's line as invalid
+                        other->sets[otherSetIndex].lines[otherLineIndex].state = INVALID;
+                        other->busInvalidations++;
+                        bytesTransferred += blockSize;
+                    }
+                }
+                
+                // Update our line to MODIFIED
+                line.state = MODIFIED;
+                updateLRU(setIndex, lineIndex);
+                
+                // Cycle cost: 1 for write + bus acquisition overhead
+                cycle += 1;
+                cyclesUsed = cycle - startCycle;
+                busTraffic += bytesTransferred;
+                return true;
+            }
+        }
+    }
+    
+    // CASE 2: CACHE MISS
+    missCount++;
+    
+    // Handle read miss
+    if (op == READ) {
+        readCount++;
+        
+        // If another cache has it in MODIFIED state, we need a cache-to-cache transfer
+        if (ownerCache && ownerState == MODIFIED) {
+            // First, owner must write back to memory (100 cycles)
+            // But it's a cache-to-cache transfer, so data doesn't go to memory first
+            ownerCache->writebackCount++; // Still count as a writeback statistically
+            
+            // Cache-to-cache transfer takes 2*blockSize/4 cycles
+            int transferCycles = (2 * blockSize) / 4;
+            cycle += transferCycles;
+            bytesTransferred += blockSize;
+            
+            // Change owner's state to SHARED
+            ownerCache->sets[ownerSetIndex].lines[ownerLineIndex].state = SHARED;
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in SHARED state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = SHARED;
+            updateLRU(setIndex, victimIndex);
+            
+            // Additional cycle for processing
+            cycle += 1;
+        }
+        // If another cache has it in EXCLUSIVE or SHARED state
+        else if (ownerCache && (ownerState == EXCLUSIVE || ownerState == SHARED)) {
+            // No need to write back, but still need to transfer
+            int transferCycles = (2 * blockSize) / 4;
+            cycle += transferCycles;
+            bytesTransferred += blockSize;
+            
+            // Change owner's state to SHARED
+            ownerCache->sets[ownerSetIndex].lines[ownerLineIndex].state = SHARED;
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in SHARED state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = SHARED;
+            updateLRU(setIndex, victimIndex);
+            
+            // Additional cycle for processing
+            cycle += 1;
+        }
+        // No other cache has it, fetch from memory
+        else {
+            // Memory access takes 100 cycles
+            cycle += 100;
+            bytesTransferred += blockSize;
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in EXCLUSIVE state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = EXCLUSIVE;
+            updateLRU(setIndex, victimIndex);
+            
+            // Additional cycle for processing
+            cycle += 1;
+        }
+    }
+    // Handle write miss
+    else if (op == WRITE) {
+        writeCount++;
+        
+        // If another cache has it in MODIFIED state
+        if (ownerCache && ownerState == MODIFIED) {
+            // Owner must write back to memory
+            ownerCache->writebackCount++;
+            cycle += 100; // 100 cycles for writeback
+            
+            // Then we fetch from memory
+            cycle += 100; // 100 cycles for memory access
+            bytesTransferred += 2 * blockSize; // Both operations use bus
+            
+            // Invalidate the line in owner's cache
+            ownerCache->sets[ownerSetIndex].lines[ownerLineIndex].state = INVALID;
+            ownerCache->busInvalidations++;
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in MODIFIED state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = MODIFIED;
+            updateLRU(setIndex, victimIndex);
+            
+            // Finally write to it (1 cycle)
+            cycle += 1;
+        }
+        // If another cache has it in EXCLUSIVE or SHARED state
+        else if (ownerCache && (ownerState == EXCLUSIVE || ownerState == SHARED)) {
+            // Fetch from memory
+            cycle += 100; // 100 cycles for memory access
+            bytesTransferred += blockSize;
+            
+            // Invalidate all copies in other caches
+            for (Cache* other : otherCaches) {
+                unsigned int otherSetIndex = other->getSetIndex(address);
+                int otherLineIndex = other->findLineInSet(otherSetIndex, tag);
+                if (otherLineIndex != -1 &&
+                    other->sets[otherSetIndex].lines[otherLineIndex].state != INVALID) {
+                    // Mark the other cache's line as invalid
+                    other->sets[otherSetIndex].lines[otherLineIndex].state = INVALID;
+                    other->busInvalidations++;
+                }
+            }
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in MODIFIED state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = MODIFIED;
+            updateLRU(setIndex, victimIndex);
+            
+            // Write to it (1 cycle)
+            cycle += 1;
+        }
+        // No other cache has it, fetch from memory
+        else {
+            // Fetch from memory
+            cycle += 100; // 100 cycles for memory access
+            bytesTransferred += blockSize;
+            
+            // Find a spot in our cache
+            int victimIndex = pickLRUVictim(setIndex);
+            if (sets[setIndex].lines[victimIndex].valid) {
+                evictLine(setIndex, victimIndex, cycle);
+            }
+            
+            // Add line to our cache in MODIFIED state
+            CacheLine &line = sets[setIndex].lines[victimIndex];
+            line.valid = true;
+            line.tag = tag;
+            line.state = MODIFIED;
+            updateLRU(setIndex, victimIndex);
+            
+            // Write to it (1 cycle)
+            cycle += 1;
+        }
+    }
+    
+    // Update cycle count and bus traffic
     cyclesUsed = cycle - startCycle;
-    bytesTransferred = busTraffic - prevBusTraffic;
+    busTraffic += bytesTransferred;
     
-    return result;
+    return false; // It was a miss
 }
 
 //
