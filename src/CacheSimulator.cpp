@@ -54,7 +54,7 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
     globalCycle = 0;
     busFree = true;
     busOwner = -1;
-    
+    debugMode = false;
     // Block size in bytes: blockSize = 2^b
     blockSize = 1 << b;
     

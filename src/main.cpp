@@ -48,6 +48,7 @@ int main(int argc, char* argv[]) {
                 printHelp();
                 return 0;
             default:
+                debugMode = false;
                 printHelp();
                 return 1;
         }
