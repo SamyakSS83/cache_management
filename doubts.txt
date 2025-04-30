@@ -1,5 +1,0 @@
-- how long does a bus transaction take?
-- what exactly should a bus transaction have and do?
-- what is the bus latency?
-- what is the bus bandwidth? - 1 transaction at a time
-try to figure out from lecture slides or readings
