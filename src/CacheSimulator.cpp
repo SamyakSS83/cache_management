@@ -20,6 +20,7 @@ struct CoreState {
     bool finished;
     int extime;    // execution time counter
     int idletime;  // idle time counter
+    int finishtime; // finish time counter
 
     // Each core now uses a Cache (with full LRU and MESI handling)
     Cache* cachePtr;
@@ -179,6 +180,7 @@ void CacheSimulator::runSimulation() {
                     if (lineIndex == -1) { //miss happened
                         if (!busFree) { //bus not free, stall on read miss
                             core.idletime++;
+                            cout << "hee hie ihei" << endl;
                             debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " +
                                        std::to_string(busOwner) + ")");
                             continue;
@@ -253,6 +255,7 @@ void CacheSimulator::runSimulation() {
                 // Read next line for this core.
                 if (!std::getline(core.trace, core.currentLine)) {
                     core.finished = true;
+                    core.finishtime = globalCycle;
                     debugPrint("Core " + std::to_string(coreId) + " has no more instructions");
                 } else {
                     debugPrint("Core " + std::to_string(coreId) + " next instruction: " + core.currentLine);
@@ -317,8 +320,8 @@ void CacheSimulator::printStatistics() {
         out << "Total Instructions: " << core.totalInstructions << std::endl;
         out << "Total Reads: " << core.readCount << std::endl;
         out << "Total Writes: " << core.writeCount << std::endl;
-        out << "Total Execution Cycles: " << core.totalInstructions << std::endl;
-        out << "Idle Cycles: " << core.extime  << std::endl;
+        out << "Total Execution Cycles: " << core.extime << std::endl;
+        out << "Idle Cycles: " << core.finishtime - core.extime << std::endl;
         out << "Cache Misses: " << core.missCount << std::endl;
         out << "Cache Miss Rate: " << std::fixed << std::setprecision(2) << missRate << "%" << std::endl;
         out << "Cache Evictions: " << core.evictionCount << std::endl;
