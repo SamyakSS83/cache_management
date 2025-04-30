@@ -134,8 +134,8 @@ void CacheSimulator::runSimulation() {
             }
             
             if (!core.currentLine.empty()) {
-                cores[1].cachePtr->printState();
-                cout << "state of core 1" << endl;
+                // cores[1].cachePtr->printState();
+                // cout << "state of core 1" << endl;
                 // If the bus is not free, the core idles.
                 // if (!busFree) {
                 //     core.idletime++;
