@@ -62,3 +62,9 @@ The simulator implements the MESI protocol:
 - I (Invalid): Line is invalid
 
 When a read or write miss occurs, the simulator checks for copies in other caches and handles coherence appropriately, updating the MESI states and tracking bus traffic.
+
+## Additional Testcase
+
+Kindly refer to [TEST.md](TEST.md) for their description. 
+
+They are present in [assignment3_traces](assignment3_traces) folder
