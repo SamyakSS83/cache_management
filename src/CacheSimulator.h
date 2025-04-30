@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <utility>
+// #include "Cache.h"
 
 class CacheSimulator {
 private:
