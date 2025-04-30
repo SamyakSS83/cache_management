@@ -11,6 +11,7 @@
 #include <cmath>
 #include <algorithm>
 #include <iomanip>
+using namespace std;
 
 // Extend the CoreState structure to include a pointer to the per‐core cache.
 struct CoreState {
@@ -133,17 +134,17 @@ void CacheSimulator::runSimulation() {
             
             if (!core.currentLine.empty()) {
                 // If the bus is not free, the core idles.
-                if (!busFree) {
-                    core.idletime++;
-                    debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " +
-                               std::to_string(busOwner) + ")");
-                    continue;
-                }
+                // if (!busFree) {
+                //     core.idletime++;
+                //     debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " +
+                //                std::to_string(busOwner) + ")");
+                //     continue;
+                // }
                 
                 // Mark bus busy for this core.
-                busFree = false;
-                busOwner = coreId;
-                debugPrint("Core " + std::to_string(coreId) + " acquired bus");
+                // busFree = false;
+                // busOwner = coreId;
+                // debugPrint("Core " + std::to_string(coreId) + " acquired bus");
                 
                 // Use an istringstream to parse the line command from the trace
                 std::istringstream iss(core.currentLine);
@@ -169,7 +170,31 @@ void CacheSimulator::runSimulation() {
                 
                 if (opChar == 'R') {
                     core.readCount++;
+
+                    unsigned int setIndex = core.cachePtr->getSetIndex(address);
+                    unsigned int tag = core.cachePtr->getTag(address);
+                    int lineIndex = core.cachePtr->findLineInSet(setIndex, tag);
+                    std::cout << "coreId: " << coreId << " lineIndex : " << lineIndex << " address: " << address << std::endl;
+
+                    if (lineIndex == -1) { //miss happened
+                        if (!busFree) { //bus not free, stall on read miss
+                            core.idletime++;
+                            debugPrint("Core " + std::to_string(coreId) + " is stalled waiting for bus (owner: Core " +
+                                       std::to_string(busOwner) + ")");
+                            continue;
+                        }
+                    }
                     hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
+                    
+                    std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
+                    cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
+
+                    if (!hit) {
+                        busFree = false;
+                        busOwner = coreId;
+                        debugPrint("Core " + std::to_string(coreId) + " acquired bus");
+                    }
+
                     core.extime += cyclesUsed;
                     core.dataTraffic += bytesTransferred;
                     totalBusTraffic += bytesTransferred;
