@@ -6,6 +6,8 @@ import subprocess
 
 # Create assets directory if it doesn't exist
 os.makedirs('assets', exist_ok=True)
+subprocess.run("make clean", shell=True, check=True)
+subprocess.run("make", shell=True, check=True)    
 
 def parse_execution_cycles(filename):
     """Extract execution cycles from simulation output file"""
