@@ -54,7 +54,7 @@ CacheSimulator::CacheSimulator(const std::string& traceFilePrefix, int s, int E,
     globalCycle = 0;
     busFree = true;
     busOwner = -1;
-    debugMode = false;
+    // debugMode = false;
     // Block size in bytes: blockSize = 2^b
     blockSize = 1 << b;
     
@@ -134,6 +134,8 @@ void CacheSimulator::runSimulation() {
             }
             
             if (!core.currentLine.empty()) {
+                cores[1].cachePtr->printState();
+                cout << "state of core 1" << endl;
                 // If the bus is not free, the core idles.
                 // if (!busFree) {
                 //     core.idletime++;
@@ -175,7 +177,9 @@ void CacheSimulator::runSimulation() {
                     unsigned int setIndex = core.cachePtr->getSetIndex(address);
                     unsigned int tag = core.cachePtr->getTag(address);
                     int lineIndex = core.cachePtr->findLineInSet(setIndex, tag);
-                    // std::cout << "coreId: " << coreId << " lineIndex : " << lineIndex << " address: " << address << std::endl;
+
+                    std::cout << "coreId: " << coreId << " lineIndex : " << lineIndex << " address: " << address << std::endl;
+                    cout << "tag: " << tag << " setIndex: " << setIndex << endl;
 
                     if (lineIndex == -1) { //miss happened
                         if (!busFree) { //bus not free, stall on read miss
@@ -188,8 +192,8 @@ void CacheSimulator::runSimulation() {
                     }
                     hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
 
-                    // std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
-                    // cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
+                    std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
+                    cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
 
                     if (!hit) {
                         busFree = false;

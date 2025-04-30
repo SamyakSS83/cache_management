@@ -244,6 +244,7 @@ bool Cache::processRequest(MemoryOperation op,
     unsigned int setIndex = getSetIndex(address);
     unsigned int tag = getTag(address);
     int lineIndex = findLineInSet(setIndex, tag);
+    bool isInvalid = (this->sets[setIndex].lines[lineIndex].state == INVALID);
     int startCycle = cycle;
     bytesTransferred = 0;
     
@@ -269,7 +270,7 @@ bool Cache::processRequest(MemoryOperation op,
     }
     
     // CASE 1: CACHE HIT
-    if (lineIndex != -1) {
+    if (lineIndex != -1 && !isInvalid) {
         CacheLine &line = sets[setIndex].lines[lineIndex];
         
         // Handle read hit - simple case, always take 1 cycle
