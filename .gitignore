@@ -1,4 +1,4 @@
 bin
 obj
 *.zip
-L1simulate
+./L1simulate
