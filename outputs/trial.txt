@@ -1,0 +1,147 @@
+[Cycle 0] Initializing simulator with 4 cores
+[Cycle 0] Block size: 32 bytes
+[Cycle 0] Core 0 first instruction: R 0x7e1afe78
+[Cycle 0] Core 1 first instruction: R 0x7e1afe78
+[Cycle 0] Core 2 first instruction: W 0x7e1afe78
+[Cycle 0] Core 3 first instruction: W 0x7e1afe78
+[Cycle 0] ======= Starting cycle 0 =======
+[Cycle 0] Bus is free
+[Cycle 0] Core 0 acquired bus
+[Cycle 0] Core 0 processing: R 0x7e1afe78
+[Cycle 0] Core 0 READ MISS for address 0x7e1afe78
+[Cycle 101] Memory fetch complete (took 100 cycles)
+[Cycle 101] Core 0 state now EXCLUSIVE
+[Cycle 101] Core 0 released the bus
+[Cycle 101] Core 0 next instruction: W 0x7e1ac04c
+[Cycle 101] Core 1 acquired bus
+[Cycle 101] Core 1 processing: R 0x7e1afe78
+[Cycle 101] Core 1 READ MISS for address 0x7e1afe78
+[Cycle 101] Core 1 found data in Core 0 (state: E)
+[Cycle 101] Extra cycle for E/M state transfer
+[Cycle 119] Core 0 state changed to SHARED
+[Cycle 119] Cache-to-cache transfer complete (took 17 cycles)
+[Cycle 119] Core 1 state now SHARED
+[Cycle 119] Core 1 released the bus
+[Cycle 119] Core 1 next instruction: R 0x7e1ac04c
+[Cycle 119] Core 2 acquired bus
+[Cycle 119] Core 2 processing: W 0x7e1afe78
+[Cycle 119] Core 2 WRITE MISS for address 0x7e1afe78
+[Cycle 119] Invalidated Core 0 copy (was S)
+[Cycle 119] Invalidated Core 1 copy (was S)
+[Cycle 220] Memory fetch and modify complete (took 101 cycles)
+[Cycle 220] Core 2 state now MODIFIED
+[Cycle 220] Core 2 released the bus
+[Cycle 220] Core 2 next instruction: R 0x7e1ac04c
+[Cycle 220] Core 3 acquired bus
+[Cycle 220] Core 3 processing: W 0x7e1afe78
+[Cycle 220] Core 3 WRITE MISS for address 0x7e1afe78
+[Cycle 220] Invalidated Core 2 copy (was M)
+[Cycle 321] Memory fetch and modify complete (took 101 cycles)
+[Cycle 321] Core 3 state now MODIFIED
+[Cycle 321] Core 3 released the bus
+[Cycle 321] Core 3 next instruction: W 0x7e1ac04c
+[Cycle 321] ======= Starting cycle 321 =======
+[Cycle 321] Bus is free
+[Cycle 321] Core 0 acquired bus
+[Cycle 321] Core 0 processing: W 0x7e1ac04c
+[Cycle 321] Core 0 WRITE MISS for address 0x7e1ac04c
+[Cycle 422] Memory fetch and modify complete (took 101 cycles)
+[Cycle 422] Core 0 state now MODIFIED
+[Cycle 422] Core 0 released the bus
+[Cycle 422] Core 0 has no more instructions
+[Cycle 422] Core 1 acquired bus
+[Cycle 422] Core 1 processing: R 0x7e1ac04c
+[Cycle 422] Core 1 READ MISS for address 0x7e1ac04c
+[Cycle 422] Core 1 found data in Core 0 (state: M)
+[Cycle 422] Extra cycle for E/M state transfer
+[Cycle 440] Core 0 state changed to SHARED
+[Cycle 440] Cache-to-cache transfer complete (took 17 cycles)
+[Cycle 440] Core 1 state now SHARED
+[Cycle 440] Core 1 released the bus
+[Cycle 440] Core 1 has no more instructions
+[Cycle 440] Core 2 acquired bus
+[Cycle 440] Core 2 processing: R 0x7e1ac04c
+[Cycle 440] Core 2 READ MISS for address 0x7e1ac04c
+[Cycle 440] Core 2 found data in Core 0 (state: S)
+[Cycle 457] Cache-to-cache transfer complete (took 16 cycles)
+[Cycle 457] Core 2 state now SHARED
+[Cycle 457] Core 2 released the bus
+[Cycle 457] Core 2 has no more instructions
+[Cycle 457] Core 3 acquired bus
+[Cycle 457] Core 3 processing: W 0x7e1ac04c
+[Cycle 457] Core 3 WRITE MISS for address 0x7e1ac04c
+[Cycle 457] Invalidated Core 0 copy (was S)
+[Cycle 457] Invalidated Core 1 copy (was S)
+[Cycle 457] Invalidated Core 2 copy (was S)
+[Cycle 558] Memory fetch and modify complete (took 101 cycles)
+[Cycle 558] Core 3 state now MODIFIED
+[Cycle 558] Core 3 released the bus
+[Cycle 558] Core 3 has no more instructions
+Simulation Parameters:
+Trace Prefix: app
+Set Index Bits: 6
+Associativity: 2
+Block Bits: 5
+Block Size (Bytes): 32
+Number of Sets: 64
+Cache Size (KB per core): 4.00
+MESI Protocol: Enabled
+Write Policy: Write-back, Write-allocate
+Replacement Policy: LRU
+Bus: Central snooping bus
+
+Core 0 Statistics:
+Total Instructions: 2
+Total Reads: 1
+Total Writes: 1
+Total Execution Cycles: 202
+Idle Cycles: 0
+Cache Misses: 2
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 2
+Data Traffic (Bytes): 64
+
+Core 1 Statistics:
+Total Instructions: 2
+Total Reads: 2
+Total Writes: 0
+Total Execution Cycles: 36
+Idle Cycles: 0
+Cache Misses: 2
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 2
+Data Traffic (Bytes): 64
+
+Core 2 Statistics:
+Total Instructions: 2
+Total Reads: 1
+Total Writes: 1
+Total Execution Cycles: 118
+Idle Cycles: 0
+Cache Misses: 2
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 2
+Data Traffic (Bytes): 128
+
+Core 3 Statistics:
+Total Instructions: 2
+Total Reads: 0
+Total Writes: 2
+Total Execution Cycles: 202
+Idle Cycles: 0
+Cache Misses: 2
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 0
+Data Traffic (Bytes): 192
+
+Overall Bus Summary:
+Total Bus Transactions: 8
+Total Bus Traffic (Bytes): 448

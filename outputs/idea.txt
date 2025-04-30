@@ -1,0 +1,142 @@
+If read hit:
+//Execute
+Total time+1
+Extime+1
+
+If read miss
+
+
+If Bus free
+If in other cache_s
+
+if mem_dirty:
+totaltime +100
+extime+100
+else
+
+//c2c transfer 
+Ex time + 2n 
+Total time +2n 
+Bus free 
+My state S, 
+extime +1
+totaltime +1
+
+
+if in other cache_e
+
+if mem_dirty:
+totaltime +100
+extime+100
+else
+
+Ex time + 2n +1
+Total time +2n +1
+Buffer free at time + 2n
+My state S, 
+other state S
+
+if in other cache_m
+
+if mem_dirty:
+totaltime +100
+extime+100
+else
+
+Ex time + 2n +1
+Total time +2n +1
+My state S, 
+other state S
+
+//wb to mem
+total time + 100
+bus free
+
+
+If not in cache:
+//fetch
+
+if mem_dirty:
+totaltime +100
+extime+100
+else
+
+
+Ex time +101
+Total time + 101
+Bus free at time + 100
+
+
+If bus not free:
+Put in buffer;
+queue,stall, add to idle time until chance then do above
+
+
+
+
+
+
+if write hit
+
+if bus free:
+
+if is_S
+ send I
+make m
+bus free
+extime +1
+totaltime +1
+
+if is_M
+bus free
+totaltime+1
+extime+1
+
+if is_E
+extime+1
+totaltime+1
+make M
+
+if bus_not_free:
+queue,stall, add to idle time until chance and then do above
+
+if write miss:
+
+if bus free:
+
+case: rwitm (read with intent to modify)
+
+if others_dont_have:
+
+if my_mem_dirty:
+totaltime +100
+extime+100
+else
+
+total time +100
+extime+100
+bus free
+totaltime,extime +1
+state = E
+
+if other_has:
+is_S or is_E:
+
+if my_mem_dirty:
+totaltime +100
+extime+100
+else
+
+totaltime,extime +100 //from mem
+bus free
+totaltime,extime+1
+
+is_m
+send I to others //safety
+idle_time+100
+make_other e
+
+
+if bus_not_free:
+queue,stall add to idle time until chance and then do above
+

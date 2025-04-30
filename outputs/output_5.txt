@@ -1,0 +1,2859 @@
+[Cycle 0] Initializing simulator with 4 cores
+[Cycle 0] Block size: 32 bytes
+[Cycle 0] Core 0 first instruction: R 0xf0000000
+[Cycle 0] Core 1 first instruction: R 0xf0000000
+[Cycle 0] Core 2 first instruction: R 0xffff0000
+[Cycle 0] Core 3 first instruction: R 0xffff00ff
+[Cycle 0] ======= Starting cycle 0 =======
+[Cycle 0] Bus is free
+Cache state for core 1:
+Set 0:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 0] Core 0 processing: R 0xf0000000
+coreId: 0 lineIndex : -1 address: 4026531840
+tag: 1966080 setIndex: 0
+coreId: 0 hit : 0 address: 4026531840
+bus is free at cycle: 101 busOwner: -1
+[Cycle 101] Core 0 acquired bus
+[Cycle 101] Core 0 READ MISS for address 0xf0000000
+[Cycle 101] Core 0 released the bus
+[Cycle 101] Core 0 cache state:
+Cache state for core 0:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: E, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 101] Core 0 next instruction: W 0xf0000000
+Cache state for core 1:
+Set 0:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 101] Core 1 processing: R 0xf0000000
+coreId: 1 lineIndex : -1 address: 4026531840
+tag: 1966080 setIndex: 0
+coreId: 1 hit : 0 address: 4026531840
+bus is free at cycle: 118 busOwner: -1
+[Cycle 118] Core 1 acquired bus
+[Cycle 118] Core 1 READ MISS for address 0xf0000000
+[Cycle 118] Core 1 released the bus
+[Cycle 118] Core 1 cache state:
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: S, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 118] Core 1 next instruction: R 0xf0000004
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: S, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 118] Core 2 processing: R 0xffff0000
+coreId: 2 lineIndex : -1 address: 4294901760
+tag: 2097120 setIndex: 0
+coreId: 2 hit : 0 address: 4294901760
+bus is free at cycle: 219 busOwner: -1
+[Cycle 219] Core 2 acquired bus
+[Cycle 219] Core 2 READ MISS for address 0xffff0000
+[Cycle 219] Core 2 released the bus
+[Cycle 219] Core 2 cache state:
+Cache state for core 2:
+Set 0:
+  Line 0: Valid, Tag: 2097120, State: E, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 219] Core 2 has no more instructions
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: S, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 219] Core 3 processing: R 0xffff00ff
+coreId: 3 lineIndex : -1 address: 4294902015
+tag: 2097120 setIndex: 7
+coreId: 3 hit : 0 address: 4294902015
+bus is free at cycle: 320 busOwner: -1
+[Cycle 320] Core 3 acquired bus
+[Cycle 320] Core 3 READ MISS for address 0xffff00ff
+[Cycle 320] Core 3 released the bus
+[Cycle 320] Core 3 cache state:
+Cache state for core 3:
+Set 0:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Valid, Tag: 2097120, State: E, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 320] Core 3 has no more instructions
+[Cycle 320] ======= Starting cycle 320 =======
+[Cycle 320] Bus is free
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: S, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 320] Core 0 processing: W 0xf0000000
+[Cycle 321] Core 0 WRITE HIT for address 0xf0000000
+[Cycle 321] Core 0 released the bus
+[Cycle 321] Core 0 cache state:
+Cache state for core 0:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: M, lastUsed: 2
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 321] Core 0 next instruction: R 0xfff000ff
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: I, lastUsed: 1
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 321] Core 1 processing: R 0xf0000004
+coreId: 1 lineIndex : 0 address: 4026531844
+tag: 1966080 setIndex: 0
+coreId: 1 hit : 0 address: 4026531844
+bus is free at cycle: 438 busOwner: -1
+[Cycle 438] Core 1 acquired bus
+[Cycle 438] Core 1 READ MISS for address 0xf0000004
+[Cycle 438] Core 1 released the bus
+[Cycle 438] Core 1 cache state:
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: I, lastUsed: 1
+  Line 1: Valid, Tag: 1966080, State: S, lastUsed: 2
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 438] Core 1 has no more instructions
+[Cycle 438] Core 2 has finished execution
+[Cycle 438] Core 3 has finished execution
+[Cycle 438] ======= Starting cycle 438 =======
+[Cycle 438] Bus is free
+Cache state for core 1:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: I, lastUsed: 1
+  Line 1: Valid, Tag: 1966080, State: S, lastUsed: 2
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+state of core 1
+[Cycle 438] Core 0 processing: R 0xfff000ff
+coreId: 0 lineIndex : -1 address: 4293918975writeback
+tag: 2096640 setIndex: 7
+coreId: 0 hit : 0 address: 4293918975
+bus is free at cycle: 539 busOwner: -1
+[Cycle 539] Core 0 acquired bus
+[Cycle 539] Core 0 READ MISS for address 0xfff000ff
+[Cycle 539] Core 0 released the bus
+[Cycle 539] Core 0 cache state:
+Cache state for core 0:
+Set 0:
+  Line 0: Valid, Tag: 1966080, State: S, lastUsed: 2
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 1:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 2:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 3:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 4:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 5:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 6:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 7:
+  Line 0: Valid, Tag: 2096640, State: E, lastUsed: 3
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 8:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 9:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 10:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 11:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 12:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 13:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 14:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 15:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 16:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 17:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 18:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 19:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 20:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 21:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 22:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 23:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 24:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 25:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 26:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 27:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 28:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 29:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 30:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 31:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 32:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 33:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 34:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 35:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 36:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 37:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 38:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 39:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 40:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 41:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 42:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 43:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 44:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 45:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 46:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 47:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 48:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 49:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 50:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 51:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 52:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 53:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 54:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 55:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 56:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 57:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 58:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 59:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 60:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 61:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 62:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+Set 63:
+  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
+  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
+[Cycle 539] Core 0 has no more instructions
+[Cycle 539] Core 1 has finished execution
+[Cycle 539] Core 2 has finished execution
+[Cycle 539] Core 3 has finished execution
+Simulation Parameters:
+Trace Prefix: app
+Set Index Bits: 6
+Associativity: 2
+Block Bits: 5
+Block Size (Bytes): 32
+Number of Sets: 64
+Cache Size (KB per core): 4.00
+MESI Protocol: Enabled
+Write Policy: Write-back, Write-allocate
+Replacement Policy: LRU
+Bus: Central snooping bus
+
+Core 0 Statistics:
+Total Instructions: 3
+Total Reads: 2
+Total Writes: 1
+Total Execution Cycles: 203
+Idle Cycles: 336
+Cache Misses: 2
+Cache Miss Rate: 66.67%
+Cache Evictions: 0
+Writebacks: 1
+Bus Invalidations: 0
+Data Traffic (Bytes): 96
+
+Core 1 Statistics:
+Total Instructions: 2
+Total Reads: 2
+Total Writes: 0
+Total Execution Cycles: 134
+Idle Cycles: 304
+Cache Misses: 2
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 1
+Data Traffic (Bytes): 64
+
+Core 2 Statistics:
+Total Instructions: 1
+Total Reads: 1
+Total Writes: 0
+Total Execution Cycles: 101
+Idle Cycles: 118
+Cache Misses: 1
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 0
+Data Traffic (Bytes): 32
+
+Core 3 Statistics:
+Total Instructions: 1
+Total Reads: 1
+Total Writes: 0
+Total Execution Cycles: 101
+Idle Cycles: 219
+Cache Misses: 1
+Cache Miss Rate: 100.00%
+Cache Evictions: 0
+Writebacks: 0
+Bus Invalidations: 0
+Data Traffic (Bytes): 32
+
+Overall Bus Summary:
+Total Bus Transactions: 7
+Total Bus Traffic (Bytes): 224
