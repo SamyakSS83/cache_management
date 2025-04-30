@@ -86,7 +86,7 @@ void Cache::updateLRU(unsigned int setIndex, int lineIndex) {
 // Evict a cache line according to its MESI state and the copies in other caches.
 // Modifies the cycle count to account for any stalls due to write-back.
 //
-void Cache::evictLine(unsigned int setIndex, int lineIndex, int &cycle) {
+void Cache::evictLine(unsigned int setIndex, int lineIndex, int &cycle, int &bytesTransferred) {
     CacheLine &line = sets[setIndex].lines[lineIndex];
     if (!line.valid) return; // Nothing to evict
 
@@ -149,6 +149,7 @@ void Cache::evictLine(unsigned int setIndex, int lineIndex, int &cycle) {
         case MODIFIED:
             // On eviction, a cache line in MODIFIED state must be written back.
             writebackCount++;
+            bytesTransferred += blockSize;
             // Stall 100 cycles to perform the write-back.
             cycle += 100;
             // Assume bus ownership for these extra cycles happens within the simulator.
@@ -211,7 +212,7 @@ bool Cache::processRequest(MemoryOperation op,
     // If the set is full, pick a victim and evict.
     int victimIndex = pickLRUVictim(setIndex);
     if (sets[setIndex].lines[victimIndex].valid) {
-        evictLine(setIndex, victimIndex, cycle);
+        evictLine(setIndex, victimIndex, cycle, busTraffic);
     }
     
     // Insert the new line.
@@ -355,7 +356,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in SHARED state
@@ -381,7 +382,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in SHARED state
@@ -403,7 +404,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in EXCLUSIVE state
@@ -438,7 +439,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in MODIFIED state
@@ -472,7 +473,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in MODIFIED state
@@ -494,7 +495,7 @@ bool Cache::processRequest(MemoryOperation op,
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
             if (sets[setIndex].lines[victimIndex].valid) {
-                evictLine(setIndex, victimIndex, cycle);
+                evictLine(setIndex, victimIndex, cycle, bytesTransferred);
             }
             
             // Add line to our cache in MODIFIED state

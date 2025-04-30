@@ -35,7 +35,7 @@ private:
     int findLineInSet(unsigned int setIndex, unsigned int tag) const;
     int pickLRUVictim(unsigned int setIndex) const;
     void updateLRU(unsigned int setIndex, int lineIndex);
-    void evictLine(unsigned int setIndex, int lineIndex, int &cycle);
+    void evictLine(unsigned int setIndex, int lineIndex, int &cycle, int &bytesTransferred);
     Cache(int coreId, int s, int E, int b);
 
     // processes a core read / write

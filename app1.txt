@@ -22,7 +22,7 @@ Cache Miss Rate: 1.49%
 Cache Evictions: 28429
 Writebacks: 8587
 Bus Invalidations: 45
-Data Traffic (Bytes): 1189664
+Data Traffic (Bytes): 1462816
 
 Core 1 Statistics:
 Total Instructions: 2490468
@@ -35,7 +35,7 @@ Cache Miss Rate: 1.41%
 Cache Evictions: 28272
 Writebacks: 6799
 Bus Invalidations: 73
-Data Traffic (Bytes): 1127936
+Data Traffic (Bytes): 1343808
 
 Core 2 Statistics:
 Total Instructions: 2509057
@@ -48,7 +48,7 @@ Cache Miss Rate: 1.62%
 Cache Evictions: 30149
 Writebacks: 10437
 Bus Invalidations: 74
-Data Traffic (Bytes): 1306560
+Data Traffic (Bytes): 1638016
 
 Core 3 Statistics:
 Total Instructions: 2503127
@@ -61,8 +61,8 @@ Cache Miss Rate: 1.44%
 Cache Evictions: 28744
 Writebacks: 7044
 Bus Invalidations: 62
-Data Traffic (Bytes): 1150784
+Data Traffic (Bytes): 1374368
 
 Overall Bus Summary:
 Total Bus Transactions: 149034
-Total Bus Traffic (Bytes): 4774944
+Total Bus Traffic (Bytes): 5819008
