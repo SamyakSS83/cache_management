@@ -174,7 +174,7 @@ void CacheSimulator::runSimulation() {
                     unsigned int setIndex = core.cachePtr->getSetIndex(address);
                     unsigned int tag = core.cachePtr->getTag(address);
                     int lineIndex = core.cachePtr->findLineInSet(setIndex, tag);
-                    std::cout << "coreId: " << coreId << " lineIndex : " << lineIndex << " address: " << address << std::endl;
+                    // std::cout << "coreId: " << coreId << " lineIndex : " << lineIndex << " address: " << address << std::endl;
 
                     if (lineIndex == -1) { //miss happened
                         if (!busFree) { //bus not free, stall on read miss
@@ -185,9 +185,9 @@ void CacheSimulator::runSimulation() {
                         }
                     }
                     hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
-                    
-                    std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
-                    cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
+
+                    // std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
+                    // cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
 
                     if (!hit) {
                         busFree = false;
@@ -317,8 +317,8 @@ void CacheSimulator::printStatistics() {
         out << "Total Instructions: " << core.totalInstructions << std::endl;
         out << "Total Reads: " << core.readCount << std::endl;
         out << "Total Writes: " << core.writeCount << std::endl;
-        out << "Total Execution Cycles: " << core.extime << std::endl;
-        out << "Idle Cycles: " << core.idletime << std::endl;
+        out << "Total Execution Cycles: " << core.totalInstructions << std::endl;
+        out << "Idle Cycles: " << core.extime  << std::endl;
         out << "Cache Misses: " << core.missCount << std::endl;
         out << "Cache Miss Rate: " << std::fixed << std::setprecision(2) << missRate << "%" << std::endl;
         out << "Cache Evictions: " << core.evictionCount << std::endl;
