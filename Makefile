@@ -4,7 +4,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra -O2
 SRCDIR = src
 OBJDIR = obj
-BINDIR = bin
+BINDIR = .
 
 # Source files
 SOURCES = $(wildcard $(SRCDIR)/*.cpp)

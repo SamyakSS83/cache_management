@@ -2584,7 +2584,7 @@ Set 63:
   Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
 state of core 1
 [Cycle 438] Core 0 processing: R 0xfff000ff
-coreId: 0 lineIndex : -1 address: 4293918975
+coreId: 0 lineIndex : -1 address: 4293918975writeback
 tag: 2096640 setIndex: 7
 coreId: 0 hit : 0 address: 4293918975
 bus is free at cycle: 539 busOwner: -1
