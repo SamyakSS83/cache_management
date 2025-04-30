@@ -185,7 +185,7 @@ void CacheSimulator::runSimulation() {
                         }
                     }
                     hit = core.cachePtr->processRequest(READ, address, globalCycle, otherCaches, cyclesUsed, bytesTransferred);
-                    
+
                     // std::cout << "coreId: " << coreId << " hit : " << hit << " address: " << address << std::endl;
                     // cout << "bus is free at cycle: " << globalCycle << " busOwner: " << busOwner << endl;
 
@@ -317,8 +317,8 @@ void CacheSimulator::printStatistics() {
         out << "Total Instructions: " << core.totalInstructions << std::endl;
         out << "Total Reads: " << core.readCount << std::endl;
         out << "Total Writes: " << core.writeCount << std::endl;
-        out << "Total Execution Cycles: " << core.extime << std::endl;
-        out << "Idle Cycles: " << core.idletime << std::endl;
+        out << "Total Execution Cycles: " << core.totalInstructions << std::endl;
+        out << "Idle Cycles: " << core.extime  << std::endl;
         out << "Cache Misses: " << core.missCount << std::endl;
         out << "Cache Miss Rate: " << std::fixed << std::setprecision(2) << missRate << "%" << std::endl;
         out << "Cache Evictions: " << core.evictionCount << std::endl;
