@@ -345,7 +345,7 @@ bool Cache::processRequest(MemoryOperation op,
             // First, owner must write back to memory (100 cycles)
             // But it's a cache-to-cache transfer, so data doesn't go to memory first
             ownerCache->writebackCount++; // Still count as a writeback statistically
-            
+            cycle += 100; // 100 cycles for writeback
             // Cache-to-cache transfer takes 2*blockSize/4 cycles
             int transferCycles = (2 * blockSize) / 4;
             cycle += transferCycles;
