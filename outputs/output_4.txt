@@ -16,33 +16,33 @@ Total Instructions: 4
 Total Reads: 2
 Total Writes: 2
 Total Execution Cycles: 120
-Idle Cycles: 241
+Idle Cycles: 357
 Cache Misses: 2
 Cache Miss Rate: 50.00%
 Cache Evictions: 0
-Writebacks: 0
-Bus Invalidations: 0
-Data Traffic (Bytes): 96
+Writebacks: 1
+Bus Invalidations: 2
+Data Traffic (Bytes): 128
 
 Core 1 Statistics:
 Total Instructions: 4
 Total Reads: 4
 Total Writes: 0
-Total Execution Cycles: 36
+Total Execution Cycles: 268
 Idle Cycles: 326
-Cache Misses: 2
-Cache Miss Rate: 50.00%
+Cache Misses: 4
+Cache Miss Rate: 100.00%
 Cache Evictions: 0
 Writebacks: 0
-Bus Invalidations: 1
-Data Traffic (Bytes): 64
+Bus Invalidations: 0
+Data Traffic (Bytes): 128
 
 Core 2 Statistics:
 Total Instructions: 4
 Total Reads: 4
 Total Writes: 0
 Total Execution Cycles: 104
-Idle Cycles: 259
+Idle Cycles: 491
 Cache Misses: 1
 Cache Miss Rate: 25.00%
 Cache Evictions: 0
@@ -55,7 +55,7 @@ Total Instructions: 4
 Total Reads: 4
 Total Writes: 0
 Total Execution Cycles: 104
-Idle Cycles: 260
+Idle Cycles: 492
 Cache Misses: 1
 Cache Miss Rate: 25.00%
 Cache Evictions: 0
@@ -64,5 +64,5 @@ Bus Invalidations: 0
 Data Traffic (Bytes): 32
 
 Overall Bus Summary:
-Total Bus Transactions: 7
-Total Bus Traffic (Bytes): 224
+Total Bus Transactions: 10
+Total Bus Traffic (Bytes): 320

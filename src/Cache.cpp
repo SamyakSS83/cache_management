@@ -315,10 +315,11 @@ bool Cache::processRequest(MemoryOperation op,
                         other->sets[otherSetIndex].lines[otherLineIndex].state != INVALID) {
                         // Mark the other cache's line as invalid
                         other->sets[otherSetIndex].lines[otherLineIndex].state = INVALID;
-                        other->busInvalidations++;
+                        // other->busInvalidations++;
                         bytesTransferred += blockSize;
                     }
                 }
+                this->busInvalidations ++;
                 
                 // Update our line to MODIFIED
                 line.state = MODIFIED;
@@ -435,7 +436,7 @@ bool Cache::processRequest(MemoryOperation op,
             
             // Invalidate the line in owner's cache
             ownerCache->sets[ownerSetIndex].lines[ownerLineIndex].state = INVALID;
-            ownerCache->busInvalidations++;
+            this->busInvalidations++;
             
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);
@@ -467,9 +468,10 @@ bool Cache::processRequest(MemoryOperation op,
                     other->sets[otherSetIndex].lines[otherLineIndex].state != INVALID) {
                     // Mark the other cache's line as invalid
                     other->sets[otherSetIndex].lines[otherLineIndex].state = INVALID;
-                    other->busInvalidations++;
+                    // other->busInvalidations++;
                 }
             }
+            this->busInvalidations ++;
             
             // Find a spot in our cache
             int victimIndex = pickLRUVictim(setIndex);

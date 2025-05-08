@@ -1,144 +1,11 @@
-[Cycle 0] Initializing simulator with 4 cores
-[Cycle 0] Block size: 32 bytes
-[Cycle 0] Core 0 first instruction: R 0xf0000000
-[Cycle 0] Core 1 first instruction: W 0xf0000000
-[Cycle 0] Core 2 first instruction: W 0xf0000000
-[Cycle 0] Core 3 first instruction: W 0xf0000000
-[Cycle 0] ======= Starting cycle 0 =======
-[Cycle 0] Bus is free
-[Cycle 0] Core 0 processing: R 0xf0000000
-coreId: 0 lineIndex : -1 address: 4026531840
-tag: 15728640 setIndex: 0
-coreId: 0 hit : 0 address: 4026531840
-bus is free at cycle: 101 busOwner: -1
-[Cycle 101] Core 0 acquired bus
-[Cycle 101] Core 0 READ MISS for address 0xf0000000
-[Cycle 101] Core 0 released the bus
-[Cycle 101] Core 0 cache state:
-Cache state for core 0:
-Set 0:
-  Line 0: Valid, Tag: 15728640, State: E, lastUsed: 1
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 1:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 2:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 3:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 4:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 5:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 6:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 7:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-[Cycle 101] Core 0 has no more instructions
-[Cycle 101] Core 1 processing: W 0xf0000000
-[Cycle 202] Core 1 WRITE MISS for address 0xf0000000
-[Cycle 202] Core 1 released the bus
-[Cycle 202] Core 1 cache state:
-Cache state for core 1:
-Set 0:
-  Line 0: Valid, Tag: 15728640, State: M, lastUsed: 1
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 1:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 2:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 3:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 4:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 5:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 6:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 7:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-[Cycle 202] Core 1 has no more instructions
-[Cycle 202] Core 2 processing: W 0xf0000000
-[Cycle 403] Core 2 WRITE MISS for address 0xf0000000
-[Cycle 403] Core 2 released the bus
-[Cycle 403] Core 2 cache state:
-Cache state for core 2:
-Set 0:
-  Line 0: Valid, Tag: 15728640, State: M, lastUsed: 1
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 1:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 2:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 3:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 4:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 5:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 6:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 7:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-[Cycle 403] Core 2 has no more instructions
-[Cycle 403] Core 3 processing: W 0xf0000000
-[Cycle 604] Core 3 WRITE MISS for address 0xf0000000
-[Cycle 604] Core 3 released the bus
-[Cycle 604] Core 3 cache state:
-Cache state for core 3:
-Set 0:
-  Line 0: Valid, Tag: 15728640, State: M, lastUsed: 1
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 1:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 2:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 3:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 4:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 5:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 6:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-Set 7:
-  Line 0: Invalid, Tag: 0, State: I, lastUsed: 0
-  Line 1: Invalid, Tag: 0, State: I, lastUsed: 0
-[Cycle 604] Core 3 has no more instructions
 Simulation Parameters:
 Trace Prefix: app
-Set Index Bits: 3
+Set Index Bits: 6
 Associativity: 2
 Block Bits: 5
 Block Size (Bytes): 32
-Number of Sets: 8
-Cache Size (KB per core): 0.50
+Number of Sets: 64
+Cache Size (KB per core): 4.00
 MESI Protocol: Enabled
 Write Policy: Write-back, Write-allocate
 Replacement Policy: LRU
@@ -167,7 +34,7 @@ Cache Misses: 1
 Cache Miss Rate: 100.00%
 Cache Evictions: 0
 Writebacks: 0
-Bus Invalidations: 0
+Bus Invalidations: 1
 Data Traffic (Bytes): 32
 
 Core 2 Statistics:
@@ -180,7 +47,7 @@ Cache Misses: 1
 Cache Miss Rate: 100.00%
 Cache Evictions: 0
 Writebacks: 0
-Bus Invalidations: 0
+Bus Invalidations: 1
 Data Traffic (Bytes): 64
 
 Core 3 Statistics:
@@ -193,7 +60,7 @@ Cache Misses: 1
 Cache Miss Rate: 100.00%
 Cache Evictions: 0
 Writebacks: 0
-Bus Invalidations: 0
+Bus Invalidations: 1
 Data Traffic (Bytes): 64
 
 Overall Bus Summary:
